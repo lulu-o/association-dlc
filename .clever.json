@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_53dc8efb-ecd3-43eb-8bb0-3d4f0e3867c2",
+      "org_id": "user_3ea56dea-4e82-4534-b9c9-3cd094f5f99b",
+      "deploy_url": "https://push-par-clevercloud-customers.services.clever-cloud.com/app_53dc8efb-ecd3-43eb-8bb0-3d4f0e3867c2.git",
+      "name": "associationdlc",
+      "alias": "associationdlc"
+    }
+  ]
+}
