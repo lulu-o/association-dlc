@@ -33,6 +33,10 @@ gem 'devise'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'geocoder'
+
+gem 'rails-i18n'
+gem 'devise-i18n'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -41,6 +45,8 @@ group :development, :test do
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'seed_dump'
+
 end
 
 group :development do
