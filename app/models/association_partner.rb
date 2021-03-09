@@ -1,0 +1,2 @@
+class AssociationPartner < ApplicationRecord
+end

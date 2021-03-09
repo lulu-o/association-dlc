@@ -1,0 +1,2 @@
+class Harvester < ApplicationRecord
+end
