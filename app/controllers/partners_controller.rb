@@ -12,8 +12,8 @@ class PartnersController < ApplicationController
     else
       @markers = @partners.geocoded.map do |partner|
         {
-          lat: shop.latitude,
-          lng: shop.longitude,
+          lat: partner.latitude,
+          lng: partner.longitude,
           infoWindow: render_to_string(partial: "partners/info_window", locals: { partner: partner })
         }
       end
