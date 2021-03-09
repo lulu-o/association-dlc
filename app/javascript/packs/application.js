@@ -23,10 +23,11 @@ import "bootstrap";
 
 // Internal imports
 import { initMapbox } from '../plugins/init_mapbox';
+import { initModal } from '../plugins/init_modal';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
-
+  initModal();
   const searchButton = document.getElementById("search");
   if (searchButton) {
     searchButton.addEventListener('click', () => {

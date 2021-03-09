@@ -9,9 +9,14 @@ body {
 }
 
 h1 {
-	font-family: 'Montserrat', sans-serif; 
-	font-size: 20px; 
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
 	text-transform: uppercase;
 	margin-top: 1rem;
 }
 
+.content {
+	position:relative;
+	z-index:5;
+	padding:0 0.75rem;
+}
