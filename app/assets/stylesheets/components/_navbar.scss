@@ -1,12 +1,72 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+//.navbar-lewagon {
+//  justify-content: space-between;
+//  background: white;
+//}
+
+//.navbar-lewagon .navbar-collapse {
+// flex-grow: 0;
+//}
+
+//.navbar-lewagon .navbar-brand img {
+//  width: 40px;
+//}
+
+/* Place the navbar at the bottom of the page, and make it stick */
+.navbar {
+  background-color: $green;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+/* Style the links inside the navigation bar */
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 11px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+/* Change the color of links on hover */
+// .navbar a:hover {
+//  background-color: #ddd;
+//  color: black;
+// }
+
+/* Add a color to the active/current link */
+.navbar a.active {
+  color: white;
 }
+
+.category-menu {
+	color: $white-50;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 5px 15px;
+
+	a {
+		color: $white-50;
+	}
+}
+
+.category-menu-urgences {
+	color: $yellow;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 5px;
+
+	a {
+		color: $yellow;
+	}
+}
+
+i {
+	font-size: 25px;
+	padding-bottom: 5px;
+}
+

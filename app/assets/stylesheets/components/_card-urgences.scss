@@ -5,6 +5,22 @@
 	box-shadow: $title-shadow;
 }
 
+.date-info {
+	background-color: $green;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 5px 15px;
+
+
+  p {
+  	margin: 0px;
+  }
+}
+
 .card-shop {
 	background: white;
   box-shadow: $box-shadow;
@@ -14,12 +30,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-radius: 5px;
 
   p {
 		margin-bottom: 0;
-		}
-
+	}
+	
 	.top {
 		display: flex;
 		flex-direction: row;
@@ -54,7 +69,6 @@
 		font-size: 12px;
 	}
 
-
 	.distance {
 		display: flex;
 		flex-direction: row;
@@ -71,7 +85,6 @@
 		}
 	}
 
-
 	.label-yellow {
 		background-color: $yellow;
 		text-transform: uppercase;
@@ -82,3 +95,4 @@
     line-height: normal;
 	}
 }
+
