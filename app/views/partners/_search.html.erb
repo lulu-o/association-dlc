@@ -1,0 +1,16 @@
+<%= form_tag('map', :method => "get", :id => "geo-search")  do |f| %>
+  <%= text_field_tag :place %>
+  <%= select_tag :radius,
+        options_for_select([
+          ["1km", "1"],
+          ["2km", "2"],
+          ["5km", "5"],
+          ["10km", "10"],
+          ["20km", "20"],
+          ["50km", "50"],
+          ["100km", "100"]
+        ]) %>
+  <input id="geoloc" type="submit" action="" value="Géoloc">
+  <%= submit_tag "recherche", :id => "search-submit" %>
+
+<% end %>
