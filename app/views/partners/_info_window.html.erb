@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @partner.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @partner.address %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @partner.zipcode %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @partner.city %>
+</p>
+<div id="map" class="show"
+     style="width: 100%; height: 500px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<%= link_to 'Edit', edit_shop_path(@partner) %> |
+<%= link_to 'Back', partners_path %>
