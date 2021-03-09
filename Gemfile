@@ -35,6 +35,9 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'geocoder'
 
+gem 'rails-i18n'
+gem 'devise-i18n'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
