@@ -21,10 +21,19 @@ ActiveStorage.start()
 // External imports
 import "bootstrap";
 
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+// Internal imports
+import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
+  initMapbox();
+
+  const searchButton = document.getElementById("search");
+  if (searchButton) {
+    searchButton.addEventListener('click', () => {
+      const place = document.getElementById("place").innerText;
+      const result = Geocoder.search(place);
+      // console.log(initMapbox.geocoder);
+    });
+  }
+
 });

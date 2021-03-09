@@ -1,0 +1,66 @@
+/* COLLECT DATE */
+
+.collect-date {
+  height:64px;
+  border-radius: 32px;
+  padding:8px 8px 8px 16px;
+  margin:16px 0;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.collect-date > p {
+  width:max-content;
+  text-align:center;
+  max-width:40%;
+}
+
+.collect-date > div {
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  width:48px;
+  height:48px;
+  line-height:48px;
+  border-radius:50%;
+  font-size:2em;
+}
+
+/* MISSING DATE */
+
+.collect-date.missing > div {
+  background-color: #114D4D;
+}
+
+.collect-date.missing {
+  background-color:white;
+  color:#114D4D;
+}
+
+.collect-date.missing .register {
+  font-weight:bold;
+  color:white;
+}
+
+/* REGISTERED DATE */
+
+.collect-date.registered {
+  background-color: #114D4D;
+  color:rgba(0,0,0,0.8);
+  p {
+    color:white;
+  }
+}
+
+.collect-date .cancel {
+  background-color:#EB5855;
+  color:white;
+}
+
+/* FULL DATE */
+
+.collect-date.full {
+  background-color:rgba(17,77,77,0.5);
+  color:rgba(255,255,255,0.4);
+}

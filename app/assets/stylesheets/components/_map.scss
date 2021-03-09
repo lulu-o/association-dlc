@@ -1,0 +1,55 @@
+#geo-search {
+  display:flex;
+  * {
+    padding:4px 8px;
+  }
+  .mapboxgl-ctrl, select {
+    margin-right:16px;
+  }
+  input#place {
+    border-radius:16px 0 0 16px;
+  }
+  #radius {
+    margin-right:0;
+  }
+  input#search-submit {
+    border-radius:0 16px 16px 0;
+  }
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-marker {
+  cursor:pointer;
+
+  g, circle {
+    color:#114D4D;
+  }
+
+}
+
+.show .mapboxgl-marker {
+  pointer-events:none;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  padding-top:15px;
+  h2 {
+    font-size:1.25rem;
+  }
+  p.address {
+    font-size:0.875rem;
+    margin-bottom:8px;
+  }
+  p.city {
+    font-size:1rem;
+    margin-bottom:8px;
+  }
+  button.mapboxgl-popup-close-button {
+  font-size:2rem;
+  }
+}
