@@ -22,7 +22,7 @@ const initMapbox = () => {
       element.style.color = '#114D4D';
       element.style.width = '40px';
       element.style.height = '40px';
-      new mapboxgl.Marker(element)
+      new mapboxgl.Marker()
         .setLngLat([marker.lng, marker.lat])
         .addTo(map);
     });
