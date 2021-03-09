@@ -1,10 +1,19 @@
 // Define variables for your color scheme
+$yellow: #F8C630;
+$red: #EB5855;
 
-// For example:
-$red: #FD1015;
+$green: #114D4D;
+$green-40: rgba(17, 77, 77, 0.6);
+$green-25: rgba(17, 77, 77, 0.4);
+$green-10: rgba(17, 77, 77, 0.2);
+
+$white-50: rgba(#FFF, 0.50);
+$white-30: rgba(#FFF, 0.30);
+
+$card-shadow: 2px 2px 20px 20px rgba(#000, 0.25);
+$title-shadow: rgba($green, .3) 0px 2px 0px 0px, rgba($green, .3) 0px -.6em 0px 0px inset;
+
 $blue: #167FFB;
-$yellow: #FFC65A;
 $orange: #E67E22;
-$green: #1EDD88;
 $gray: #0E0000;
 $light-gray: #F4F4F4;
