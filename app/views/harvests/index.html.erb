@@ -1,5 +1,24 @@
 <% @harvests.each do |harvest| %>
+  <p>ID récolte : <%= harvest.id %></p>
   <p>Date récolte : <%= harvest.date.strftime("%d/%m/%Y") %></p>
   <p>Partenaire : <%= harvest.partner.name %></p>
   <p>Heure : <%= harvest.hour.strftime("%H:%M") %></p>
+  <p><%= harvest.harvesters.count %> récolteurs positionnés sur <%= harvest.harvesters_number %></p>
+  <p><%= if harvest.harvesters.count < harvest.harvesters_number
+    "Pas assez de récolteurs"
+    else
+    "Quota de récolteurs atteint"
+    end %></p>
+
+  <p><%= Date.today.advance(days: 7).strftime("%d/%m/%Y") %></p>
+
+  <p><%= if harvest.date <= Date.today.advance(days: 7)
+    "La date est proche"
+    else
+    "La date est loin"
+    end %></p>
+
+
+
+  <br><br><br><br><br>
 <% end %>
