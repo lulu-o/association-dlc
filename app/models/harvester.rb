@@ -1,4 +1,4 @@
 class Harvester < ApplicationRecord
-  belongs_to :users
-  belongs_to :harvests
+  belongs_to :user
+  belongs_to :harvest
 end
