@@ -210,3 +210,22 @@ harvester_35 = Harvester.create({user: user_4, harvest: harvest_27})
 harvester_36 = Harvester.create({user: user_5, harvest: harvest_28})
 harvester_37 = Harvester.create({user: user_1, harvest: harvest_29})
 puts "End Of Harvesters Creating"
+
+
+puts "Creating Favorites"
+favorite_11 = Favorite.create({user: user_1, partner: partner_01})
+favorite_12 = Favorite.create({user: user_1, partner: partner_03})
+favorite_13 = Favorite.create({user: user_1, partner: partner_05})
+favorite_21 = Favorite.create({user: user_2, partner: partner_07})
+favorite_22 = Favorite.create({user: user_2, partner: partner_09})
+favorite_23 = Favorite.create({user: user_2, partner: partner_11})
+favorite_31 = Favorite.create({user: user_3, partner: partner_13})
+favorite_32 = Favorite.create({user: user_3, partner: partner_02})
+favorite_33 = Favorite.create({user: user_3, partner: partner_04})
+favorite_41 = Favorite.create({user: user_4, partner: partner_06})
+favorite_42 = Favorite.create({user: user_4, partner: partner_08})
+favorite_43 = Favorite.create({user: user_4, partner: partner_01})
+favorite_51 = Favorite.create({user: user_5, partner: partner_03})
+favorite_52 = Favorite.create({user: user_5, partner: partner_05})
+favorite_53 = Favorite.create({user: user_5, partner: partner_07})
+puts "End Of Favorites Creating"
