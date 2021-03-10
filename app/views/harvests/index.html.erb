@@ -3,3 +3,42 @@
   <p>Partenaire : <%= harvest.partner.name %></p>
   <p>Heure : <%= harvest.hour.strftime("%H:%M") %></p>
 <% end %>
+
+<div class="index">
+	<!-- TITLE -->
+	<h1 class="inset">Les récoltes urgentes</h1>
+	<p>Cette semaine, il manque du monde sur les crénaux suivants : </p>
+
+	<!-- CARDS -->
+	<div class="cards">
+
+		<!-- CARD URGENCE -->
+		<div class="card-template-urgence">
+			<% @harvests.each do |harvest| %>
+  			<p>Date récolte : <%= harvest.date.strftime("%d/%m/%Y") %></p>
+  
+  
+
+			<div class="date-info">
+				<p><i class="fas fa-user"></i> <i class="far fa-user"></i></p>
+				<p class="hour"><%= harvest.hour.strftime("%H:%M") %></p>
+			</div>
+			<div class="card-urgence">
+				<div class="top">
+					<div class="shop-name">
+						<%= image_tag "carrefour.png", alt: "Carrefour", width: 30 %>
+						<p class="shop-title"><%= harvest.partner.name %></p>
+					</div>
+					<div class="distance">
+						<p class="distance-label"><span><i class="fas fa-map-marker-alt"></i></span>700 m</p>
+					</div>	
+				</div>
+				<div class="bottom">
+					<p class="shop-address">Boulevard De la Baule, 44000 Saint- Herblain</p>
+					<p class="label-yellow">je m'inscris</p>
+				</div>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>
