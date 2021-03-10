@@ -16,3 +16,51 @@
 		</div>
 	</div>
 </div>
+
+
+
+<div class="index">
+	<div class="date-info">
+			<p><i class="fas fa-user"></i> <i class="far fa-user"></i></p>
+			<p class="hour">18h00</p>
+		</div>
+	<div class="card-shop">
+		<div class="top">
+			<div class="shop-name">
+				<%= image_tag "logo-carrefour.jpeg", alt: "Carrefour", width: 30 %>
+				<p class="shop-title">carrefour saint-herblain</p>
+			</div>
+			<div class="distance">
+				<p class="distance-label"><span><i class="fas fa-map-marker-alt"></i></span>700 m</p>
+			</div>	
+		</div>
+		<div class="bottom">
+			<p class="shop-address">Boulevard De la Baule, 44000 Saint- Herblain</p>
+			<p class="label-yellow">je m'inscris</p>
+		</div>
+	</div>
+</div>
+
+<div class="index">
+	<div class="date-info">
+			<p>Vendredi 12 mars 2021</p>
+			<p class="hour">18h00</p>
+		</div>
+	<div class="card-shop">
+		<div class="top">
+			<div class="shop-name">
+				<%= image_tag "logo-carrefour.jpeg", alt: "Carrefour", width: 30 %>
+				<p class="shop-title">carrefour saint-herblain</p>
+			</div>
+			<div class="distance">
+				<p class="distance-label"><span><i class="fas fa-map-marker-alt"></i></span>700 m</p>
+			</div>	
+		</div>
+		<div class="bottom">
+			<p class="shop-address">Boulevard De la Baule, 44000 Saint- Herblain</p>
+			<p><span class="cross"><i class="fas fa-times-circle"></i></span></p>
+		</div>
+	</div>
+</div>
+
+<%= render 'shared/navbar' %>
