@@ -10,6 +10,25 @@
 </div>
 
 <div class="shops-list">
+  <% @partners.each do |partner| %>
+    <div class="card-template-shop">
+			<div class="card-shop">
+				<div class="top">
+					<div class="shop-name">
+						<%= image_tag "logo-carrefour.jpeg", alt: "Carrefour", width: 30 %>
+						<p class="shop-title"><%= partner.name %></p>
+					</div>
+					<div class="distance">
+						<p class="distance-label"><span><i class="fas fa-map-marker-alt"></i></span>700 m</p>
+					</div>
+				</div>
+				<div class="bottom">
+					<p class="shop-address"><%= partner.full_address %></p>
+					<p class="label-yellow">urgent</p>
+				</div>
+			</div>
+		</div>
+  <% end %>
 </div>
 
 <div class="shops-map">

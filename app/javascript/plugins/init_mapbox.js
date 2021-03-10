@@ -18,7 +18,6 @@ const initMapbox = () => {
       const element = document.createElement('i');
       element.classList.add('fas');
       element.classList.add('fa-map-marker-alt');
-      // element.style.backgroundSize = 'contain';
       element.style.color = '#114D4D';
       element.style.width = '40px';
       element.style.height = '40px';
