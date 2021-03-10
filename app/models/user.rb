@@ -7,6 +7,7 @@ class User < ApplicationRecord
   # belongs_to :association
   belongs_to :my_association, class_name: "Association", foreign_key: "association_id"
   has_many :harvesters
+  has_many :favorites
   validates :first_name, :last_name, :address, :zipcode, :city, presence: true
   validates :email, presence: true, uniqueness: true
   geocoded_by :full_address
