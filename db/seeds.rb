@@ -1,6 +1,8 @@
 require "open-uri"
 
 puts "Cleaning Database"
+puts "Cleaning Favorites"
+Favorite.destroy_all
 puts "Cleaning Harvesters"
 Harvester.destroy_all
 puts "Cleaning Contacts"
@@ -139,35 +141,35 @@ contact_14 = Contact.create({partner: partner_14, first_name: "Pierre-Emmanuel",
 puts "End Of Contacts Creating"
 
 puts "Creating Harvests"
-harvest_01 = Harvest.create({my_association: association_1, partner: partner_01, date: "2021-03-15", harvesters_number: 2})
-harvest_02 = Harvest.create({my_association: association_1, partner: partner_01, date: "2021-03-17", harvesters_number: 2})
-harvest_03 = Harvest.create({my_association: association_1, partner: partner_01, date: "2021-03-19", harvesters_number: 2})
-harvest_04 = Harvest.create({my_association: association_1, partner: partner_01, date: "2021-03-20", harvesters_number: 2})
-harvest_05 = Harvest.create({my_association: association_1, partner: partner_02, date: "2021-03-15", harvesters_number: 2})
-harvest_06 = Harvest.create({my_association: association_1, partner: partner_02, date: "2021-03-16", harvesters_number: 2})
-harvest_07 = Harvest.create({my_association: association_1, partner: partner_02, date: "2021-03-17", harvesters_number: 2})
-harvest_08 = Harvest.create({my_association: association_1, partner: partner_02, date: "2021-03-18", harvesters_number: 2})
-harvest_09 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-15", harvesters_number: 1})
-harvest_10 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-16", harvesters_number: 1})
-harvest_11 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-17", harvesters_number: 1})
-harvest_12 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-18", harvesters_number: 1})
-harvest_13 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-19", harvesters_number: 1})
-harvest_14 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-20", harvesters_number: 1})
-harvest_15 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-21", harvesters_number: 1})
-harvest_16 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-15", harvesters_number: 1})
-harvest_17 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-16", harvesters_number: 1})
-harvest_18 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-17", harvesters_number: 1})
-harvest_19 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-18", harvesters_number: 1})
-harvest_20 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-19", harvesters_number: 1})
-harvest_21 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-20", harvesters_number: 1})
-harvest_22 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-21", harvesters_number: 1})
-harvest_23 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-15", harvesters_number: 1})
-harvest_24 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-16", harvesters_number: 1})
-harvest_25 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-17", harvesters_number: 1})
-harvest_26 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-18", harvesters_number: 1})
-harvest_27 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-19", harvesters_number: 1})
-harvest_28 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-20", harvesters_number: 1})
-harvest_29 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-21", harvesters_number: 1})
+harvest_01 = Harvest.create({my_association: association_1, partner: partner_01, date: "2021-03-15", harvesters_number: 2, hour: "18:30:00"})
+harvest_02 = Harvest.create({my_association: association_1, partner: partner_01, date: "2021-03-17", harvesters_number: 2, hour: "18:30:00"})
+harvest_03 = Harvest.create({my_association: association_1, partner: partner_01, date: "2021-03-19", harvesters_number: 2, hour: "18:30:00"})
+harvest_04 = Harvest.create({my_association: association_1, partner: partner_01, date: "2021-03-20", harvesters_number: 2, hour: "18:30:00"})
+harvest_05 = Harvest.create({my_association: association_1, partner: partner_02, date: "2021-03-15", harvesters_number: 2, hour: "18:45:00"})
+harvest_06 = Harvest.create({my_association: association_1, partner: partner_02, date: "2021-03-16", harvesters_number: 2, hour: "18:45:00"})
+harvest_07 = Harvest.create({my_association: association_1, partner: partner_02, date: "2021-03-17", harvesters_number: 2, hour: "18:45:00"})
+harvest_08 = Harvest.create({my_association: association_1, partner: partner_02, date: "2021-03-18", harvesters_number: 2, hour: "18:45:00"})
+harvest_09 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-15", harvesters_number: 1, hour: "19:00:00"})
+harvest_10 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-16", harvesters_number: 1, hour: "19:00:00"})
+harvest_11 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-17", harvesters_number: 1, hour: "19:00:00"})
+harvest_12 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-18", harvesters_number: 1, hour: "19:00:00"})
+harvest_13 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-19", harvesters_number: 1, hour: "19:00:00"})
+harvest_14 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-20", harvesters_number: 1, hour: "19:00:00"})
+harvest_15 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-21", harvesters_number: 1, hour: "19:00:00"})
+harvest_16 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-15", harvesters_number: 1, hour: "19:00:00"})
+harvest_17 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-16", harvesters_number: 1, hour: "19:00:00"})
+harvest_18 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-17", harvesters_number: 1, hour: "19:00:00"})
+harvest_19 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-18", harvesters_number: 1, hour: "19:00:00"})
+harvest_20 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-19", harvesters_number: 1, hour: "19:00:00"})
+harvest_21 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-20", harvesters_number: 1, hour: "19:00:00"})
+harvest_22 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-21", harvesters_number: 1, hour: "19:00:00"})
+harvest_23 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-15", harvesters_number: 1, hour: "19:00:00"})
+harvest_24 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-16", harvesters_number: 1, hour: "19:00:00"})
+harvest_25 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-17", harvesters_number: 1, hour: "19:00:00"})
+harvest_26 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-18", harvesters_number: 1, hour: "19:00:00"})
+harvest_27 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-19", harvesters_number: 1, hour: "19:00:00"})
+harvest_28 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-20", harvesters_number: 1, hour: "19:00:00"})
+harvest_29 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-21", harvesters_number: 1, hour: "19:00:00"})
 puts "End Of Harvests Creating"
 
 
