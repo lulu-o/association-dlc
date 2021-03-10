@@ -7,7 +7,9 @@
 
 <div class="collapse" id="CollapseExample1">
   <div class="card-body">
-    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+    <% @harvesters.each do |harvester| %>
+      <p>Le <%= harvester.harvest.date %> à <%= harvester.harvest.hour.strftime("%H:%M") %> à <%= harvester.harvest.partner.name %></p>
+    <% end %>
   </div>
 </div>
 <br>
@@ -43,6 +45,8 @@
         </div>
   </div>
 </div>
+
+
 
 
 
