@@ -4,6 +4,7 @@ class Partner < ApplicationRecord
   has_many :harvests
   has_many :contacts
   has_many :association_partners
+  has_many :favorites
   geocoded_by :full_address
   after_validation :geocode, if: :will_save_change_to_address?
 
