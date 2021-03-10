@@ -5,17 +5,17 @@
 </div>
 
 <div class="tabs d-flex">
-  <div id="shops-list">Liste</div>
-  <div id="shops-map">Carte</div>
+  <div class="tab active" id="shops-list-tab">Liste</div>
+  <div class="tab" id="shops-map-tab">Carte</div>
 </div>
 
-<div class="shops-list">
+<div id="shops-list-container" class="tab-container active">
   <% @partners.each do |partner| %>
     <div class="card-template-shop">
 			<div class="card-shop">
 				<div class="top">
 					<div class="shop-name">
-						<%= image_tag "logo-carrefour.jpeg", alt: "Carrefour", width: 30 %>
+						<%= image_tag "carrefour.png", alt: "Carrefour", width: 30 %>
 						<p class="shop-title"><%= partner.name %></p>
 					</div>
 					<div class="distance">
@@ -31,7 +31,7 @@
   <% end %>
 </div>
 
-<div class="shops-map">
+<div id="shops-list-map" class="tab-container">
   <div id="map" class="show"
     style="width: 100%; height: 500px;"
     data-markers="<%= @markers.to_json %>"

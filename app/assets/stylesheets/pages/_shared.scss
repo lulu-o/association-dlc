@@ -8,7 +8,7 @@ body {
 	background: $green-20;
 }
 
-p { 
+p {
 	margin-bottom: 0;
 }
 
@@ -17,6 +17,30 @@ h1 {
 	font-size: 20px;
 	text-transform: uppercase;
 	margin-top: 1rem;
+}
+
+.tabs {
+	width:100%;
+	display:flex;
+	justify-content:space-evenly;
+	margin:1em auto;
+	.tab {
+		background-color:white;
+		color:$green;
+		padding:8px;
+		width:33%;
+		text-transform:uppercase;
+		text-align:center;
+		cursor:pointer;
+	}
+	.active {
+		background-color:$green;
+		color:white;
+	}
+}
+
+.tab-container:not(.active) {
+	display:none;
 }
 
 .content {
