@@ -1,98 +1,93 @@
-.index {
-	padding: 0 .5rem;
-}
-.inset {
-	box-shadow: $title-shadow;
-}
-
-.date-info {
-	background-color: $green;
-	color: white;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  padding: 5px 15px;
-
-
-  p {
-  	margin: 0px;
-  }
-}
-
-.card-shop {
-	background: white;
-  box-shadow: $box-shadow;
-  margin-bottom: 10px;
-  padding: 15px;
-  min-height: 7rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  p {
-		margin-bottom: 0;
-	}
-	
-	.top {
+.card-template-urgence {
+	.date-info {
+		background-color: $green;
+		color: white;
 		display: flex;
-		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
+		border-top-left-radius: 8px;
+	  border-top-right-radius: 8px;
+	  padding: 5px 15px;
+
+
+	  p {
+	  	margin: 0px;
+	  }
 	}
 
-	.bottom {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: flex-end;
-	}
+	.card-urgence {
+		background: white;
+	  box-shadow: $box-shadow;
+	  margin-bottom: 10px;
+	  padding: 15px;
+	  min-height: 7rem;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: space-between;
 
-	.shop-name {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-	}
+	  p {
+			margin-bottom: 0;
+		}
+		
+		.top {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
 
-	.shop-title {
-		font-size: 14px;
-		font-weight: 600;
-		text-transform: capitalize;
-		padding-left: 5px;
-	}
+		.bottom {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-end;
+		}
 
-	.shop-address {
-		color: black;
-		opacity: 0.5;
-		font-size: 12px;
-	}
+		.shop-name {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
 
-	.distance {
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-end;
-	}
+		.shop-title {
+			font-size: 14px;
+			font-weight: 600;
+			text-transform: capitalize;
+			padding-left: 5px;
+		}
 
-	.distance-label {
-		font-size: 14px;
-		font-weight: 500;
+		.shop-address {
+			color: black;
+			opacity: 0.5;
+			font-size: 12px;
+			width: 55%;
+		}
 
-		span {
-			color: $green;
-			padding-right: 5px;
+		.distance {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+		}
+
+		.distance-label {
+			font-size: 14px;
+			font-weight: 500;
+
+			span {
+				color: $green;
+				padding-right: 5px;
+			}
+		}
+
+		.label-yellow {
+			background-color: $yellow;
+			text-transform: uppercase;
+			font-size: 14px;
+			border-radius: 10px; 
+			padding: 0.3rem .8em;
+	    margin: 0;
+	    line-height: normal;
 		}
 	}
-
-	.label-yellow {
-		background-color: $yellow;
-		text-transform: uppercase;
-		font-size: 14px;
-		border-radius: 10px; 
-		padding: 0.3rem .8em;
-    margin: 0;
-    line-height: normal;
-	}
 }
-
