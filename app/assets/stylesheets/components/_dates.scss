@@ -8,45 +8,49 @@
   display:flex;
   align-items:center;
   justify-content: space-between;
+  p {
+    width:max-content;
+    text-align:center;
+    max-width:40%;
+    margin:0;
+  }
 }
 
-.collect-date > p {
-  width:max-content;
-  text-align:center;
-  max-width:40%;
-}
-
-.collect-date > div {
+.collect-date > div.date-action {
+  cursor:pointer;
   display:flex;
   align-items:center;
   justify-content: center;
-  width:48px;
-  height:48px;
-  line-height:48px;
+  width:56px;
+  height:56px;
+  line-height:56px;
   border-radius:50%;
   font-size:2em;
 }
 
 /* MISSING DATE */
 
-.collect-date.missing > div {
-  background-color: #114D4D;
-}
-
 .collect-date.missing {
   background-color:white;
-  color:#114D4D;
+  color: $green;
 }
 
 .collect-date.missing .register {
-  font-weight:bold;
+  background-color: $green;
   color:white;
+  width:48px;
+  height:48px;
+  line-height:48px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 /* REGISTERED DATE */
 
 .collect-date.registered {
-  background-color: #114D4D;
+  background-color: $green;
   color:rgba(0,0,0,0.8);
   p {
     color:white;
@@ -54,7 +58,7 @@
 }
 
 .collect-date .cancel {
-  background-color:#EB5855;
+  background-color:$red;
   color:white;
 }
 
@@ -63,4 +67,15 @@
 .collect-date.full {
   background-color:rgba(17,77,77,0.5);
   color:rgba(255,255,255,0.4);
+}
+
+.pop {
+  animation-duration: 0.4s;
+  animation-name: pop;
+}
+
+@keyframes pop {
+  from { width:48px; height:48px; }
+  50% { width:56px; height:56px; }
+  to { width:48px; height:48px; }
 }
