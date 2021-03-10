@@ -1,0 +1,11 @@
+.header-show {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	i {
+		font-size: 30px;
+		margin-right: 1rem;
+		padding-top: 1rem;
+	}
+}
