@@ -1,0 +1,5 @@
+<% @harvests.each do |harvest| %>
+  <p>Date récolte : <%= harvest.date.strftime("%d/%m/%Y") %></p>
+  <p>Partenaire : <%= harvest.partner.name %></p>
+  <p>Heure : <%= harvest.hour.strftime("%H:%M") %></p>
+<% end %>

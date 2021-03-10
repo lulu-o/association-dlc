@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_10_105202) do
+ActiveRecord::Schema.define(version: 2021_03_10_141308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,15 @@ ActiveRecord::Schema.define(version: 2021_03_10_105202) do
     t.index ["partner_id"], name: "index_contacts_on_partner_id"
   end
 
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "partner_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["partner_id"], name: "index_favorites_on_partner_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
   create_table "harvest_slots", force: :cascade do |t|
     t.integer "day_of_the_week"
     t.time "hour"
@@ -79,6 +88,7 @@ ActiveRecord::Schema.define(version: 2021_03_10_105202) do
     t.bigint "partner_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.time "hour"
     t.index ["association_id"], name: "index_harvests_on_association_id"
     t.index ["partner_id"], name: "index_harvests_on_partner_id"
   end
@@ -123,6 +133,8 @@ ActiveRecord::Schema.define(version: 2021_03_10_105202) do
   add_foreign_key "association_partners", "associations"
   add_foreign_key "association_partners", "partners"
   add_foreign_key "contacts", "partners"
+  add_foreign_key "favorites", "partners"
+  add_foreign_key "favorites", "users"
   add_foreign_key "harvest_slots", "partners"
   add_foreign_key "harvesters", "harvests"
   add_foreign_key "harvesters", "users"

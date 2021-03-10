@@ -1,6 +1,8 @@
 require "open-uri"
 
 puts "Cleaning Database"
+puts "Cleaning Favorites"
+Favorite.destroy_all
 puts "Cleaning Harvesters"
 Harvester.destroy_all
 puts "Cleaning Contacts"
@@ -37,14 +39,14 @@ puts "End of Users Creation"
 
 
 puts "Creating Brands"
-carrefour = Brand.create({name: "Carrefour", logo: "https://e7.pngegg.com/pngimages/592/86/png-clipart-carrefour-online-marketing-business-hypermarket-marketing-text-retail.png"})
-netto = Brand.create({name: "Netto", logo: "https://banner2.cleanpng.com/20180715/pbh/kisspng-netto-marken-discount-supermarket-discount-shop-co-netto-logo-5b4b46be2ef505.7313158715316599661924.jpg"})
-boulangerie_honore = Brand.create({name: "Boulangerie Honoré", logo: "https://static4.pagesjaunes.fr/media/cviv/54456614-35ac0f7bab9faaf40079b1050c742020"})
-boulangerie_ange = Brand.create({name: "Boulangerie Ange", logo: "https://upload.wikimedia.org/wikipedia/fr/8/8e/Logo_Boulangerie_Ange.png"})
-intermarche = Brand.create({name: "Intermarché", logo: "https://images.ctfassets.net/26cqtpvnd0cd/NyecMADUMS8OQSo2Seuwi/d8ea253e85218964ef6a8268e79f83f0/Fichier_1.png"})
-boulangerie_augustin = Brand.create({name: "Boulangerie Augustin", logo: "https://www.centre-commercial.fr/carrefour-iroise/wp-content/uploads/sites/73/2017/05/augus-1.jpg"})
-systeme_u = Brand.create({name: "Systeme U", logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/1/10/Syst%C3%A8me_U_logo_2009.svg/1395px-Syst%C3%A8me_U_logo_2009.svg.png"})
-potager_city = Brand.create({name: "Potager City", logo: "https://www.potagercity.fr/images/logo-121x70@2x.png"})
+carrefour = Brand.create({name: "Carrefour", logo: "carrefour.png"})
+netto = Brand.create({name: "Netto", logo: "netto.png"})
+boulangerie_honore = Brand.create({name: "Boulangerie Honoré", logo: "boulangerie-honore.png"})
+boulangerie_ange = Brand.create({name: "Boulangerie Ange", logo: "boulangerie-ange.png"})
+intermarche = Brand.create({name: "Intermarché", logo: "intermarche.png"})
+boulangerie_augustin = Brand.create({name: "Boulangerie Augustin", logo: "boulangerie-augustin.png"})
+systeme_u = Brand.create({name: "Systeme U", logo: "systeme-u.png"})
+potager_city = Brand.create({name: "Potager City", logo: "potager-city.png"})
 puts "End of Brands Creating"
 
 
@@ -139,35 +141,35 @@ contact_14 = Contact.create({partner: partner_14, first_name: "Pierre-Emmanuel",
 puts "End Of Contacts Creating"
 
 puts "Creating Harvests"
-harvest_01 = Harvest.create({my_association: association_1, partner: partner_01, date: "2021-03-15", harvesters_number: 2})
-harvest_02 = Harvest.create({my_association: association_1, partner: partner_01, date: "2021-03-17", harvesters_number: 2})
-harvest_03 = Harvest.create({my_association: association_1, partner: partner_01, date: "2021-03-19", harvesters_number: 2})
-harvest_04 = Harvest.create({my_association: association_1, partner: partner_01, date: "2021-03-20", harvesters_number: 2})
-harvest_05 = Harvest.create({my_association: association_1, partner: partner_02, date: "2021-03-15", harvesters_number: 2})
-harvest_06 = Harvest.create({my_association: association_1, partner: partner_02, date: "2021-03-16", harvesters_number: 2})
-harvest_07 = Harvest.create({my_association: association_1, partner: partner_02, date: "2021-03-17", harvesters_number: 2})
-harvest_08 = Harvest.create({my_association: association_1, partner: partner_02, date: "2021-03-18", harvesters_number: 2})
-harvest_09 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-15", harvesters_number: 1})
-harvest_10 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-16", harvesters_number: 1})
-harvest_11 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-17", harvesters_number: 1})
-harvest_12 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-18", harvesters_number: 1})
-harvest_13 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-19", harvesters_number: 1})
-harvest_14 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-20", harvesters_number: 1})
-harvest_15 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-21", harvesters_number: 1})
-harvest_16 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-15", harvesters_number: 1})
-harvest_17 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-16", harvesters_number: 1})
-harvest_18 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-17", harvesters_number: 1})
-harvest_19 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-18", harvesters_number: 1})
-harvest_20 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-19", harvesters_number: 1})
-harvest_21 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-20", harvesters_number: 1})
-harvest_22 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-21", harvesters_number: 1})
-harvest_23 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-15", harvesters_number: 1})
-harvest_24 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-16", harvesters_number: 1})
-harvest_25 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-17", harvesters_number: 1})
-harvest_26 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-18", harvesters_number: 1})
-harvest_27 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-19", harvesters_number: 1})
-harvest_28 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-20", harvesters_number: 1})
-harvest_29 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-21", harvesters_number: 1})
+harvest_01 = Harvest.create({my_association: association_1, partner: partner_01, date: "2021-03-15", harvesters_number: 2, hour: "18:30:00"})
+harvest_02 = Harvest.create({my_association: association_1, partner: partner_01, date: "2021-03-17", harvesters_number: 2, hour: "18:30:00"})
+harvest_03 = Harvest.create({my_association: association_1, partner: partner_01, date: "2021-03-19", harvesters_number: 2, hour: "18:30:00"})
+harvest_04 = Harvest.create({my_association: association_1, partner: partner_01, date: "2021-03-20", harvesters_number: 2, hour: "18:30:00"})
+harvest_05 = Harvest.create({my_association: association_1, partner: partner_02, date: "2021-03-15", harvesters_number: 2, hour: "18:45:00"})
+harvest_06 = Harvest.create({my_association: association_1, partner: partner_02, date: "2021-03-16", harvesters_number: 2, hour: "18:45:00"})
+harvest_07 = Harvest.create({my_association: association_1, partner: partner_02, date: "2021-03-17", harvesters_number: 2, hour: "18:45:00"})
+harvest_08 = Harvest.create({my_association: association_1, partner: partner_02, date: "2021-03-18", harvesters_number: 2, hour: "18:45:00"})
+harvest_09 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-15", harvesters_number: 1, hour: "19:00:00"})
+harvest_10 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-16", harvesters_number: 1, hour: "19:00:00"})
+harvest_11 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-17", harvesters_number: 1, hour: "19:00:00"})
+harvest_12 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-18", harvesters_number: 1, hour: "19:00:00"})
+harvest_13 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-19", harvesters_number: 1, hour: "19:00:00"})
+harvest_14 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-20", harvesters_number: 1, hour: "19:00:00"})
+harvest_15 = Harvest.create({my_association: association_1, partner: partner_03, date: "2021-03-21", harvesters_number: 1, hour: "19:00:00"})
+harvest_16 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-15", harvesters_number: 1, hour: "19:00:00"})
+harvest_17 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-16", harvesters_number: 1, hour: "19:00:00"})
+harvest_18 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-17", harvesters_number: 1, hour: "19:00:00"})
+harvest_19 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-18", harvesters_number: 1, hour: "19:00:00"})
+harvest_20 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-19", harvesters_number: 1, hour: "19:00:00"})
+harvest_21 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-20", harvesters_number: 1, hour: "19:00:00"})
+harvest_22 = Harvest.create({my_association: association_1, partner: partner_04, date: "2021-03-21", harvesters_number: 1, hour: "19:00:00"})
+harvest_23 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-15", harvesters_number: 1, hour: "19:00:00"})
+harvest_24 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-16", harvesters_number: 1, hour: "19:00:00"})
+harvest_25 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-17", harvesters_number: 1, hour: "19:00:00"})
+harvest_26 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-18", harvesters_number: 1, hour: "19:00:00"})
+harvest_27 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-19", harvesters_number: 1, hour: "19:00:00"})
+harvest_28 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-20", harvesters_number: 1, hour: "19:00:00"})
+harvest_29 = Harvest.create({my_association: association_1, partner: partner_05, date: "2021-03-21", harvesters_number: 1, hour: "19:00:00"})
 puts "End Of Harvests Creating"
 
 
@@ -210,3 +212,22 @@ harvester_35 = Harvester.create({user: user_4, harvest: harvest_27})
 harvester_36 = Harvester.create({user: user_5, harvest: harvest_28})
 harvester_37 = Harvester.create({user: user_1, harvest: harvest_29})
 puts "End Of Harvesters Creating"
+
+
+puts "Creating Favorites"
+favorite_11 = Favorite.create({user: user_1, partner: partner_01})
+favorite_12 = Favorite.create({user: user_1, partner: partner_03})
+favorite_13 = Favorite.create({user: user_1, partner: partner_05})
+favorite_21 = Favorite.create({user: user_2, partner: partner_07})
+favorite_22 = Favorite.create({user: user_2, partner: partner_09})
+favorite_23 = Favorite.create({user: user_2, partner: partner_11})
+favorite_31 = Favorite.create({user: user_3, partner: partner_13})
+favorite_32 = Favorite.create({user: user_3, partner: partner_02})
+favorite_33 = Favorite.create({user: user_3, partner: partner_04})
+favorite_41 = Favorite.create({user: user_4, partner: partner_06})
+favorite_42 = Favorite.create({user: user_4, partner: partner_08})
+favorite_43 = Favorite.create({user: user_4, partner: partner_01})
+favorite_51 = Favorite.create({user: user_5, partner: partner_03})
+favorite_52 = Favorite.create({user: user_5, partner: partner_05})
+favorite_53 = Favorite.create({user: user_5, partner: partner_07})
+puts "End Of Favorites Creating"

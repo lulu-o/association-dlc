@@ -8,7 +8,7 @@
 			<div class="card-shop">
 				<div class="top">
 					<div class="shop-name">
-						<%= image_tag "logo-carrefour.jpeg", alt: "Carrefour", width: 30 %>
+						<%= image_tag "carrefour.png", alt: "Carrefour", width: 30 %>
 						<p class="shop-title">carrefour saint-herblain</p>
 					</div>
 					<div class="distance">
@@ -30,7 +30,7 @@
 			<div class="card-urgence">
 				<div class="top">
 					<div class="shop-name">
-						<%= image_tag "logo-carrefour.jpeg", alt: "Carrefour", width: 30 %>
+						<%= image_tag "carrefour.png", alt: "Carrefour", width: 30 %>
 						<p class="shop-title">carrefour saint-herblain</p>
 					</div>
 					<div class="distance">
@@ -52,7 +52,7 @@
 			<div class="card-planning">
 				<div class="top">
 					<div class="shop-name">
-						<%= image_tag "logo-carrefour.jpeg", alt: "Carrefour", width: 30 %>
+						<%= image_tag "carrefour.png", alt: "Carrefour", width: 30 %>
 						<p class="shop-title">carrefour saint-herblain</p>
 					</div>
 					<div class="distance">
@@ -65,6 +65,44 @@
 				</div>
 			</div>
 		</div>
+
+		<!-- CARD FAVORIS -->
+		<div class="card-template-favoris">
+			<div class="card-favoris">
+				<div class="top">
+					<div class="shop-name">
+						<%= image_tag "carrefour.png", alt: "Carrefour", width: 30 %>
+						<p class="shop-title">carrefour saint-herblain</p>
+					</div>
+					<div class="distance">
+						<p class="distance-label"><span><i class="fas fa-map-marker-alt"></i></span>700 m</p>
+					</div>	
+				</div>
+				<div class="bottom">
+					<p class="shop-address">Boulevard De la Baule, 44000 Saint- Herblain</p>
+					<p><i class="fas fa-heart heart"></i></p>
+				</div>
+			</div>
+		</div>
+
+				<!-- CARD CONTACT -->
+		<div class="card-template-contact">
+			<div class="card-contact">
+		 		<h4>Contact</h4>
+		 		<p>Abel AUBOISDORMANT</p>
+		 		<p>02.44.55.66.77</p>
+		 		<p>a.auboisdormant@systemeu.fr</p>
+			</div>
+		</div>
+
+		<!-- CARD HOUR -->
+		<div class="card-template-hour">
+			<div class="card-hour">
+		 		<p>Heure de la récolte</p>
+		 		<p>18h00</p>
+			</div>
+		</div>
+
 	</div>
 </div>
 <%= render 'shared/navbar' %>
