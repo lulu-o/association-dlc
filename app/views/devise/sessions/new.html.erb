@@ -5,11 +5,12 @@
     <h1 class="logo-badge text-whitesmoke"><span class="fa fa-user-circle"></span></h1>
   </div>
 
-<h5 class="card-title text-center" >Bienvenue</h5>
-<h5 class="card-title text-center">Connectez-vous</h5>
+
+<h1 class="card-title inset text-center" >Bienvenue</h1>
+<h1 class="card-title inset text-center">Connectez-vous</h1>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "pb-2"}) do |f| %>
-  <div class="form-inputs" class="label-login">
+  <div class="form-inputs" id="label-login">
     <%= f.input :email,
                 label: "Email",
                 required: false,
@@ -20,6 +21,7 @@
                 label: "Mot de passe",
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
+
                 <%= render "devise/shared/links" %>
                 </p>
 
