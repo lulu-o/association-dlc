@@ -1,1 +1,21 @@
 <h1>TEST</h1>
+
+<div class="d-flex">
+     <%= render partial: 'form' %>
+</div>
+
+<div class="tabs d-flex">
+  <div id="shops-list">Liste</div>
+  <div id="shops-map">Carte</div>
+</div>
+
+<div class="shops-list">
+</div>
+
+<div class="shops-map">
+  <div id="map" class="show"
+    style="width: 100%; height: 500px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+</div>
+

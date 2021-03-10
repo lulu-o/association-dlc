@@ -24,17 +24,15 @@ import "bootstrap";
 // Internal imports
 import { initMapbox } from '../plugins/init_mapbox';
 import { initModal } from '../plugins/init_modal';
+import { initSearch } from "../plugins/init_search";
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initModal();
-  const searchButton = document.getElementById("search");
-  if (searchButton) {
-    searchButton.addEventListener('click', () => {
-      const place = document.getElementById("place").innerText;
-      const result = Geocoder.search(place);
-      // console.log(initMapbox.geocoder);
-    });
-  }
+  initSearch();
+  const tabs = document.querySelector('.tabs');
 
+  if (tabs) {
+
+  }
 });
