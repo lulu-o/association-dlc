@@ -1,0 +1,27 @@
+.margin-inset {
+  margin-bottom: 30px;
+}
+
+.toggle-profil-btn {
+
+background-color: $green-20!important;
+border-color: none;
+color: $green;
+}
+
+.btn-primary {
+  border: none;
+}
+
+.fa-chevron-down {
+    margin-left: auto;
+    transition: transform 0.5s;
+    align-self: flex-end;
+ }
+
+
+.card-body[aria-expanded=true]>.fa-chevron-down {
+    transform: rotate(
+-180deg
+);
+}
