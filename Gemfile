@@ -34,6 +34,7 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'geocoder'
+gem 'turf-ruby'
 
 gem 'rails-i18n'
 gem 'devise-i18n'

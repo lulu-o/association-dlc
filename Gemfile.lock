@@ -219,6 +219,7 @@ GEM
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
+    turf-ruby (0.3.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     warden (1.2.9)
@@ -273,6 +274,7 @@ DEPENDENCIES
   simple_form
   spring
   turbolinks (~> 5)
+  turf-ruby
   tzinfo-data
   web-console (>= 4.1.0)
   webdrivers

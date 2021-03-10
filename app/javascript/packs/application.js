@@ -25,6 +25,8 @@ import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initModal } from '../plugins/init_modal';
 import { initSearch } from "../plugins/init_search";
+import { computeDistance } from "../plugins/compute_distance";
+
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();

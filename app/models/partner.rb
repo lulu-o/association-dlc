@@ -11,4 +11,8 @@ class Partner < ApplicationRecord
   def full_address
   [address, zipcode, city].compact.join(' ')
   end
+
+  def coordinates
+    [latitude, longitude]
+  end
 end

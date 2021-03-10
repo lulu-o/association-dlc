@@ -2,6 +2,7 @@ class PartnersController < ApplicationController
   # before_action :set_partner, only: %i[ index show edit update destroy ]
 
   def index
+    # Si pas de données, on affiche les magasins autour de l'adresse du user dans un rayon de 20km
     params[:place].nil? ? @place = current_user.full_address : @place = params[:place]
     params[:radius].to_i == 0 ? @radius = 20 : @radius = params[:radius].to_i
     @partners = Partner.near(@place, @radius)
@@ -27,6 +28,12 @@ class PartnersController < ApplicationController
 
   def new
     @partner = Partner.new
+  end
+
+  def distance(place, shop)
+    from = place
+    to = shop
+    distance.toFixed([2])
   end
 
   private
