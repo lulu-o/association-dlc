@@ -25,9 +25,11 @@ import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initModal } from '../plugins/init_modal';
 import { initSearch } from "../plugins/init_search";
+import { calculateDistance } from "../plugins/calculate_distance"
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  calculateDistance();
   initModal();
   initSearch();
   const tabs = document.querySelectorAll('.tab');
@@ -40,9 +42,7 @@ document.addEventListener('turbolinks:load', () => {
         tab.classList.add('active');
         tabContainers.forEach((container) => { container.classList.remove('active') });
         const contentId = tab.id.split('-')[1];
-        console.log(contentId);
         const activeContainer = document.getElementById(`shops-${contentId}-container`);
-        console.log(activeContainer);
         activeContainer.classList.add('active');
       });
     });
