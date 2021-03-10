@@ -37,14 +37,14 @@ puts "End of Users Creation"
 
 
 puts "Creating Brands"
-carrefour = Brand.create({name: "Carrefour", logo: "https://e7.pngegg.com/pngimages/592/86/png-clipart-carrefour-online-marketing-business-hypermarket-marketing-text-retail.png"})
-netto = Brand.create({name: "Netto", logo: "https://banner2.cleanpng.com/20180715/pbh/kisspng-netto-marken-discount-supermarket-discount-shop-co-netto-logo-5b4b46be2ef505.7313158715316599661924.jpg"})
-boulangerie_honore = Brand.create({name: "Boulangerie Honoré", logo: "https://static4.pagesjaunes.fr/media/cviv/54456614-35ac0f7bab9faaf40079b1050c742020"})
-boulangerie_ange = Brand.create({name: "Boulangerie Ange", logo: "https://upload.wikimedia.org/wikipedia/fr/8/8e/Logo_Boulangerie_Ange.png"})
-intermarche = Brand.create({name: "Intermarché", logo: "https://images.ctfassets.net/26cqtpvnd0cd/NyecMADUMS8OQSo2Seuwi/d8ea253e85218964ef6a8268e79f83f0/Fichier_1.png"})
-boulangerie_augustin = Brand.create({name: "Boulangerie Augustin", logo: "https://www.centre-commercial.fr/carrefour-iroise/wp-content/uploads/sites/73/2017/05/augus-1.jpg"})
-systeme_u = Brand.create({name: "Systeme U", logo: "https://upload.wikimedia.org/wikipedia/fr/thumb/1/10/Syst%C3%A8me_U_logo_2009.svg/1395px-Syst%C3%A8me_U_logo_2009.svg.png"})
-potager_city = Brand.create({name: "Potager City", logo: "https://www.potagercity.fr/images/logo-121x70@2x.png"})
+carrefour = Brand.create({name: "Carrefour", logo: "carrefour.png"})
+netto = Brand.create({name: "Netto", logo: "netto.png"})
+boulangerie_honore = Brand.create({name: "Boulangerie Honoré", logo: "boulangerie-honore.png"})
+boulangerie_ange = Brand.create({name: "Boulangerie Ange", logo: "boulangerie-ange.png"})
+intermarche = Brand.create({name: "Intermarché", logo: "intermarche.png"})
+boulangerie_augustin = Brand.create({name: "Boulangerie Augustin", logo: "boulangerie-augustin.png"})
+systeme_u = Brand.create({name: "Systeme U", logo: "systeme-u.png"})
+potager_city = Brand.create({name: "Potager City", logo: "potager-city.png"})
 puts "End of Brands Creating"
 
 
