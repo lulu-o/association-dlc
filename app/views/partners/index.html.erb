@@ -1,4 +1,4 @@
-<h1>TEST</h1>
+<h1>LISTE DES MAGASINS</h1>
 
 <div class="d-flex">
      <%= render partial: 'form' %>
@@ -20,7 +20,7 @@
               <p class="shop-title"><%= partner.name %></p>
             </div>
             <div class="distance">
-              <p class="distance-label"><span><i class="fas fa-map-marker-alt"></i></span>700 m</p>
+              <p class="distance-label" lat="<%= partner.latitude %>" lng="<%= partner.longitude %>"><span><i class="fas fa-map-marker-alt"></i></span><span class="dist-number">700</span></p>
             </div>
           </div>
           <div class="bottom">
