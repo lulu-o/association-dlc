@@ -1,26 +1,31 @@
 <div class="navbar">
-  <a href="#home">
+  <%= link_to partners_path do %> 
     <div class="category-menu active">
       <i class="fas fa-store-alt"></i>
       <p>Magasins</p>
     </div>
-  </a>
-  <a href="#news">
+  <% end %>
+
+  
+  <%= link_to harvests_path do %> 
     <div class="category-menu">
       <i class="fas fa-exclamation-triangle"></i>
       <p>Urgences</p>
     </div>
-  </a>
+  <% end %>
+     
   <a href="#news">
     <div class="category-menu">
       <i class="fas fa-heart"></i>
       <p>Favoris</p>
     </div>
   </a>
-  <a href="#contact">
+
+  <%= link_to user_path(current_user) do %> 
     <div class="category-menu">
       <i class="fas fa-user"></i>
       <p>Profile</p>
     </div>
-  </a> 
+  <% end %>
+  
 </div>
