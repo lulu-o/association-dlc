@@ -30,9 +30,15 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initModal();
   initSearch();
-  const tabs = document.querySelector('.tabs');
+  const tabs = document.querySelectorAll('.tab');
 
   if (tabs) {
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
 
+        const contentId = tab.id.split('-')[1];
+
+      });
+    });
   }
 });
