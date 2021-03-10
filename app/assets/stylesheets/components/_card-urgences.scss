@@ -5,10 +5,13 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		border-top-left-radius: 8px;
-	  border-top-right-radius: 8px;
+		border-top-left-radius: $card-radius;
+	  border-top-right-radius: $card-radius;
 	  padding: 5px 15px;
 
+	  i {
+	  	font-size: 16px;
+	  }
 
 	  p {
 	  	margin: 0px;
@@ -24,6 +27,8 @@
 	  display: flex;
 	  flex-direction: column;
 	  justify-content: space-between;
+	  border-bottom-left-radius: $card-radius;
+	  border-bottom-right-radius: $card-radius;
 
 	  p {
 			margin-bottom: 0;

@@ -1,0 +1,24 @@
+.card-template-hour {
+
+	.card-hour {
+		background: $green;
+		border-radius: $card-radius;
+	  margin-bottom: 10px;
+	  padding: 10px;
+	  display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	h4 {
+		text-transform: uppercase;
+		font-size: 14px;
+		font-weight: 700;
+	}
+
+	p {
+		font-weight: 400;
+		font-size: 14px;
+		color: white;
+	}
+}

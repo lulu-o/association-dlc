@@ -1,21 +1,6 @@
 .card-template-favoris {
-	.date-info {
-		background-color: $green;
-		color: white;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		border-top-left-radius: 8px;
-	  border-top-right-radius: 8px;
-	  padding: 5px 15px;
-
-
-	  p {
-	  	margin: 0px;
-	  }
-	}
-
-	.card-planning {
+	
+	.card-favoris {
 		background: white;
 	  box-shadow: $box-shadow;
 	  margin-bottom: 10px;
@@ -24,6 +9,7 @@
 	  display: flex;
 	  flex-direction: column;
 	  justify-content: space-between;
+	  border-radius: $card-radius;
 
 	  p {
 			margin-bottom: 0;
@@ -81,7 +67,7 @@
 			}
 		}
 
-		.cross {
+		.heart {
 			color: $red;
 			font-size: 25px;
 			padding: 0.2rem .1em;
