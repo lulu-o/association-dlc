@@ -6,7 +6,7 @@ const calculateDistance = () => {
     coords.forEach((coord) => {
       const distanceTag = coord.lastElementChild;
       const coordinates = [parseFloat(coord.getAttribute('lat')), parseFloat(coord.getAttribute('lng'))];
-      const distance = turf.distance(myCoords, coordinates, { units: 'miles' }).toFixed(2);
+      const distance = turf.distance(myCoords, coordinates, { units: 'kilometers' }).toFixed(2);
       distanceTag.innerText = `${distance} km`;
     });
   }

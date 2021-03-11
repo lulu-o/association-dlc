@@ -1,6 +1,6 @@
-/* COLLECT DATE */
+/* COMPOSANT DATE */
 
-.collect-date {
+.harvest-date {
   height:64px;
   border-radius: 32px;
   padding:8px 8px 8px 16px;
@@ -16,58 +16,62 @@
   }
 }
 
-.collect-date > div.date-action {
+.harvest-date.missing {
+  background-color:white;
+  color: $green;
+}
+
+.harvest-date.registered {
+  background-color: $green;
+  color:rgba(0,0,0,0.8);
+  color:white;
+}
+
+.harvest-date.full {
+  background-color:$green-40;
+  color:rgba(255,255,255,0.4);
+}
+
+
+/* BOUTON INSCRIPTION */
+
+.harvest-date > div.date-action {
   cursor:pointer;
   display:flex;
   align-items:center;
   justify-content: center;
   width:56px;
   height:56px;
-  line-height:56px;
   border-radius:50%;
   font-size:2em;
+  color:white;
+  div {
+    border-radius:50%;
+    width:48px;
+    height:48px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+  }
 }
 
 /* MISSING DATE */
 
-.collect-date.missing {
-  background-color:white;
-  color: $green;
+.missing .date-action > div {
+  background-color: $green;
 }
 
-.collect-date.missing .register {
-  background-color: $green;
-  color:white;
-  width:48px;
-  height:48px;
-  line-height:48px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.registered .date-action > div {
+  background-color: $red;
 }
 
 /* REGISTERED DATE */
 
-.collect-date.registered {
-  background-color: $green;
-  color:rgba(0,0,0,0.8);
-  p {
-    color:white;
-  }
-}
-
-.collect-date .cancel {
+.harvest-date .cancel {
   background-color:$red;
-  color:white;
 }
 
-/* FULL DATE */
-
-.collect-date.full {
-  background-color:rgba(17,77,77,0.5);
-  color:rgba(255,255,255,0.4);
-}
+/* ANIMATION BOUTON */
 
 .pop {
   animation-duration: 0.4s;
