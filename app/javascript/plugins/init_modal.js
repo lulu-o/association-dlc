@@ -2,7 +2,7 @@ const initModal = () => {
   const modalWindow = document.getElementById("modal-window");
   if (modalWindow) {
     const buttons = document.querySelectorAll(".date-action > div");
-    // ELEMENTS TEXTE DE LA MODALE
+    // Eléments de la modale (nom du magasin, date, bouton annuler)
     let modalShop = document.getElementById("modal-shop");
     let modalSchedule = document.getElementById("modal-schedule");
     const cancelButton = document.getElementById("modal-cancel");
@@ -14,17 +14,16 @@ const initModal = () => {
         const shop = document.getElementById("partner-name").innerText;
         const date = button.parentElement.parentElement.querySelector('.date').innerText;
         const introTag = document.getElementById("intro-text");
+        // On vérifie la classe css du bouton pour afficher le bon message
         if (button.classList.contains('cancel')) {
-          console.log("cancelClass");
           let introText = "Souhaitez-vous vous désinscrire pour la récolte :";
           introTag.innerText = introText;
         } else {
-          console.log("registerClass");
           let introText = "Confirmez votre inscription pour la récolte :";
           introTag.innerText = introText;
         }
 
-
+        // On insère les données magasin + date
         modalShop.innerText = shop;
         modalSchedule.innerText = date;
         setTimeout(() => {
@@ -34,6 +33,7 @@ const initModal = () => {
       });
     });
 
+    // Au clic sur Annuler, on masque la modale
     cancelButton.addEventListener('click', () => {
       modalWindow.classList.add("transparent");
       setTimeout(() => {

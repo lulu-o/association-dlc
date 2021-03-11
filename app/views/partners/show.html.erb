@@ -2,6 +2,14 @@
   <div class="header-show">
     <h1 class="inset" id="partner-name"><%= @partner.name %></h1>
     <i class="fas fa-heart"></i>
+    <%= if @favorite.blank? %>
+      <%= link_to user_favorites_path(@partner), method: :post do  %>
+        <p>ADD TO FAV</p>
+      <% end %>
+    <%= else %>
+        Bouton delete
+    <% end %>
+
   </div>
   <!-- CARD HOUR -->
     <div class="card-template-address-mag">
@@ -31,28 +39,32 @@
 
     <h1 class="inset">Prochaines récoltes</h1>
 
-  <div class="collect-date full">
+  <div class="harvest-date full">
     <p class="date">Mar 16/03/2021</p>
     <p class="missing">2/2 inscrits</p>
     <div class="date-action">
     </div>
   </div>
 
-  <div class="collect-date missing">
+  <div class="harvest-date missing">
     <p class="date">Mer 17/03/2021</p>
     <p class="missing">1/2 inscrits</p>
     <div class="date-action">
-      <div class="register" id="click2"><span>&#43;</span></div>
+      <div class="register" id=""><span>&#43;</span></div>
     </div>
   </div>
 
-  <div class="collect-date missing">
+  <div class="harvest-date registered">
     <p class="date">Mer 17/03/2021</p>
-    <p class="missing">1/2 inscrits</p>
-    <div class="date-action cancel">
-      <div class="cancel" id="click2"><span>&#43;</span></div>
+    <p class="missing">2/2 inscrits</p>
+    <div class="date-action">
+      <div class="cancel" id=""><span>&#43;</span></div>
     </div>
   </div>
+
+  <% @harvests.each do |harvest| %>
+    <p><%= harvest.date.strftime("%d/%m/%Y") %></p>
+  <% end %>
 
   <div id="map" class="show"
       style="width: 100%; height: 500px;"
