@@ -10,5 +10,4 @@ class HarvestsController < ApplicationController
     # Facon plus propre ne fonctionne pas - a creuser
     # Harvest.where('harvesters_number > harvesters.count')
   end
-
 end
