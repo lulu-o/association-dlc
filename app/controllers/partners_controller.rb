@@ -30,7 +30,18 @@ class PartnersController < ApplicationController
   end
 
   def show
+
+    # raise
+
+    @favorite = Favorite.includes(:partner).where(user: current_user)
+    if @favorite.blank? 
+      @favorite = Favorite.new 
+    else
+      @favorite = Favorite.includes(:partner).where(user: current_user)
+    end
+
     @partner = Partner.find(params[:id])
+
     @markers = [{ lat: @partner.latitude, lng: @partner.longitude }]
   end
 

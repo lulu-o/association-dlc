@@ -2,6 +2,14 @@
   <div class="header-show">
     <h1 class="inset" id="partner-name"><%= @partner.name %></h1>
     <i class="fas fa-heart"></i>
+    <%= if @favorite.blank? %>
+      <%= link_to user_favorites_path(@partner), method: :post do  %>
+        <p>ADD TO FAV</p>
+      <% end %>
+    <%= else %>
+        Bouton delete
+    <% end %>
+
   </div>
   <!-- CARD HOUR -->
     <div class="card-template-address-mag">
