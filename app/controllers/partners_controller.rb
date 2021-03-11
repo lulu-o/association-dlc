@@ -43,6 +43,8 @@ class PartnersController < ApplicationController
     @partner = Partner.find(params[:id])
 
     @markers = [{ lat: @partner.latitude, lng: @partner.longitude }]
+    @harvests = Harvest.where('date >= ?', DateTime.now).where(partner: @partner.id).order(:date)
+    # raise
   end
 
   def new
