@@ -1,18 +1,48 @@
 <h1 class="inset margin-inset">MON PROFIL</h1>
 
+
 <div class="toggle-profil-btn btn btn-lg btn-block btn-primary d-flex justify-content-center card-body" data-toggle="collapse" href="#CollapseExample1" role="button" aria-expanded="false" aria-controls="CollapseExample">
   <p>MON PLANNING RÉCOLTES</p>
   <i class="fas fa-chevron-down fa-lg"></i>
 </div>
 
 <div class="collapse" id="CollapseExample1">
-  <div class="card-body">
-    <% @harvesters.each do |harvester| %>
-      <p>Le <%= harvester.harvest.date %> à <%= harvester.harvest.hour.strftime("%H:%M") %> à <%= harvester.harvest.partner.name %></p>
-    <% end %>
+  <div class="cards card-body">
+
+    <!-- CARD PLANNING -->
+    <div class="card-template-planning">
+      <% @harvesters.each do |harvester| %>
+      <%= link_to partner_path(harvester.harvest.partner) do %>
+      <div class="date-info">
+        <p><%= l(harvester.harvest.date, format: "%A %d %B %Y") %></p>
+        <p class="hour"><%= harvester.harvest.hour.strftime("%H:%M") %></p>
+      </div>
+      <div class="card-planning">
+        <div class="top">
+          <div class="shop-name">
+            <%= image_tag "carrefour.png", alt: "Carrefour", width: 30 %>
+            <p class="shop-title"><%= harvester.harvest.partner.name %></p>
+          </div>
+          <div class="distance">
+            <p class="distance-label"><span><i class="fas fa-map-marker-alt"></i></span>700 m</p>
+          </div>  
+        </div>
+        <div class="bottom">
+          <div class="shop-address">
+           <p><%= harvester.harvest.partner.address %></p> 
+           <p><%= harvester.harvest.partner.zipcode %> <%= harvester.harvest.partner.city %></p>
+          </div>
+          <p><i class="fas fa-times-circle cross"></i></p>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+
+
   </div>
 </div>
-<br>
+
 
 <div class="toggle-profil-btn btn btn-lg btn-block btn-primary d-flex justify-content-center card-body" data-toggle="collapse" href="#CollapseExample2" role="button" aria-expanded="false" aria-controls="CollapseExample2">
   <p>MES COORDONNÉES</p>
@@ -21,29 +51,44 @@
 <div class="collapse" id="CollapseExample2">
   <div class="card-body">
 
-        <div class="col-md-5">
-            <div class=" py-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right">Mes informations</h4>
-                </div>
-                <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Prénom</label><input type="text" class="form-control" placeholder="<%= @user.first_name %>" value=""></div>
-                    <div class="col-md-6"><label class="labels">Nom</label><input type="text" class="form-control" value="" placeholder="<%= @user.last_name %>"></div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Adresse</label><input type="text" class="form-control" placeholder="<%= @user.address %>" value=""></div>
-                    <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" placeholder="<%= @user.email %>" value=""></div>
-
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-6"><label class="labels">Code postal</label><input type="text" class="form-control" placeholder="<%= @user.zipcode %>" value=""></div>
-                    <div class="col-md-6"><label class="labels">Ville</label><input type="text" class="form-control" value="" placeholder="<%= @user.city %>"></div>
-                </div>
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Sauvegarder</button></div>
-            </div>
+    <div class="form-user py-5">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="text-right">Mes informations</h4>
+      </div>
+      <div class="row mt-2">
+        <div class=" mt-3 col-md-6">
+          <label class="labels">Prénom</label>
+          <input type="text" class="form-control" placeholder="<%= @user.first_name %>" value="">
         </div>
+        <div class=" mt-3 col-md-6">
+          <label class="labels">Nom</label>
+          <input type="text" class="form-control" value="" placeholder="<%= @user.last_name %>">
+        </div>
+        <div class=" mt-3 col-md-12">
+          <label class="labels">Adresse</label>
+          <input type="text" class="form-control" placeholder="<%= @user.address %>" value="">
+        </div>
+        <div class=" mt-3 col-md-12">
+          <label class="labels">Email</label>
+          <input type="text" class="form-control" placeholder="<%= @user.email %>" value="">
+        </div>
+        <div class=" mt-3 col-md-6">
+          <label class="labels">Code postal</label>
+          <input type="text" class="form-control" placeholder="<%= @user.zipcode %>" value="">
+        </div>
+        <div class=" mt-3 col-md-6">
+          <label class="labels">Ville</label>
+          <input type="text" class="form-control" value="" placeholder="<%= @user.city %>">
+        </div>
+        <div class="mt-5 col-md-6">
+          <button class="btn btn-primary profile-button" type="button">Sauvegarder</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
+
 
 
 
