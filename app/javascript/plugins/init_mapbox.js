@@ -11,10 +11,10 @@ const initMapbox = () => {
       style: 'mapbox://styles/mapbox/streets-v10'
     });
 
-    // variable markers qui récupère tous les magasins
     const markers = JSON.parse(mapElement.dataset.markers);
     // console.log(markers);
     markers.forEach((marker) => {
+      // ELEMENT => CUSTOM MARKERS (DESACTIVE POUR LE MOMENT)
       const element = document.createElement('i');
       element.classList.add('fas');
       element.classList.add('fa-map-marker-alt');
@@ -36,14 +36,13 @@ const initMapbox = () => {
 
     const addMarkersToMap = (map, markers) => {
       markers.forEach((marker) => {
-        if (marker.found != "none") {
-          const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
-
+        // if (marker.found != "none") {
+          const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
           new mapboxgl.Marker()
             .setLngLat([marker.lng, marker.lat])
-            .setPopup(popup) // add this
+            .setPopup(popup)
             .addTo(map);
-        }
+        // }
       });
     };
 
@@ -54,9 +53,7 @@ const initMapbox = () => {
       mapboxgl: mapboxgl
     });
 
-    // const form = document.getElementById('geo-search');
-    // form.prepend(geocoder.onAdd(map));
-
+    // GEOLOC
     const locationLink = document.getElementById("geoloc");
     const place = document.getElementById("place");
     const submit = document.getElementById("search-submit");
@@ -66,7 +63,6 @@ const initMapbox = () => {
         navigator.geolocation.getCurrentPosition((data) => {
           const currentPosition = [data.coords.latitude, data.coords.longitude];
           place.value = currentPosition;
-          console.log(currentPosition);
           submit.click();
         });
       });
