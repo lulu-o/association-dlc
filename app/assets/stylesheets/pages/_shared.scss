@@ -6,6 +6,9 @@
 
 body {
 	background: $green-20;
+}
+
+body.signed-in {
 	padding-bottom:6rem;
 }
 
@@ -23,6 +26,7 @@ p {
 a {
 	text-decoration: none !important;
 	color: #000;
+	text-decoration:none!important;
 }
 
 .content {

@@ -12,7 +12,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
+  <body class="<%= "signed-in" if user_signed_in? %>">
     <%= render 'shared/navbar' if user_signed_in? %>
     <%= render 'shared/flashes' %>
 

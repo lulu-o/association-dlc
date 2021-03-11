@@ -6,7 +6,7 @@ class PartnersController < ApplicationController
     # 1 : Geocoding ne retrouve pas l'adresse => on prend le zipcode
     # 2 : Geocoding OK mais pas de lieu demandé => on prend l'adresse du user
     # 3 : Lieu renseigné => on fait la recherche sur ce lieu
-    if params[:place].nil?
+    if params[:place].nil? || params[:place].empty?
       current_user.latitude.nil? ? @place = current_user.zipcode : @place = current_user.full_address
     else
       @place = params[:place]

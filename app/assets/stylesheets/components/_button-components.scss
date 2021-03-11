@@ -1,0 +1,34 @@
+//add class="text-center" to center the button in the modal
+
+
+.btn-oval {
+border-radius: 45px;
+border: none;
+color: white;
+font-family: 'Hind Madurai', sans-serif;
+padding-left: 20px;
+padding-right: 20px;
+margin-top: 20px;
+}
+
+.btn-oval-full-green {
+border-radius: 45px;
+background-color: $green;
+border: none;
+color: white;
+font-family: 'Hind Madurai', sans-serif;
+padding-left: 20px;
+padding-right: 20px;
+margin-top: 20px;
+}
+
+.btn-oval-full-pink {
+border-radius: 45px;
+background-color: $red;
+border: none;
+color: white;
+font-family: 'Hind Madurai', sans-serif;
+padding-left: 20px;
+padding-right: 20px;
+margin-top: 20px;
+}
