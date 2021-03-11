@@ -65,6 +65,10 @@ partner_11 = Partner.create({brand: systeme_u, name: "Super U St Philbert de gra
 partner_12 = Partner.create({brand: systeme_u, name: "Super U Bouaye", address: "53 Rue de Nantes", zipcode: "44830", city: "Bouaye", harvesters_number: 2})
 partner_13 = Partner.create({brand: systeme_u, name: "Super U Sainte-Pazanne", address: "Rue des Charmes", zipcode: "44680", city: "Sainte-Pazanne", harvesters_number: 2})
 partner_14 = Partner.create({brand: potager_city, name: "Potager City Les Sorinières", address: "1 B Rue Du Progres", zipcode: "44840", city: "LES SORINIERES", harvesters_number: 1})
+partner_15 = Partner.create({brand: carrefour, name: "Carrefour Express Angers Lorette", address: "Bd Joseph Bédier", zipcode: "49000", city: "ANGERS", harvesters_number: 2})
+partner_16 = Partner.create({brand: carrefour, name: "Carrefour City Angers Hérault", address: "3 Place Hérault", zipcode: "49100", city: "ANGERS", harvesters_number: 1})
+partner_17 = Partner.create({brand: intermarche, name: "Intermarché Avrillé", address: "2 Rue Michel Seurat", zipcode: "49000", city: "ANGERS", harvesters_number: 1})
+partner_18 = Partner.create({brand: netto, name: "Netto Cholet", address: "36 Rue de l'Abbé de l'Épée", zipcode: "49300", city: "CHOLET", harvesters_number: 1})
 puts "End of Partners Creating"
 
 
@@ -83,6 +87,10 @@ association_partner_11 = AssociationPartner.create({my_association: association_
 association_partner_12 = AssociationPartner.create({my_association: association_1, partner: partner_12})
 association_partner_13 = AssociationPartner.create({my_association: association_1, partner: partner_13})
 association_partner_14 = AssociationPartner.create({my_association: association_1, partner: partner_14})
+association_partner_15 = AssociationPartner.create({my_association: association_1, partner: partner_15})
+association_partner_16 = AssociationPartner.create({my_association: association_1, partner: partner_16})
+association_partner_17 = AssociationPartner.create({my_association: association_1, partner: partner_17})
+association_partner_18 = AssociationPartner.create({my_association: association_1, partner: partner_18})
 puts "End Of Association Partners Creating"
 
 
