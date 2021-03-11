@@ -1,11 +1,17 @@
-.img-login {
-background-image: url(image-path('backgroung.png'));
-background-repeat: no-repeat;
-background-size: cover;
-height: 100vh;
-
-}
-
 #label-login {
   color: white;
 }
+
+.btn-block {
+  margin-top: 30px;
+}
+
+.logo-badge {
+  background-image: url(image-path('logo_DLC-back.png'));
+  height: 6rem;
+  width: 6rem;
+  background-size: cover;
+  margin: 3rem auto 3rem;
+}
+
+//background-image: url(image-path('patternpad.svg'));
