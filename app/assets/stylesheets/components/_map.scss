@@ -1,3 +1,4 @@
+// MOTEUR
 #geo-search {
   display:flex;
   * {
@@ -17,27 +18,22 @@
   }
 }
 
+// MAP
+
 .mapboxgl-popup {
   max-width: 200px;
 }
 
 .mapboxgl-marker {
   cursor:pointer;
-
-  g, circle {
-    color:#114D4D;
-  }
-
 }
 
-.show .mapboxgl-marker {
-  pointer-events:none;
-}
 
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   padding-top:15px;
+  color:black;
   h2 {
     font-size:1.25rem;
   }
@@ -52,4 +48,8 @@
   button.mapboxgl-popup-close-button {
   font-size:2rem;
   }
+}
+
+.mapbox-gl-canvas {
+  width:100%;
 }

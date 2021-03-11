@@ -1,7 +1,7 @@
 const calculateDistance = () => {
   const searchBar = document.getElementById("geo-search");
   if (searchBar) {
-    const myCoords = [parseFloat(searchBar.getAttribute('lat')), parseFloat(searchBar.getAttribute('lng'))]
+    const myCoords = [parseFloat(searchBar.getAttribute('lat')), parseFloat(searchBar.getAttribute('lng'))];
     const coords = document.querySelectorAll(".distance-label");
     coords.forEach((coord) => {
       const distanceTag = coord.lastElementChild;
