@@ -1,13 +1,13 @@
-<h1>LISTE DES MAGASINS</h1>
+<h1 class="inset margin-inset">Je choisis un magasin</h1>
 
 <div class="d-flex">
      <%= render partial: 'form' %>
 </div>
-<h2><%= @partners.length %> Magasins trouvés</h2>
+<h2><%= @partners.length %> magasins trouvés</h2>
 
 <div class="tabs d-flex">
   <div class="tab" id="shops-list-tab">Liste</div>
-  <div class="tab active" id="shops-map-tab">Carte</div>
+  <div class="tab active" id="shops-map-tab"><i class="far fa-map"></i></div>
 </div>
 
 <div id="shops-list-container" class="tab-container">
@@ -25,7 +25,10 @@
             </div>
           </div>
           <div class="bottom">
-            <p class="shop-address"><%= partner.full_address %></p>
+            <div>
+              <p class="shop-address"><%= partner.address %></p>
+              <p class="shop-address"><%= partner.zipcode %> <%= partner.city %></p>
+            </div>
             <p class="label-yellow">urgent</p>
           </div>
         </div>
