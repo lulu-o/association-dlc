@@ -13,6 +13,7 @@ class HarvestsController < ApplicationController
       FROM harvests
       LEFT OUTER JOIN harvesters_count ON harvesters_count.id = harvests.id
       WHERE (harvesters_count.compteur < harvests.harvesters_number OR harvesters_count.id IS NULL)
+      ORDER BY harvests.date
       SQL
 
       @harvests = Harvest.find_by_sql Arel.sql(urgent_harvests_query)
