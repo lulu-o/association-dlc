@@ -1,18 +1,48 @@
 <h1 class="inset margin-inset">MON PROFIL</h1>
 
+
 <div class="toggle-profil-btn btn btn-lg btn-block btn-primary d-flex justify-content-center card-body" data-toggle="collapse" href="#CollapseExample1" role="button" aria-expanded="false" aria-controls="CollapseExample">
   <p>MON PLANNING RÉCOLTES</p>
   <i class="fas fa-chevron-down fa-lg"></i>
 </div>
 
 <div class="collapse" id="CollapseExample1">
-  <div class="card-body">
-    <% @harvesters.each do |harvester| %>
-      <p>Le <%= harvester.harvest.date %> à <%= harvester.harvest.hour.strftime("%H:%M") %> à <%= harvester.harvest.partner.name %></p>
-    <% end %>
+  <div class="cards card-body">
+
+    <!-- CARD PLANNING -->
+    <div class="card-template-planning">
+      <% @harvesters.each do |harvester| %>
+      <%= link_to partner_path(harvester.harvest.partner) do %>
+      <div class="date-info">
+        <p><%= l(harvester.harvest.date, format: "%A %d %B %Y") %></p>
+        <p class="hour"><%= harvester.harvest.hour.strftime("%H:%M") %></p>
+      </div>
+      <div class="card-planning">
+        <div class="top">
+          <div class="shop-name">
+            <%= image_tag "carrefour.png", alt: "Carrefour", width: 30 %>
+            <p class="shop-title"><%= harvester.harvest.partner.name %></p>
+          </div>
+          <div class="distance">
+            <p class="distance-label"><span><i class="fas fa-map-marker-alt"></i></span>700 m</p>
+          </div>  
+        </div>
+        <div class="bottom">
+          <div class="shop-address">
+           <p><%= harvester.harvest.partner.address %></p> 
+           <p><%= harvester.harvest.partner.zipcode %> <%= harvester.harvest.partner.city %></p>
+          </div>
+          <p><i class="fas fa-times-circle cross"></i></p>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+
+
   </div>
 </div>
-<br>
+
 
 <div class="toggle-profil-btn btn btn-lg btn-block btn-primary d-flex justify-content-center card-body" data-toggle="collapse" href="#CollapseExample2" role="button" aria-expanded="false" aria-controls="CollapseExample2">
   <p>MES COORDONNÉES</p>
@@ -58,6 +88,7 @@
 
   </div>
 </div>
+
 
 
 

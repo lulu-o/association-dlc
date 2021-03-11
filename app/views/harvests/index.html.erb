@@ -34,7 +34,8 @@
 		<!-- CARD URGENCE -->
 		<div class="card-template-urgence">
 			<% @harvests.each do |harvest| %>
-  			<p>Date récolte : <%= harvest.date.strftime("%d/%m/%Y") %></p>
+				<%= link_to partner_path(harvest.partner) do %>
+  			<p><%= l(harvest.date, format: "%A %d %B %Y") %></p>
   			<!-- Test pour checker que seulement les urgences s'affichent: >0 => URGENCE -->
 				<%= harvest.harvesters_number - harvest.harvesters.count %>
 
@@ -68,6 +69,7 @@
 						<p class="label-yellow">je m'inscris</p>
 					</div>
 				</div>
+				<% end %>
 			<% end %>
 		</div>
 	</div>
