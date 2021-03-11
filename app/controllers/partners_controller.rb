@@ -2,7 +2,16 @@ class PartnersController < ApplicationController
   # before_action :set_partner, only: %i[ index show edit update destroy ]
 
   def index
-    params[:place].nil? ? @place = current_user.full_address : @place = params[:place]
+    # VERIFIER LE PARAM LIEU :
+    # 1 : Geocoding ne retrouve pas l'adresse => on prend le zipcode
+    # 2 : Geocoding OK mais pas de lieu demandé => on prend l'adresse du user
+    # 3 : Lieu renseigné => on fait la recherche sur ce lieu
+    if params[:place].nil?
+      current_user.latitude.nil? ? @place = current_user.zipcode : @place = current_user.full_address
+    else
+      @place = params[:place]
+    end
+    # Si pas de radius renseigné, on demande 20 km
     params[:radius].to_i == 0 ? @radius = 20 : @radius = params[:radius].to_i
     @place_coord = Geocoder.search(@place)[0].data
     @partners = Partner.near(@place, @radius)
