@@ -1,6 +1,6 @@
 class HarvestsController < ApplicationController
   def index
-    @harvests = Harvest.joins(:partner).where('date >= ?', DateTime.now)
+    @harvests = Harvest.joins(:partner).where('date >= ?', DateTime.now).order(:date)
 
     # Retrieve harvests needing people - to be joined with upper query
     # Facon degueulasse
