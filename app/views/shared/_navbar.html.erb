@@ -1,28 +1,28 @@
 <div class="navbar">
   <%= link_to partners_path do %> 
-    <div class="category-menu active">
-      <i class="fas fa-store-alt"></i>
+    <div class="category-menu <%= current_class?(partners_path) %>">
+      <i class="fas fa-store-alt <%= current_class?(partners_path) %>"></i>
       <p>Magasins</p>
     </div>
   <% end %>
 
   <%= link_to harvests_path do %> 
     <div class="category-menu">
-      <i class="fas fa-exclamation-triangle"></i>
-      <p>Urgences</p>
+      <i class="fas fa-exclamation-triangle <%= current_class?(harvests_path) %>"></i>
+      <p class="<%= current_class?(harvests_path) %>">Urgences</p>
     </div>
   <% end %>
      
   <%= link_to user_favorites_path(current_user) do %> 
-    <div class="category-menu">
-      <i class="fas fa-heart"></i>
+    <div class="category-menu <%= current_class?(user_favorites_path(current_user)) %>">
+      <i class="fas fa-heart <%= current_class?(user_favorites_path(current_user)) %>"></i>
       <p>Favoris</p>
     </div>
   <% end %>
 
   <%= link_to user_path(current_user) do %> 
-    <div class="category-menu">
-      <i class="fas fa-user"></i>
+    <div class="category-menu <%= current_class?(user_path(current_user)) %>">
+      <i class="fas fa-user <%= current_class?(user_path(current_user)) %>"></i>
       <p>Profile</p>
     </div>
   <% end %>
