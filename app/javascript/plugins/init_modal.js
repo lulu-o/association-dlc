@@ -13,6 +13,18 @@ const initModal = () => {
         modalWindow.classList.add("z10");
         const shop = document.getElementById("partner-name").innerText;
         const date = button.parentElement.parentElement.querySelector('.date').innerText;
+        const introTag = document.getElementById("intro-text");
+        if (button.classList.contains('cancel')) {
+          console.log("cancelClass");
+          let introText = "Souhaitez-vous vous désinscrire pour la récolte :";
+          introTag.innerText = introText;
+        } else {
+          console.log("registerClass");
+          let introText = "Confirmez votre inscription pour la récolte :";
+          introTag.innerText = introText;
+        }
+
+
         modalShop.innerText = shop;
         modalSchedule.innerText = date;
         setTimeout(() => {
@@ -29,6 +41,8 @@ const initModal = () => {
       }, 1000);
     });
   }
+
+
 
 };
 
