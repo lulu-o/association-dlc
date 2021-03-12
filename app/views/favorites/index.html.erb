@@ -25,7 +25,7 @@
             </div>
             <%# if favorite.users.include? current_user %>
             <%= link_to favorite_path(favorite), method: :delete, class: "fav" do %>
-              <p>REMOVE FAV</p>
+              <i class="fas fa-heart"></i>
             <% end %>
           </div>
         </div>
