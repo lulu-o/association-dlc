@@ -45,7 +45,7 @@ const initModal = () => {
 
     // Au clic sur Confirmer, inscrire le user (à terminer)
     confirmButton.addEventListener('click', () => {
-      cancelButton.classList.add("revert-green");
+      confirmButton.classList.add("revert-green");
       modalWindow.classList.add("transparent");
       setTimeout(() => {
         modalWindow.classList.remove("z10");
