@@ -36,8 +36,6 @@ const initMapbox = () => {
 
     fitMapToMarkers(map, markers);
 
-    addMarkersToMap(map, markers);
-
     const geocoder = new MapboxGeocoder({
       accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl
