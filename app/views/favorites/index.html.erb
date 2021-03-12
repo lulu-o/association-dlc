@@ -24,8 +24,8 @@
             <p><%= favorite.partner.zipcode %> <%= favorite.partner.city %></p>
             </div>
             <%# if favorite.users.include? current_user %>
-            <%= link_to favorite_path(favorite), method: :delete, class: "fav" do %>
-              <i class="fas fa-heart"></i>
+            <%= link_to favorite_path(favorite), remote: :true, method: :delete, class: "fav" do %>
+              <i class="fas fa-times-circle cross"></i>
             <% end %>
           </div>
         </div>

@@ -32,15 +32,15 @@ class PartnersController < ApplicationController
   def show
 
     # raise
+    @partner = Partner.find(params[:id])
 
-    @favorite = Favorite.includes(:partner).where(user: current_user)
-    if @favorite.blank? 
-      @favorite = Favorite.new 
+    @is_favorite = Favorite.includes(:partner).where('user_id = ? AND partner_id = ?', current_user.id, @partner.id)
+    if @is_favorite.blank? 
+      # @is_favorite = Favorite.new 
     else
-      @favorite = Favorite.includes(:partner).where(user: current_user)
+      @is_favorite = Favorite.includes(:partner).where('user_id = ? AND partner_id = ?', current_user.id, @partner.id)
     end
 
-    @partner = Partner.find(params[:id])
 
     @markers = [{ lat: @partner.latitude, lng: @partner.longitude }]
     @harvests = Harvest.where('date >= ?', DateTime.now).where(partner: @partner.id).order(:date)
