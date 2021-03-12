@@ -11,14 +11,14 @@ class FavoritesController < ApplicationController
     # @favorite.partner_id = params[:partner_id]
     # @favorite.user = current_user
     @favorite.save!
-    redirect_to partners_path
+    redirect_back(fallback_location: root_path)
   end
 
 	def destroy
     @favorite = Favorite.find(params[:id])
     @favorite.destroy
     # if params[:controller] == "partners"
-    	redirect_to user_favorites_path(current_user)
+    redirect_back(fallback_location: root_path)
   end
 end
 
