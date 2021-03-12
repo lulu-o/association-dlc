@@ -1,0 +1,15 @@
+.mapboxgl-popup-content {
+  padding: 1rem;
+
+  .card-body {
+    padding: 0;
+
+    img {
+      margin-bottom: 2rem;
+    }
+  }
+
+  button.mapboxgl-popup-close-button {
+    margin: .5rem;
+  }
+}
