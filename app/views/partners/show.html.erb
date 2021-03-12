@@ -35,8 +35,8 @@
       <div class="card-contact">
         <h4>Contact</h4>
         <% @partner.contacts.each do |contact| %>
-          <p> <%= contact.first_name %> <%= contact.last_name %></p>
-          <p> <%= contact.phone_number %></p>
+          <p><i class="fas fa-user"></i>  <%= contact.first_name %> <%= contact.last_name %></p>
+          <p><i class="fas fa-phone-alt"></i>  <a href="tel:<%= contact.phone_number %>"><%= contact.phone_number %></a></p>
         <% end %>
       </div>
     </div>

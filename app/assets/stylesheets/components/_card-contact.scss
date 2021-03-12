@@ -8,6 +8,10 @@
 		min-height: 4rem;
 	}
 
+	:hover {
+		color: $green;
+	}
+
 	h4 {
 		text-transform: uppercase;
 		font-size: 14px;
@@ -17,6 +21,14 @@
 	p {
 		font-weight: 600;
 		font-size: 14px;
+		color: $green;
+	}
+
+	i {
+		font-size: 12px;
+	}
+
+	a {
 		color: $green;
 	}
 }
