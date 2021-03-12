@@ -40,6 +40,7 @@ const initModal = () => {
       modalWindow.classList.add("transparent");
       setTimeout(() => {
         modalWindow.classList.remove("z10");
+        cancelButton.classList.remove("revert-red");
       }, 700);
     });
 
@@ -49,6 +50,7 @@ const initModal = () => {
       modalWindow.classList.add("transparent");
       setTimeout(() => {
         modalWindow.classList.remove("z10");
+        confirmButton.classList.remove("revert-green");
       }, 700);
     });
   }
