@@ -9,12 +9,15 @@ class PartnersController < ApplicationController
     if params[:place].nil? || params[:place].empty?
       current_user.latitude.nil? ? @place = current_user.zipcode : @place = current_user.full_address
     else
-      @place = params[:place]
+      Geocoder.search(@place)[0].nil? ? @place = "Nantes" : @place = params[:place]
     end
     # Si pas de radius renseigné, on demande 20 km
     params[:radius].to_i == 0 ? @radius = 20 : @radius = params[:radius].to_i
     @place_coord = Geocoder.search(@place)[0].data
     @partners = Partner.near(@place, @radius)
+    @partners.each do |partner|
+      partner.distance = Geocoder::Calculations.distance_between([@place_coord["lat"], @place_coord["lon"]], [partner.latitude, partner.longitude]).truncate(1)
+    end
     # Si aucun magasin n'est trouvé, on centre la carte sur l'endroit cherché avec un marker non cliquable
     if @partners.first.nil?
       @markers = [{lat: @place_coord["lat"], lng: @place_coord["lon"], found: "none"}]
@@ -35,8 +38,8 @@ class PartnersController < ApplicationController
     @partner = Partner.find(params[:id])
 
     @is_favorite = Favorite.includes(:partner).where('user_id = ? AND partner_id = ?', current_user.id, @partner.id)
-    if @is_favorite.blank? 
-      # @is_favorite = Favorite.new 
+    if @is_favorite.blank?
+      # @is_favorite = Favorite.new
     else
       @is_favorite = Favorite.includes(:partner).where('user_id = ? AND partner_id = ?', current_user.id, @partner.id)
     end

@@ -7,8 +7,10 @@ class Partner < ApplicationRecord
   has_many :favorites
   geocoded_by :full_address
   after_validation :geocode, if: :will_save_change_to_address?
+  attr_accessor :distance
 
   def full_address
   [address, zipcode, city].compact.join(' ')
   end
+
 end
