@@ -1,16 +1,17 @@
 <div class="content">
   <div class="header-show">
     <h1 class="inset" id="partner-name"><%= @partner.name %></h1>
-      <% if @user_favorite.blank? %> 
-        <%= link_to user_favorites_path(@partner), method: :post do  %>
-          <p>add<i class="far fa-heart"></i></p>
+      <% if @is_favorite.first.nil? %> 
+        <%= link_to user_favorites_path(@partner), remote: :true, method: :post do  %>
+          <p><i class="far fa-heart heart"></i></p>
+
         <% end %>
       <% else %>
-        <%= link_to user_favorite_path(@favorite), method: :delete, class: "fav" do %>
-           <p>delete<i class="fas fa-heart"></i></p>
+        <%= link_to favorite_path(@is_favorite.first), remote: :true, method: :delete, class: "fav" do %>
+           <p><i class="fas fa-heart heart"></i></p>
         <% end %>
-        Bouton delete 
     <% end %> 
+
 
   </div>
   <!-- CARD HOUR -->
