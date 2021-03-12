@@ -4,12 +4,14 @@
       <% if @is_favorite.first.nil? %> 
         <%= link_to user_favorites_path(@partner), remote: :true, method: :post do  %>
           <p><i class="far fa-heart heart"></i></p>
+
         <% end %>
       <% else %>
         <%= link_to favorite_path(@is_favorite.first), remote: :true, method: :delete, class: "fav" do %>
            <p><i class="fas fa-heart heart"></i></p>
         <% end %>
     <% end %> 
+
 
   </div>
   <!-- CARD HOUR -->
