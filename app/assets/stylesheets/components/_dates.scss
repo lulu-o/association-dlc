@@ -52,6 +52,11 @@
     display:flex;
     align-items:center;
     justify-content: center;
+    line-height:1;
+    i {
+      font-size:1rem;
+      padding:0;
+    }
   }
 }
 
@@ -69,7 +74,6 @@
 
 .harvest-date .cancel {
   background-color:$red;
-  font-size:1.5rem;
 }
 
 /* ANIMATION BOUTON */
