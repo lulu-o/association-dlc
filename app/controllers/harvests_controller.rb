@@ -27,4 +27,11 @@ class HarvestsController < ApplicationController
     # Facon plus propre ne fonctionne pas - a creuser
     # Harvest.where('harvesters_number > harvesters.count')
   end
+
+  def send_notif
+     @users = User.all
+     @users.each { |user| user.send_emergency_email }
+     redirect_to harvests_path, notice: "Notifications envoyées !"
+  end
+
 end
