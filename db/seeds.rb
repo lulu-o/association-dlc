@@ -30,7 +30,7 @@ association_1 = Association.create({name: "Association DLC", address: "14 rue Ma
 
 
 puts "Creating Users"
-user_1 = User.create({my_association: association_1, first_name: "Erika", last_name: "NAUDON", address: "25 rue du château", zipcode: "44680", city: "Saint Mars de Coutais", email: "erika@dlc.org", password: "azerty", active: true, admin: true})
+user_1 = User.create({my_association: association_1, first_name: "Antoine", last_name: "GALPY", address: "25 rue du château", zipcode: "44680", city: "Saint Mars de Coutais", email: "erika@dlc.org", password: "azerty", active: true, admin: true})
 user_2 = User.create({my_association: association_1, first_name: "Lucrece", last_name: "GUGELOT", address: "Place de l'église", zipcode: "44680", city: "Saint Mars de Coutais", email: "lucrece@dlc.org", password: "azerty", active: true, admin: true})
 user_3 = User.create({my_association: association_1, first_name: "Charlotte", last_name: "NOVELLO", address: "53 la Guinanderie", zipcode: "44680", city: "Saint Mars de Coutais", email: "charlotte@dlc.org", password: "azerty", active: true, admin: true})
 user_4 = User.create({my_association: association_1, first_name: "Céline", last_name: "MEILLERAY", address: "10 rue Félix Faure", zipcode: "44000", city: "Nantes", email: "celine@dlc.org", password: "azerty", active: true, admin: true})
