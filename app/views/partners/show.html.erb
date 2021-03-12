@@ -34,9 +34,10 @@
     <div class="card-template-contact">
       <div class="card-contact">
         <h4>Contact</h4>
-        <p>Abel AUBOISDORMANT</p>
-        <p>02.44.55.66.77</p>
-        <p>a.auboisdormant@systemeu.fr</p>
+        <% @partner.contacts.each do |contact| %>
+          <p> <%= contact.first_name %> <%= contact.last_name %></p>
+          <p> <%= contact.phone_number %></p>
+        <% end %>
       </div>
     </div>
 
