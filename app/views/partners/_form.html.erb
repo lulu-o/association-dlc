@@ -13,12 +13,10 @@
           ["50km", "50"],
           ["100km", "100"]
         ]), {prompt: "Rayon"} %>
-  <!-- <input id="geoloc" type="submit" action="" value="géoloc"> -->
-  <%= button_tag(type: "submit") do %>
+  <%= button_tag(type: "submit", id: "geoloc") do %>
     <i class="fas fa-map-marker-alt"></i>
   <% end %>
-  <!-- <%= submit_tag "recherche", :id => "search-submit" %> -->
-  <%= button_tag(type: "submit") do %>
+  <%= button_tag(type: "submit", id: "search-submit") do %>
     <i class="fas fa-search"></i>
   <% end %>
 
