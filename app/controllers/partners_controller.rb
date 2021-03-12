@@ -9,7 +9,7 @@ class PartnersController < ApplicationController
     if params[:place].nil? || params[:place].empty?
       current_user.latitude.nil? ? @place = current_user.zipcode : @place = current_user.full_address
     else
-      @place = params[:place]
+      Geocoder.search(@place)[0].nil? ? @place = "Nantes" : @place = params[:place]
     end
     # Si pas de radius renseigné, on demande 20 km
     params[:radius].to_i == 0 ? @radius = 20 : @radius = params[:radius].to_i
