@@ -1,8 +1,6 @@
 <h1 class="inset margin-inset">Je choisis un magasin</h1>
 
-<div class="d-flex">
-     <%= render partial: 'form' %>
-</div>
+<%= render partial: 'form' %>
 <h2><%= @partners.length %> magasins trouvés</h2>
 
 <div class="tabs d-flex">
@@ -10,7 +8,8 @@
   <div class="tab active" id="shops-map-tab"><i class="far fa-map"></i></div>
 </div>
 
-<div id="shops-list-container" class="tab-container">
+<div id="results-container">
+  <div id="shops-list-container" class="tab-container">
   <% @partners.each do |partner| %>
     <%= link_to partner_path(partner) do %>
       <div class="card-template-shop">
@@ -43,4 +42,6 @@
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
+</div>
+
 
