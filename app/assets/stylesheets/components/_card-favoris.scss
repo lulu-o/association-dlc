@@ -1,5 +1,9 @@
 .card-template-favoris {
 	
+		:hover {
+		color: #000;
+	}
+	
 	.card-favoris {
 		background: white;
 	  box-shadow: $box-shadow;
@@ -47,7 +51,7 @@
 			color: black;
 			opacity: 0.5;
 			font-size: 12px;
-			width: 55%;
+			// width: 55%;
 		}
 
 		.distance {

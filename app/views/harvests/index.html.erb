@@ -1,28 +1,3 @@
-<% @harvests.each do |harvest| %>
-  <p>ID récolte : <%= harvest.id %></p>
-  <p>Date récolte : <%= harvest.date.strftime("%d/%m/%Y") %></p>
-  <p>Partenaire : <%= harvest.partner.name %></p>
-  <p>Heure : <%= harvest.hour.strftime("%H:%M") %></p>
-  <p><%= harvest.harvesters.count %> récolteurs positionnés sur <%= harvest.harvesters_number %></p>
-  <p><%= if harvest.harvesters.count < harvest.harvesters_number
-    "Pas assez de récolteurs"
-    else
-    "Quota de récolteurs atteint"
-    end %></p>
-
-  <p><%= Date.today.advance(days: 7).strftime("%d/%m/%Y") %></p>
-
-  <p><%= if harvest.date <= Date.today.advance(days: 7)
-    "La date est proche"
-    else
-    "La date est loin"
-    end %></p>
-
-
-
-  <br><br><br><br><br>
-<% end %>
-
 <div class="index">
 	<!-- TITLE -->
 	<h1 class="inset">Les récoltes urgentes</h1>
@@ -43,28 +18,28 @@
 					<div>
 						<% harvest.harvesters.count.times do %>
 							<i class="fas fa-user"></i>
-						<% end %>		
+						<% end %>
 						<% (harvest.harvesters_number - harvest.harvesters.count).times do %>
 							<i class="far fa-user"></i>
 						<% end %>
 					</div>
-						
+
 					<p class="hour"><%= harvest.hour.strftime("%H:%M") %></p>
 				</div>
 				<div class="card-urgence">
 					<div class="top">
 						<div class="shop-name">
-							<%= image_tag "carrefour.png", alt: "Carrefour", width: 30 %>
+							<%= image_tag harvest.partner.brand.logo, alt: "Carrefour", width: 30 %>
 							<p class="shop-title"><%= harvest.partner.name %></p>
 						</div>
 						<div class="distance">
 							<p class="distance-label"><span><i class="fas fa-map-marker-alt"></i></span>700 m</p>
-						</div>	
+						</div>
 					</div>
 					<div class="bottom">
 						<div class="shop-address">
 							<p><%= harvest.partner.address %></p>
-							<p><%= harvest.partner.zipcode %> <%= harvest.partner.city %> </p> 
+							<p><%= harvest.partner.zipcode %> <%= harvest.partner.city %> </p>
 						</div>
 						<p class="label-yellow">je m'inscris</p>
 					</div>
