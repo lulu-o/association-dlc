@@ -1,24 +1,31 @@
 // MOTEUR
 #geo-search {
   display:flex;
+  justify-content:center;
+  width:100%;
+  padding:0 1rem;
+  overflow:hidden;
   * {
-    padding:4px 8px;
+    padding:0.125rem 0.1875rem;
+    border:none;
   }
-  .mapboxgl-ctrl, select {
-    margin-right:16px;
+  input:first-child {
+    border-radius:1.5rem 0 0 1.5rem;
+    width:-webkit-fill-available;
   }
-  input#place {
-    border-radius:16px 0 0 16px;
+  button:last-child {
+    border-radius:0 1.5rem 1.5rem 0;
   }
-  #radius {
-    margin-right:0;
-  }
-  input#search-submit {
-    border-radius:0 16px 16px 0;
+  button {
+    background-color:white;
   }
 }
 
 // MAP
+
+div#shops-map-container {
+  max-height:66vh;
+}
 
 .mapboxgl-popup {
   max-width: 200px;

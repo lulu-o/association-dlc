@@ -1,16 +1,15 @@
 <h1 class="inset margin-inset">Je choisis un magasin</h1>
 
-<div class="d-flex">
-     <%= render partial: 'form' %>
-</div>
+<%= render partial: 'form' %>
 <h2><%= @partners.length %> magasins trouvés</h2>
 
 <div class="tabs d-flex">
-  <div class="tab" id="shops-list-tab">Liste</div>
-  <div class="tab active" id="shops-map-tab"><i class="far fa-map"></i></div>
+  <div class="tab active" id="shops-list-tab">Liste</div>
+  <div class="tab" id="shops-map-tab"><i class="far fa-map"></i></div>
 </div>
 
-<div id="shops-list-container" class="tab-container">
+<div id="results-container">
+  <div id="shops-list-container" class="tab-container active">
   <% @partners.each do |partner| %>
     <%= link_to partner_path(partner) do %>
       <div class="card-template-shop">
@@ -21,7 +20,7 @@
               <p class="shop-title"><%= partner.name %></p>
             </div>
             <div class="distance">
-              <p class="distance-label" lat="<%= partner.latitude %>" lng="<%= partner.longitude %>"><span><i class="fas fa-map-marker-alt"></i></span><span class="dist-number">700</span></p>
+              <p class="distance-label" lat="<%= partner.latitude %>" lng="<%= partner.longitude %>"><span><i class="fas fa-map-marker-alt"></i></span><span class="dist-number"><%= partner.distance %> km</span></p>
             </div>
           </div>
           <div class="bottom">
@@ -37,10 +36,12 @@
   <% end %>
 </div>
 
-<div id="shops-map-container" class="tab-container active">
+<div id="shops-map-container" class="tab-container">
   <div id="map" class="show"
-    style="width: 100%; height: 500px;"
+    style="width: 100%; height: 66vh;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
+</div>
+
 

@@ -5,7 +5,11 @@
 		border-radius: $card-radius;
 		margin-bottom: 10px;
 		padding: 15px;
-		min-height: 7rem;
+		min-height: 4rem;
+	}
+
+	:hover {
+		color: $green;
 	}
 
 	h4 {
@@ -17,6 +21,14 @@
 	p {
 		font-weight: 600;
 		font-size: 14px;
+		color: $green;
+	}
+
+	i {
+		font-size: 12px;
+	}
+
+	a {
 		color: $green;
 	}
 }

@@ -2,10 +2,42 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
+	a {
+		display:flex;
+		align-items:flex-end;
+	}
 	i {
 		font-size: 30px;
 		margin-right: 1rem;
 		padding-top: 1rem;
 	}
+	#heart-container {
+		margin-left:0.5rem;
+		width:34px;
+		height:34px;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+	}
+	.heart {
+		color: $red;
+		font-size: 25px;
+		padding: 0.3rem .1em;
+		margin: 0;
+		font-size: 30px;
+	}
+}
+
+/* ANIMATION BOUTON */
+
+.heartpop {
+	transition:0.4s;
+  animation-duration:0.4s;
+  animation-name: heartpop;
+}
+
+@keyframes heartpop {
+  from { font-size:30px;color:#0E0000; }
+  50% { font-size:34px;color:$red; }
+  to { font-size:30px;color:$red; }
 }

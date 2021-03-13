@@ -16,7 +16,7 @@
 
 #modal-window {
   z-index:0;
-  transition:0.8s;
+  transition:0.8s ease-in-out;
   display:flex;
   justify-content: center;
 }

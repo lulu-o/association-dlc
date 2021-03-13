@@ -30,7 +30,6 @@ import { Button } from "bootstrap"
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
-  calculateDistance();
   initModal();
   initSearch();
   const tabs = document.querySelectorAll('.tab');
@@ -46,6 +45,16 @@ document.addEventListener('turbolinks:load', () => {
         const activeContainer = document.getElementById(`shops-${contentId}-container`);
         activeContainer.classList.add('active');
       });
+    });
+  }
+
+  const heart = document.getElementById('heart-fav');
+  if (heart) {
+    heart.addEventListener('click', () => {
+      heart.classList.add('heartpop');
+      setTimeout(() => {
+        heart.classList.remove('heartpop');
+      }, 400);
     });
   }
 

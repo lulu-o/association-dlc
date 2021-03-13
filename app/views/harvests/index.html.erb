@@ -1,7 +1,7 @@
 <div class="index">
 	<!-- TITLE -->
 	<h1 class="inset">Les récoltes urgentes</h1>
-	<p>Cette semaine, il manque du monde sur les crénaux suivants : </p>
+	<p class="mt-4">Cette semaine, il manque du monde sur les créneaux suivants : </p>
 
 	<!-- CARDS -->
 	<div class="cards">
@@ -50,6 +50,12 @@
      <div class="btn-lg btn-oval-full-pink text-center mt-5">
       <%= link_to "Notifications", notifications_path %>
      </div>
+
+    <!-- @harvests.each do |date, harvests_details| 
+		  <p class="date-harvest mt-4"> l(date, format: "%A %d %B %Y") </p>
+       harvests_details.each do |harvest| 
+         render partial: "harvest", locals: { harvest: harvest } 
+      -->
 	</div>
 </div>
 

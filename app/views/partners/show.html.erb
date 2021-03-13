@@ -1,16 +1,17 @@
 <div class="content">
   <div class="header-show">
     <h1 class="inset" id="partner-name"><%= @partner.name %></h1>
-      <% if @user_favorite.blank? %> 
-        <%= link_to user_favorites_path(@partner), method: :post do  %>
-          <p>add<i class="far fa-heart"></i></p>
+      <% if @is_favorite.first.nil? %>
+        <%= link_to user_favorites_path(@partner), remote: :true, method: :post do  %>
+          <p><div id="heart-container"><i class="far fa-heart heart" id="heart-fav"></i></div></p>
+
         <% end %>
       <% else %>
-        <%= link_to user_favorite_path(@favorite), method: :delete, class: "fav" do %>
-           <p>delete<i class="fas fa-heart"></i></p>
+        <%= link_to favorite_path(@is_favorite.first), remote: :true, method: :delete, class: "fav" do %>
+           <p><div id="heart-container"><i class="fas fa-heart heart" id="heart-fav"></i></div></p>
         <% end %>
-        Bouton delete 
-    <% end %> 
+    <% end %>
+
 
   </div>
   <!-- CARD HOUR -->
@@ -33,9 +34,10 @@
     <div class="card-template-contact">
       <div class="card-contact">
         <h4>Contact</h4>
-        <p>Abel AUBOISDORMANT</p>
-        <p>02.44.55.66.77</p>
-        <p>a.auboisdormant@systemeu.fr</p>
+        <% @partner.contacts.each do |contact| %>
+          <p><i class="fas fa-user"></i>  <%= contact.first_name %> <%= contact.last_name %></p>
+          <p><i class="fas fa-phone-alt"></i>  <a href="tel:<%= contact.phone_number %>"><%= contact.phone_number %></a></p>
+        <% end %>
       </div>
     </div>
 
@@ -52,7 +54,7 @@
     <p class="date">Mer 17/03/2021</p>
     <p class="missing">1/2 inscrits</p>
     <div class="date-action">
-      <div class="register" id=""><span>&#43;</span></div>
+      <div class="register" id=""><i class="fas fa-plus"></i></div>
     </div>
   </div>
 
@@ -60,13 +62,9 @@
     <p class="date">Mer 17/03/2021</p>
     <p class="missing">2/2 inscrits</p>
     <div class="date-action">
-      <div class="cancel" id=""><span>&#43;</span></div>
+      <div class="cancel" id=""><i class="fas fa-times"></i></div>
     </div>
   </div>
-
-  <% @harvests.each do |harvest| %>
-    <p><%= harvest.date.strftime("%d/%m/%Y") %></p>
-  <% end %>
 
   <div id="map" class="show"
       style="width: 100%; height: 500px;"

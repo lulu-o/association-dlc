@@ -17,7 +17,8 @@ class HarvestsController < ApplicationController
       ORDER BY harvests.date
       SQL
 
-      @harvests = Harvest.find_by_sql Arel.sql(urgent_harvests_query)
+
+      @harvests = Harvest.find_by_sql(urgent_harvests_query).group_by(&:date)
 
     # Retrieve harvests needing people - to be joined with upper query
     # Facon degueulasse
@@ -35,3 +36,6 @@ class HarvestsController < ApplicationController
   end
 
 end
+
+
+
