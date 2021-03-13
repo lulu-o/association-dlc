@@ -11,7 +11,11 @@
   }
   input:first-child {
     border-radius:1.5rem 0 0 1.5rem;
-    width:-webkit-fill-available;
+    flex-grow:5;
+    // width:-webkit-fill-available;
+  }
+  select {
+    flex-grow:2;
   }
   button:last-child {
     border-radius:0 1.5rem 1.5rem 0;
@@ -59,4 +63,8 @@ div#shops-map-container {
 
 .mapbox-gl-canvas {
   width:100%;
+}
+
+.mapboxgl-ctrl-attrib-inner {
+  display:none;
 }
