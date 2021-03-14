@@ -12,10 +12,14 @@
   input:first-child {
     border-radius:1.5rem 0 0 1.5rem;
     flex-grow:5;
+    padding-left:1em;
+    border-right:1px dotted black;
     // width:-webkit-fill-available;
   }
   select {
     flex-grow:2;
+    padding-left:1em;
+    border-right:1px dotted black;
   }
   button:last-child {
     border-radius:0 1.5rem 1.5rem 0;

@@ -1,9 +1,8 @@
 <%= form_tag('/partners',
     :method => "get",
-    :lat => @place_coord["lat"],
-    :lng => @place_coord["lon"],
     :id => "geo-search") do |f| %>
-  <%= text_field_tag :place %>
+  <%= text_field_tag :place, params["search-type"] == "geolocation" ? "Ma position" : params[:place] || current_user.full_address, {:required => 'required', "data-coords" => params[:place]} %>
+  <%= hidden_field_tag "search-type", params[:search_type] || "text" %>
   <%= select_tag :radius,
         options_for_select([
           ["2km", "2"],
@@ -12,8 +11,8 @@
           ["20km", "20"],
           ["50km", "50"],
           ["100km", "100"]
-        ]), {prompt: "Rayon"} %>
-  <%= button_tag(type: "submit", id: "geoloc") do %>
+        ], params[:radius] || "5"), {prompt: "Rayon", :required => 'required'} %>
+  <%= button_tag(type: "button", id: "geoloc") do %>
     <i class="fas fa-map-marker-alt"></i>
   <% end %>
   <%= button_tag(type: "submit", id: "search-submit") do %>
