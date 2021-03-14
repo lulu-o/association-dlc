@@ -2,6 +2,9 @@
     :method => "get",
     :id => "geo-search") do |f| %>
   <%= text_field_tag :place, params["search-type"] == "geolocation" ? "Ma position" : params[:place] || current_user.full_address, {:required => 'required', "data-coords" => params[:place]} %>
+    <%= button_tag(type: "button", id: "geoloc") do %>
+    <i class="fas fa-map-marker-alt"></i>
+  <% end %>  
   <%= hidden_field_tag "search-type", params[:search_type] || "text" %>
   <%= select_tag :radius,
         options_for_select([
@@ -12,9 +15,7 @@
           ["50km", "50"],
           ["100km", "100"]
         ], params[:radius] || "5"), {prompt: "Rayon", :required => 'required'} %>
-  <%= button_tag(type: "button", id: "geoloc") do %>
-    <i class="fas fa-map-marker-alt"></i>
-  <% end %>
+
   <%= button_tag(type: "submit", id: "search-submit") do %>
     <i class="fas fa-search"></i>
   <% end %>
