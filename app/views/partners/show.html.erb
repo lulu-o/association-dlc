@@ -36,19 +36,19 @@
         <h4>Contact</h4>
         <% @partner.contacts.each do |contact| %>
           <p><i class="fas fa-user"></i>  <%= contact.first_name %> <%= contact.last_name %></p>
-          <p><i class="fas fa-phone-alt"></i>  <a href="tel:<%= contact.phone_number %>"><%= contact.phone_number %></a></p>
+          <p><i class="fas fa-mobile-alt"></i>  <a href="tel:<%= contact.phone_number %>"> <%= contact.phone_number %></a></p>
         <% end %>
       </div>
     </div>
 
     <h1 class="inset">Prochaines récoltes</h1>
 
-  <div class="harvest-date full">
+  <!-- <div class="harvest-date full">
     <p class="date">Mar 16/03/2021</p>
     <p class="missing">2/2 inscrits</p>
     <div class="date-action">
     </div>
-  </div>
+  </div> -->
 
   <div class="harvest-date missing">
     <p class="date">Mer 17/03/2021</p>

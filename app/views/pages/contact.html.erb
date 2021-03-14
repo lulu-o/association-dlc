@@ -1,0 +1,105 @@
+<div class="contact">
+
+	<h1>Merci !</h1>
+
+	<p>L'équipe support</p>
+
+	<div class="top">
+		<div class="inside">
+			<div  class="photo">
+				<%= image_tag "Guillaume.jpeg", class: "avatar", alt: "avatar" %>
+			</div>
+			<p>Guillaume</p>
+		</div>
+
+		<div class="inside">
+			<%= image_tag "Antoine.jpeg", class: "avatar", alt: "avatar" %>
+			<p>Antoine</p>
+		</div>
+ 	</div>
+
+ 	<div class="bottom">
+ 		<div class="inside">
+			<%= image_tag "Marion.jpeg", class: "avatar", alt: "avatar" %>
+			<p>Marion</p>
+		</div>
+
+		<div class="inside">
+			<%= image_tag "Lucrece.jpeg", class: "avatar", alt: "avatar" %>
+			<p>Lucrèce</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="form-user py-5">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="text-right inset">J'organise ma distribution</h1>
+      </div>
+      <div class="row mt-2">
+        <div class="mt-3 col-md-12">
+          <label class="labels">1. Le nombre de panier</label>
+          <input type="integer" class="form-control" placeholder="" value="">
+        </div>
+        <div class="mt-3 col-md-12">
+          <label class="labels">2. Description (type de produits)</label>
+          <input type="text" class="form-control" value="" placeholder="">
+        </div>
+        <div class="mt-3 ml-3">
+        	<p>3. Équipements nécessaires</p>
+        </div>
+        <div class="form-check ml-3 col-md-12">
+  				<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  				<label class="form-check-label" for="flexCheckDefault">
+    			Sacs et cabas
+  				</label>
+				</div>
+				<div class="form-check ml-3 col-md-12">
+  				<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+ 				 	<label class="form-check-label" for="flexCheckChecked">
+    			Glacière obligatoire
+  			</label>
+				</div>
+
+        <div class="mt-3 col-md-12">
+          <label class="labels">4. Adresse de la distribution</label>
+          <input type="text" class="form-control" placeholder="" value="">
+        </div>
+        <div class="mt-3 col-md-12">
+          <label class="labels">5. Heure</label>
+          <input type="text" class="form-control" placeholder="" value="">
+        </div>
+        <div class="mt-3 col-md-12">
+          <label class="labels">6. Infos complémentaires</label>
+          <input type="text" class="form-control" value="" placeholder="">
+        </div>
+        <div class="mt-5 col-md-6">
+          <button class="btn btn-oval-full-green profile-button" type="button">Sauvegarder</button>
+        </div>
+      </div>
+    </div>
+
+
+
+  <h1 class="inset">Mes distributions</h1>
+  <!-- CARD DISTRIBUTUION -->
+		<div class="card-template-distribution">
+			<div class="date-info">
+				<p>Vendredi 12 mars 2021</p>
+				<p>10 <i class="fas fa-shopping-basket"></i></p>
+				<p class="hour">20h00</p>
+			</div>
+			<div class="card-distribution">
+				<div class="top">
+					<p>On y retrouve des produits épiceries (riz, pates, semoule etc) des produits d’hygiènes (savon et gel douche).</p>
+					<p class="mt-1">Sacs et cabas</p>
+				</div>
+				<div class="bottom mt-2">
+					<div class="shop-address">
+           <p>Boulevard De la Baule</p>
+           <p>44000 Saint- Herblain</p>
+          </div>
+					<p><i class="fas fa-pen-square pensil"></i></p>
+				</div>
+			</div>
+		</div>

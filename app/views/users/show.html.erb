@@ -8,7 +8,6 @@
 
 <div class="collapse" id="CollapseExample1">
   <div class="cards card-body">
-
     <!-- CARD PLANNING -->
     <div class="card-template-planning">
       <% @harvesters.each do |harvester| %>
@@ -38,11 +37,38 @@
       <% end %>
       <% end %>
     </div>
-
-
   </div>
 </div>
 
+<div class="toggle-profil-btn btn btn-lg btn-block btn-primary d-flex justify-content-center card-body" data-toggle="collapse" href="#CollapseExample2" role="button" aria-expanded="false" aria-controls="CollapseExample2">
+  <p>MES DISTRIBUTIONS</p>
+  <i class="fas fa-chevron-down fa-lg"></i>
+</div>
+<div class="collapse" id="CollapseExample2">
+  <div class="card-body">
+<!-- CARD DISTRIBUTUION -->
+    <div class="card-template-distribution">
+      <div class="date-info">
+        <p>Vendredi 12 mars 2021</p>
+        <p>10 <i class="fas fa-shopping-basket"></i></p>
+        <p class="hour">20h00</p>
+      </div>
+      <div class="card-distribution">
+        <div class="top">
+          <p>On y retrouve des produits épiceries (riz, pates, semoule etc) des produits d’hygiènes (savon et gel douche).</p>
+          <p class="mt-1">Sacs et cabas</p>
+        </div>
+        <div class="bottom mt-2">
+          <div class="shop-address">
+           <p>Boulevard De la Baule</p>
+           <p>44000 Saint- Herblain</p>
+          </div>
+          <p><i class="fas fa-pen-square pensil"></i></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="toggle-profil-btn btn btn-lg btn-block btn-primary d-flex justify-content-center card-body" data-toggle="collapse" href="#CollapseExample2" role="button" aria-expanded="false" aria-controls="CollapseExample2">
   <p>MES COORDONNÉES</p>
