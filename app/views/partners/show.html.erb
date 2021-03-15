@@ -54,7 +54,7 @@
     <p class="date">Mer 17/03/2021</p>
     <p class="missing">1/2 inscrits</p>
     <div class="date-action">
-      <div class="register" id=""><span>&#43;</span></div>
+      <div class="register" id=""><i class="fas fa-plus"></i></div>
     </div>
   </div>
 
@@ -62,13 +62,9 @@
     <p class="date">Mer 17/03/2021</p>
     <p class="missing">vous participez</p>
     <div class="date-action">
-      <div class="cancel" id=""><span>&#10006;</span></div>
+      <div class="cancel" id=""><i class="fas fa-times"></i></div>
     </div>
   </div>
-
-  <% @harvests.each do |harvest| %>
-    <p><%= harvest.date.strftime("%d/%m/%Y") %></p>
-  <% end %>
 
   <div id="map" class="show"
       style="width: 100%; height: 500px;"

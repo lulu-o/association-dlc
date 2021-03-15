@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+
+
   devise_for :users
   root to: 'partners#index'
   get 'contact', to: 'pages#contact'
@@ -9,4 +12,10 @@ Rails.application.routes.draw do
   end
 	resources :favorites, only: [:destroy]
   resources :harvests, only: [:index, :show]
+
+  post 'notifications', to: 'harvests#send_notif'
+
+ # root to: 'harvests#index'
+ # resources :send_emergency_email, only: [:index]
+
 end

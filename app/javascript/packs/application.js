@@ -30,7 +30,6 @@ import { Button } from "bootstrap"
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
-  calculateDistance();
   initModal();
   initSearch();
   const tabs = document.querySelectorAll('.tab');
