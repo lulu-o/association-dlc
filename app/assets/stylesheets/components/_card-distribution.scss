@@ -1,0 +1,72 @@
+.card-template-distribution {
+
+	:hover {
+		color: #000;
+	}
+	
+	.date-info {
+		background-color: $green;
+		color: white;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-top-left-radius: $card-radius;
+	  border-top-right-radius: $card-radius;
+	  padding: 5px 15px;
+
+	  i {
+	  	font-size: 16px;
+	  }
+
+	  p {
+	  	margin: 0px;
+	  	text-transform: capitalize;
+	  }
+	}
+
+	.card-distribution {
+		background: white;
+	  box-shadow: $box-shadow;
+	  margin-bottom: 1rem;
+	  padding: 15px;
+	  min-height: 7rem;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: space-between;
+	  border-bottom-left-radius: $card-radius;
+	  border-bottom-right-radius: $card-radius;
+
+	  p {
+			margin-bottom: 0;
+			font-size: 14px;
+		}
+		
+		.top {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bottom {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-end;
+		}
+
+
+		.shop-address {
+			color: black;
+			opacity: 0.5;
+			font-size: 12px;
+			width: 55%;
+		}
+	
+		.pensil {
+			color: $green;
+			font-size: 25px;
+			padding: 0.2rem .1em;
+	    margin: 0;
+		}
+	}
+}
