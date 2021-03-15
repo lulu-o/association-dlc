@@ -4,8 +4,8 @@
 <h2><%= @partners.length %> magasins autour de <%= params["search-type"] == "geolocation" ? "ma position" : @place %> dans un rayon de <%= @radius %> km</h2>
 
 <div class="tabs d-flex">
-  <div class="tab active" id="shops-list-tab">Liste</div>
-  <div class="tab" id="shops-map-tab"><i class="far fa-map"></i></div>
+  <div class="tab" id="shops-list-tab">Liste</div>
+  <div class="tab active" id="shops-map-tab"><i class="far fa-map"></i></div>
 </div>
 
 <div id="results-container">
@@ -24,6 +24,7 @@
               <div class="distance">
                 <p class="distance-label" lat="<%= partner.latitude %>" lng="<%= partner.longitude %>"><span><i class="fas fa-map-marker-alt"></i></span><span class="dist-number"><%= partner.distance %> km</span></p>
               </div>
+            </div>
             <div class="bottom">
               <div>
                 <p class="shop-address"><%= partner.address %></p>
@@ -44,6 +45,7 @@
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
+
 </div>
 
 
