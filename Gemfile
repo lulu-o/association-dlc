@@ -39,7 +39,11 @@ gem 'geocoder'
 gem 'rails-i18n'
 gem 'devise-i18n'
 
+
+ gem "actionmailer_inline_css"
+
 gem 'flatpickr'
+
 
 group :development, :test do
   gem 'pry-byebug'
