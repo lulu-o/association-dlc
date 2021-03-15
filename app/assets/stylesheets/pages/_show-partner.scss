@@ -2,14 +2,19 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
 	a {
 		display:flex;
 		align-items:flex-end;
 	}
+
 	i {
 		font-size: 30px;
 		margin-right: 1rem;
 		padding-top: 1rem;
+	}
+	.store {
+		font-weight: bold;
 	}
 
 	#heart-container {

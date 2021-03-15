@@ -1,5 +1,13 @@
- .toggle-profil .btn {
-color: green-25;
+.profil-container {	
+  margin-top: 1rem;
+
+  .inset {
+	  margin-left: 1.25rem;
+	}
+}
+
+.toggle-profil .btn {
+	color: green-25;
 }
 
 .form-user .profile-button {
