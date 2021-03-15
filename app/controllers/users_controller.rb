@@ -4,5 +4,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @harvesters = Harvester.where("user_id = ?", current_user.id)
+    @distributions = Distribution.where("user_id = ?", current_user.id)
   end
 end
