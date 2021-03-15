@@ -39,6 +39,8 @@ gem 'geocoder'
 gem 'rails-i18n'
 gem 'devise-i18n'
 
+ gem "actionmailer_inline_css"
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
