@@ -25,6 +25,7 @@ class PartnersController < ApplicationController
       @markers = [{lat: @place_coord["lat"], lng: @place_coord["lon"], i_window: "none"}]
     else
       @markers = @partners.geocoded.map do |partner|
+        partner.distance = Geocoder::Calculations.distance_between([@place_coord["lat"], @place_coord["lon"]], [partner.latitude, partner.longitude]).truncate(1)
         {
           lat: partner.latitude,
           lng: partner.longitude,
@@ -38,8 +39,6 @@ class PartnersController < ApplicationController
   end
 
   def show
-    # @partner = Partner.find(params[:id])
-
     @is_favorite = Favorite.includes(:partner).where('user_id = ? AND partner_id = ?', current_user.id, @partner.id)
     if @is_favorite.blank?
       # @is_favorite = Favorite.new
@@ -62,11 +61,9 @@ class PartnersController < ApplicationController
   end
 
   def edit
-    # @partner = Partner.find(params[:id])
   end
 
   def update
-    # @partner = Partner.find(params[:id])
     @partner.save
     redirect_to_partner_path(@partner)
   end

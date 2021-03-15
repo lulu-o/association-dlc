@@ -29,6 +29,12 @@ class HarvestsController < ApplicationController
     # Harvest.where('harvesters_number > harvesters.count')
   end
 
+  def update
+    @user = current_user
+    @harvest = Harvest.find(params[:id])
+
+  end
+
   def send_notif
      @users = User.all
      @users.each { |user| user.send_emergency_email }
