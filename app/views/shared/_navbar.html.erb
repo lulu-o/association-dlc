@@ -20,9 +20,9 @@
     </div>
   <% end %>
 
-   <%= link_to user_favorites_path(current_user) do %> 
-    <div class="category-menu <%= current_class?(user_favorites_path(current_user)) %>">
-      <i class="fas fa-sync <%= current_class?(user_favorites_path(current_user)) %>"></i>
+   <%= link_to new_distribution_path do %> 
+    <div class="category-menu <%= current_class?(new_distribution_path) %>">
+      <i class="fas fa-sync <%= current_class?(new_distribution_path) %>"></i>
       <p>Distributions</p>
     </div>
   <% end %>
