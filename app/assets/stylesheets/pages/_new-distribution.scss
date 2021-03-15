@@ -1,0 +1,25 @@
+.tag-item {
+  display: inline-block;
+}
+.form-check-input {
+  position: absolute;
+  transform: scale(0);
+}
+
+.form-check-input + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.7rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  background-color: #ECEAFF;
+  color: $green;
+  border: 1px solid $green;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.form-check-input:checked + label {
+  background-color: $green;
+  color: white;
+}

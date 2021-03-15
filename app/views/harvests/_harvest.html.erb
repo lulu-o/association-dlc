@@ -32,8 +32,12 @@
           <p><%= harvest.partner.address %></p>
           <p><%= harvest.partner.zipcode %> <%= harvest.partner.city %> </p>
         </div>
-        <p class="label-yellow">je m'inscris</p>
+        <div class="date-action">
+          <p class="label-yellow">je m'inscris</p>
+        </div>
       </div>
     </div>
   <% end %>
 </div>
+
+<%= render 'shared/modal_window' %>
