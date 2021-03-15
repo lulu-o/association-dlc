@@ -20,18 +20,22 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     // console.log(markers);
     markers.forEach((marker) => {
-      // ELEMENT => CUSTOM MARKERS (DESACTIVE POUR LE MOMENT)
       const element = document.createElement('i');
       element.classList.add('fas');
       element.classList.add('fa-map-marker-alt');
       element.style.color = '#114D4D';
       element.style.fontSize = '32px';
-
-      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
-      new mapboxgl.Marker(element)
-        .setLngLat([marker.lng, marker.lat])
-        .setPopup(popup)
-        .addTo(map);
+      if (marker.i_window != "none") {
+        const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+        new mapboxgl.Marker(element)
+          .setLngLat([marker.lng, marker.lat])
+          .setPopup(popup)
+          .addTo(map);
+      } else {
+        new mapboxgl.Marker(element)
+          .setLngLat([marker.lng, marker.lat])
+          .addTo(map);
+      }
     });
 
     fitMapToMarkers(map, markers);
@@ -40,21 +44,6 @@ const initMapbox = () => {
       accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl
     });
-
-    // GEOLOC
-    const locationLink = document.getElementById("geoloc");
-    const place = document.getElementById("place");
-    const submit = document.getElementById("search-submit");
-    if (locationLink) {
-      locationLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        navigator.geolocation.getCurrentPosition((data) => {
-          const currentPosition = [data.coords.latitude, data.coords.longitude];
-          place.value = currentPosition;
-          submit.click();
-        });
-      });
-    }
 
   }
 
