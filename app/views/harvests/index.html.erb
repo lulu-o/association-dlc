@@ -1,63 +1,14 @@
 <div class="index">
 	<!-- TITLE -->
 	<h1 class="inset">Les récoltes urgentes</h1>
-	<p class="mt-4">Cette semaine, il manque du monde sur les créneaux suivants : </p>
-
+	<p class="mt-4">Cette semaine, il manque du monde sur les crénaux suivants : </p>
 	<!-- CARDS -->
 	<div class="cards">
-
-		<!-- CARD URGENCE -->
-		<div class="card-template-urgence">
-			<% @harvests.each do |harvest| %>
-				<%= link_to partner_path(harvest.partner) do %>
-  			<p><%= l(harvest.date, format: "%A %d %B %Y") %></p>
-  			<!-- Test pour checker que seulement les urgences s'affichent: >0 => URGENCE -->
-				<%= harvest.harvesters_number - harvest.harvesters.count %>
-
-				<div class="date-info">
-					<div>
-						<% harvest.harvesters.count.times do %>
-							<i class="fas fa-user"></i>
-						<% end %>
-						<% (harvest.harvesters_number - harvest.harvesters.count).times do %>
-							<i class="far fa-user"></i>
-						<% end %>
-					</div>
-
-					<p class="hour"><%= harvest.hour.strftime("%H:%M") %></p>
-				</div>
-				<div class="card-urgence">
-					<div class="top">
-						<div class="shop-name">
-							<%= image_tag harvest.partner.brand.logo, alt: "Carrefour", width: 30 %>
-							<p class="shop-title"><%= harvest.partner.name %></p>
-						</div>
-						<div class="distance">
-							<p class="distance-label"><span><i class="fas fa-map-marker-alt"></i></span>700 m</p>
-						</div>
-					</div>
-					<div class="bottom">
-						<div class="shop-address">
-							<p><%= harvest.partner.address %></p>
-							<p><%= harvest.partner.zipcode %> <%= harvest.partner.city %> </p>
-						</div>
-						<p class="label-yellow">je m'inscris</p>
-					</div>
-				</div>
-				<% end %>
-			<% end %>
-		</div>
-     <div class="btn-lg btn-oval-full-pink text-center mt-5">
-      <%= link_to "Notifications", notifications_path %>
-     </div>
-
-    <!-- @harvests.each do |date, harvests_details| 
-		  <p class="date-harvest mt-4"> l(date, format: "%A %d %B %Y") </p>
-       harvests_details.each do |harvest| 
-         render partial: "harvest", locals: { harvest: harvest } 
-      -->
+    <% @harvests.each do |date, harvests_details| %>
+		  <p class="date-harvest mt-4"><%= l(date, format: "%A %d %B %Y") %></p>
+      <% harvests_details.each do |harvest| %>
+        <%= render partial: "harvest", locals: { harvest: harvest } %>
+      <% end %>
+    <% end %>
 	</div>
 </div>
-
-
-
