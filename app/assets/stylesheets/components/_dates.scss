@@ -8,7 +8,9 @@
   display:flex;
   align-items:center;
   justify-content: space-between;
+
   p {
+    text-transform: capitalize;
     width:max-content;
     text-align:center;
     max-width:40%;
@@ -16,6 +18,11 @@
     font-weight: 600;
     font-size: 16px;
     letter-spacing: 0.5px;
+  }
+
+  .missing {
+    font-size: .9rem;
+    font-weight: normal;
   }
 }
 
@@ -26,8 +33,12 @@
 
 .harvest-date.registered {
   background-color: $green;
-  color:rgba(0,0,0,0.8);
   color:white;
+
+  .missing {
+    font-weight: lighter;
+  }
+
 }
 
 .harvest-date.full {
@@ -48,14 +59,16 @@
   border-radius:50%;
   font-size:2em;
   color:white;
+
   div {
     border-radius:50%;
-    width:48px;
-    height:48px;
+    width:2.3rem;
+    height:2.3rem;
     display:flex;
     align-items:center;
     justify-content: center;
     line-height:1;
+
     i {
       font-size:1rem;
       padding:0;
