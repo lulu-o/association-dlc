@@ -8,6 +8,8 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+import { initFlatpickr } from "../plugins/flatpickr"
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
@@ -28,6 +30,9 @@ import { initSearch } from "../plugins/init_search";
 import { Button } from "bootstrap"
 
 document.addEventListener('turbolinks:load', () => {
+
+  initFlatpickr();
+
   initMapbox();
   initSearch();
   initModal();
