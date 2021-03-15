@@ -2,7 +2,6 @@
   color: white;
 }
 
-
 .btn-block {
   margin-top: 30px;
 }
@@ -19,4 +18,10 @@
   margin:16px auto;
 }
 
+.simple_form {
+	.btn {
+    width: -webkit-fill-available;
+    display: grid;
+	}
+}
 //background-image: url(image-path('patternpad.svg'));
