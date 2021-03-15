@@ -1,6 +1,6 @@
 <div class="content">
   <div class="header-show">
-    <h1 class="inset" id="partner-name"><%= @partner.name %></h1>
+    <h1 class="store" id="partner-name"><%= @partner.name %></h1>
       <% if @is_favorite.first.nil? %>
         <%= link_to user_favorites_path(@partner), remote: :true, method: :post do  %>
           <p><div id="heart-container"><i class="far fa-heart heart" id="heart-fav"></i></div></p>
@@ -46,7 +46,7 @@
     <% @harvests.each do |harvest| %>
       <div class="harvest-date missing">
         <p class="date"><%= harvest.date %></p>
-        <p class="missing">1/2 inscrits</p>
+        <p class="missing">1/2 participants</p>
         <div class="date-action">
           <%= link_to harvesters_path(:harvest_id => harvest.id), method: :post, remote: true do %>
             <div class="register" id=""><i class="fas fa-plus"></i></div>
@@ -57,7 +57,7 @@
 
   <div class="harvest-date missing">
     <p class="date">Mer 30/08/2021</p>
-    <p class="missing">1/2 inscrits</p>
+    <p class="missing">1/2 participants</p>
     <div class="date-action">
       <div class="register" id=""><i class="fas fa-plus"></i></div>
     </div>
@@ -80,7 +80,7 @@
 
       </div>
 
-  <%= link_to 'Back', partners_path %>
+  <!-- <%= link_to 'Back', partners_path %> -->
 
 </div>
 
