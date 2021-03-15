@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 	resources :favorites, only: [:destroy]
   resources :harvests, only: [:index, :show]
-  resources :harvesters, only: [:create, :destroy]
+  resources :harvesters, only: [:show, :create, :destroy]
   resources :distributions, only: [:new, :create, :index, :show]
 
   post 'notifications', to: 'harvests#send_notif'

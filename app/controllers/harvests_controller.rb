@@ -29,6 +29,10 @@ class HarvestsController < ApplicationController
     # Harvest.where('harvesters_number > harvesters.count')
   end
 
+  def show
+    @harvest = Harvest.includes(:harvesters).find(params[:id])
+  end
+
   def update
     @user = current_user
     @harvest = Harvest.find(params[:id])

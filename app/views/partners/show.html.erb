@@ -46,11 +46,12 @@
 
     <% @harvests.each do |harvest| %>
       <% if harvest.user_registered?(current_user.id) %>
+        <% harvester = harvest.harvesters.find_by(:user_id => current_user) %>
         <div class="harvest-date registered">
           <p class="date"><%= l(harvest.date, format: "%a %d/%m/%y").capitalize %></p>
           <p>vous participez</p>
           <div class="date-action">
-            <div class="cancel" id=""><i class="fas fa-times"></i></div>
+            <div class="cancel" data-remote="true" data-method="delete" data-url="<%= harvester_path(harvester.id) %>"><i class="fas fa-times"></i></div>
           </div>
         </div>
       <% else %>
@@ -58,28 +59,11 @@
           <p class="date"><%= l(harvest.date, format: "%a %d/%m/%y").capitalize %></p>
             <p> <%= harvest.harvesters.count %>/<%= harvest.harvesters_number %> participants </p>
           <div class="date-action">
-            <div class="register"><i class="fas fa-plus"></i></div>
+            <div class="register" data-remote="true" data-method="post" data-url="<%= harvesters_path(:harvest_id => harvest.id) %>"><i class="fas fa-plus"></i></div>
           </div>
         </div>
       <% end %>
     <% end %>
-
-
-  <div class="harvest-date missing">
-    <p class="date">Mer 30/08/2021</p>
-    <p class="missing">1/2 participants</p>
-    <div class="date-action">
-      <div class="register" id=""><i class="fas fa-plus"></i></div>
-    </div>
-  </div>
-
-  <div class="harvest-date registered">
-    <p class="date">Mer 30/08/2021</p>
-    <p class="missing">vous participez</p>
-    <div class="date-action">
-      <div class="cancel" id=""><i class="fas fa-times"></i></div>
-    </div>
-  </div>
 
 
   <div id="map" class="show"

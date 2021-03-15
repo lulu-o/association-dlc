@@ -1,6 +1,6 @@
 class PartnersController < ApplicationController
   before_action :authorize, only: %i[ new create edit update ]
-  before_action :set_partner, only: %i[ show edit update ]
+  before_action :set_partner, only: %i[ edit update ]
 
   def index
 
@@ -16,7 +16,8 @@ class PartnersController < ApplicationController
     # Demander à Geocoder de remonter le résultat le plus pertinent (index 0)
     @place_coord = Geocoder.search(@place)[0].data
     # Remonter tous les partenaires autour de ce lieu
-    @partners = Partner.near(@place, @radius)
+    @partners = Partner.joins(:harvests).where("harvests.date > ?", Time.now).near(@place, @radius)
+    raise
     @partners.each do |partner|
       partner.distance = Geocoder::Calculations.distance_between([@place_coord["lat"], @place_coord["lon"]], [partner.latitude, partner.longitude]).truncate(1)
     end
@@ -39,6 +40,7 @@ class PartnersController < ApplicationController
   end
 
   def show
+    @partner = Partner.joins(:harvests).where("harvests.date > ?", Time.now).find(params[:id])
     @is_favorite = Favorite.includes(:partner).where('user_id = ? AND partner_id = ?', current_user.id, @partner.id)
     if @is_favorite.blank?
       # @is_favorite = Favorite.new
@@ -47,23 +49,9 @@ class PartnersController < ApplicationController
     end
 
     @markers = [{ lat: @partner.latitude, lng: @partner.longitude, i_window: "none" }]
-    urgent_harvests_query = <<~SQL
-      WITH harvesters_count AS
-      (SELECT harvest_id AS id, count(id) AS compteur FROM harvesters GROUP BY harvesters.harvest_id ORDER BY compteur DESC)
-      SELECT
-          harvests.id,
-          harvests.date,
-          harvests.partner_id,
-          harvests.harvesters_number
-      FROM harvests
-      LEFT OUTER JOIN harvesters_count ON harvesters_count.id = harvests.id
-      WHERE (harvesters_count.compteur < harvests.harvesters_number OR harvesters_count.id IS NULL) AND harvests.partner_id = ?
-      GROUP BY harvests.date, harvests.id
-      ORDER BY harvests.date
-      SQL
 
-
-    @harvests = Harvest.find_by_sql([urgent_harvests_query, @partner.id])
+    @harvests = @partner.harvests.joins(:harvesters)
+    # raise
   end
 
   def new

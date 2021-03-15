@@ -14,6 +14,7 @@ const initModal = () => {
     buttons.forEach((button) => {
       button.addEventListener('click', () => {
         const url = button.dataset.url;
+        const method = button.dataset.method;
         button.classList.add('pop');
         modalWindow.classList.add("z10");
         const date = button.parentElement.parentElement.querySelector('.date').innerText;
@@ -24,7 +25,7 @@ const initModal = () => {
             introTag.innerText = "Confirmez votre inscription pour la récolte :";
         }
         confirmButton.setAttribute("data-remote", "true");
-        confirmButton.setAttribute("data-method", "post");
+        confirmButton.setAttribute("data-method", method);
         confirmButton.setAttribute("href", url);
         // Insérer les données magasin + date
         modalShop.innerText = shop;
