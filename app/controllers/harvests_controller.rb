@@ -17,7 +17,8 @@ class HarvestsController < ApplicationController
       ORDER BY harvests.date
       SQL
 
-      @harvests = Harvest.find_by_sql Arel.sql(urgent_harvests_query)
+
+      @harvests = Harvest.find_by_sql(urgent_harvests_query).group_by(&:date)
 
     # Retrieve harvests needing people - to be joined with upper query
     # Facon degueulasse
@@ -27,4 +28,14 @@ class HarvestsController < ApplicationController
     # Facon plus propre ne fonctionne pas - a creuser
     # Harvest.where('harvesters_number > harvesters.count')
   end
+
+  def send_notif
+     @users = User.all
+     @users.each { |user| user.send_emergency_email }
+     redirect_to harvests_path, notice: "Notifications envoyées !"
+  end
+
 end
+
+
+

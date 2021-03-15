@@ -25,14 +25,12 @@ import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initModal } from '../plugins/init_modal';
 import { initSearch } from "../plugins/init_search";
-import { calculateDistance } from "../plugins/calculate_distance"
 import { Button } from "bootstrap"
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
-  calculateDistance();
-  initModal();
   initSearch();
+  initModal();
   const tabs = document.querySelectorAll('.tab');
   const tabContainers = document.querySelectorAll('.tab-container');
 
@@ -46,6 +44,16 @@ document.addEventListener('turbolinks:load', () => {
         const activeContainer = document.getElementById(`shops-${contentId}-container`);
         activeContainer.classList.add('active');
       });
+    });
+  }
+
+  const heart = document.getElementById('heart-fav');
+  if (heart) {
+    heart.addEventListener('click', () => {
+      heart.classList.add('heartpop');
+      setTimeout(() => {
+        heart.classList.remove('heartpop');
+      }, 400);
     });
   }
 

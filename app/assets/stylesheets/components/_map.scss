@@ -1,24 +1,41 @@
 // MOTEUR
 #geo-search {
   display:flex;
+  justify-content:center;
+  width:100%;
+  padding:0 1rem;
+  overflow:hidden;
   * {
-    padding:4px 8px;
+    padding:0.125rem 0.1875rem;
+    border:none;
   }
-  .mapboxgl-ctrl, select {
-    margin-right:16px;
+  input:first-child {
+    border-radius:1.5rem 0 0 1.5rem;
+    flex-grow:5;
+    padding-left:1em;
+    // width:-webkit-fill-available;
   }
-  input#place {
-    border-radius:16px 0 0 16px;
+  button:first-of-type {
+    border-right:1px dotted black;
   }
-  #radius {
-    margin-right:0;
+  select {
+    flex-grow:2;
+    padding-left:1em;
+    border-right:1px dotted black;
   }
-  input#search-submit {
-    border-radius:0 16px 16px 0;
+  button:last-child {
+    border-radius:0 1.5rem 1.5rem 0;
+  }
+  button {
+    background-color:white;
   }
 }
 
 // MAP
+
+div#shops-map-container {
+  max-height:66vh;
+}
 
 .mapboxgl-popup {
   max-width: 200px;
@@ -52,4 +69,8 @@
 
 .mapbox-gl-canvas {
   width:100%;
+}
+
+.mapboxgl-ctrl-attrib-inner {
+  display:none;
 }
