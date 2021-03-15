@@ -47,7 +47,23 @@ class PartnersController < ApplicationController
     end
 
     @markers = [{ lat: @partner.latitude, lng: @partner.longitude, i_window: "none" }]
-    @harvests = Harvest.where('date >= ?', DateTime.now).where(partner: @partner.id).order(:date)
+    urgent_harvests_query = <<~SQL
+      WITH harvesters_count AS
+      (SELECT harvest_id AS id, count(id) AS compteur FROM harvesters GROUP BY harvesters.harvest_id ORDER BY compteur DESC)
+      SELECT
+          harvests.id,
+          harvests.date,
+          harvests.partner_id,
+          harvests.harvesters_number
+      FROM harvests
+      LEFT OUTER JOIN harvesters_count ON harvesters_count.id = harvests.id
+      WHERE (harvesters_count.compteur < harvests.harvesters_number OR harvesters_count.id IS NULL) AND harvests.partner_id = ?
+      GROUP BY harvests.date, harvests.id
+      ORDER BY harvests.date
+      SQL
+
+
+    @harvests = Harvest.find_by_sql([urgent_harvests_query, @partner.id])
   end
 
   def new
