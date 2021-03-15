@@ -25,13 +25,12 @@ import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initModal } from '../plugins/init_modal';
 import { initSearch } from "../plugins/init_search";
-import { calculateDistance } from "../plugins/calculate_distance"
 import { Button } from "bootstrap"
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
-  initModal();
   initSearch();
+  initModal();
   const tabs = document.querySelectorAll('.tab');
   const tabContainers = document.querySelectorAll('.tab-container');
 
