@@ -19,7 +19,7 @@ class UserMailer < ApplicationMailer
 
     @harvests = Harvest.find_by_sql(urgent_harvests_query).group_by(&:date)
     @user = params[:user] # Instance variable => available in view
-    mail(to: @user.email, subject: 'Récoltes urgentes')
+    mail(to: "lucrecegugelot@gmail.com", subject: 'Récoltes urgentes')
 
     # This will render a view in `app/views/user_mailer`!
   end
