@@ -9,6 +9,10 @@ color: green-25;
 
 .btn-oval-full-green {
   display: flex;
+
+  :hover {
+  	color: white;
+  }
 }
 
 .btn-logout:hover {
