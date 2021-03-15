@@ -43,15 +43,20 @@
 
     <h1 class="inset">Prochaines récoltes</h1>
 
-  <!-- <div class="harvest-date full">
-    <p class="date">Mar 16/03/2021</p>
-    <p class="missing">2/2 inscrits</p>
-    <div class="date-action">
-    </div>
-  </div> -->
+    <% @harvests.each do |harvest| %>
+      <div class="harvest-date missing">
+        <p class="date"><%= harvest.date %></p>
+        <p class="missing">1/2 inscrits</p>
+        <div class="date-action">
+          <%= link_to harvesters_path(:harvest_id => harvest.id), method: :post, remote: true do %>
+            <div class="register" id=""><i class="fas fa-plus"></i></div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
 
   <div class="harvest-date missing">
-    <p class="date">Mer 17/03/2021</p>
+    <p class="date">Mer 30/08/2021</p>
     <p class="missing">1/2 inscrits</p>
     <div class="date-action">
       <div class="register" id=""><i class="fas fa-plus"></i></div>
@@ -59,7 +64,7 @@
   </div>
 
   <div class="harvest-date registered">
-    <p class="date">Mer 17/03/2021</p>
+    <p class="date">Mer 30/08/2021</p>
     <p class="missing">vous participez</p>
     <div class="date-action">
       <div class="cancel" id=""><i class="fas fa-times"></i></div>

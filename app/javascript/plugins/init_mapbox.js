@@ -18,7 +18,7 @@ const initMapbox = () => {
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
-    // console.log(markers);
+    console.log(markers);
     markers.forEach((marker) => {
       const element = document.createElement('i');
       element.classList.add('fas');

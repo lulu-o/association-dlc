@@ -4,8 +4,8 @@
   <%= text_field_tag :place, params["search-type"] == "geolocation" ? "Ma position" : params[:place] || current_user.full_address, {:required => 'required', "data-coords" => params[:place]} %>
     <%= button_tag(type: "button", id: "geoloc") do %>
     <i class="fas fa-map-marker-alt"></i>
-  <% end %>  
-  <%= hidden_field_tag "search-type", params[:search_type] || "text" %>
+  <% end %>
+  <%= hidden_field_tag "search-type", params["search-type"] || "text" %>
   <%= select_tag :radius,
         options_for_select([
           ["2km", "2"],
