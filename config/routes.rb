@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   resources :harvesters, only: [:show, :create, :destroy]
   resources :distributions, only: [:new, :create, :index, :show, :edit, :update]
 
+  resources :admin, only: [:index]
+
   post 'notifications', to: 'harvests#send_notif'
 
  # root to: 'harvests#index'
