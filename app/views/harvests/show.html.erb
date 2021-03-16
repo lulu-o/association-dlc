@@ -1,0 +1,6 @@
+<h2>Show Harvest</h2>
+<%= @harvest.date %>
+
+<% @harvest.harvesters.each do |harvester| %>
+  <p><%= harvester.user.first_name %></p>
+<% end %>
