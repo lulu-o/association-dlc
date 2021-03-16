@@ -1,3 +1,9 @@
-<div class="card-template-urgence">
-
-Le <%= harvest.date.strftime("%d/%m/%Y") %> à <%= harvest.hour.strftime("%H:%M") %> chez <%= harvest.partner.name %> il y a <%= harvest.harvesters.count %> inscrit pour <%= harvest.harvesters_number %> nécessaires.
+<tr>
+      <th scope="row"><%= harvest.id %></th>
+      <td><%= harvest.date.strftime("%d/%m/%Y") %></td>
+      <td><%= harvest.hour.strftime("%H:%M")  %></td>
+      <td><%= harvest.partner.name %></td>
+      <td><%= harvest.harvesters.count %></td>
+      <td><%= harvest.harvesters_number %></td>
+      <td><i class="fas fa-user-times"></i></td>
+    </tr>

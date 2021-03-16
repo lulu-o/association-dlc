@@ -1,26 +1,31 @@
-Les récoltes suivantes posent problème
-  <p>Cette semaine, il manque du monde sur les crénaux suivants : </p>
-  <!-- CARDS -->
-
-  <div class="cards">
+<h1>Les récoltes suivantes posent problème</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Date</th>
+      <th scope="col">Heure</th>
+      <th scope="col">Partenaire</th>
+      <th scope="col">Nb Inscrits</th>
+      <th scope="col">Inscrits nécessaires</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
     <% @harvests.each do |date, harvests_details| %>
-      <p class="date-harvest mt-4"><%= l(date, format: "%A %d %B %Y") %></p>
-      <% harvests_details.each do |harvest| %>
+    <tr>
+      <th colspan="7"><%= l(date, format: "%A %d %B %Y") %></th>
+    </tr>
+    <% harvests_details.each do |harvest| %>
         <%= render partial: "problematics_harvests", locals: { harvest: harvest } %>
       <% end %>
     <% end %>
-  </div>
+  </tbody>
+</table>
 
-  <div class="cards">
-    <% @non_distributed_harvests.each do |date, non_distributed_harvest| %>
-      <p class="date-harvest mt-4"><%= l(date, format: "%A %d %B %Y") %></p>
-      <% non_distributed_harvest.each do |harvest| %>
-        <%= render partial: "non_distributed_harvests", locals: { harvest: harvest } %>
-      <% end %>
-    <% end %>
-  </div>
+<br><br><br><br>
 
-
+<h1>Récoltes qui n'ont pas de distribution planifiée</h1>
 <table class="table">
   <thead>
     <tr>
@@ -32,51 +37,21 @@ Les récoltes suivantes posent problème
     </tr>
   </thead>
   <tbody>
+    <% @non_distributed_harvests.each do |date, non_distributed_harvest| %>
     <tr>
-      <th colspan="6">21/03/2021</th>
+      <th colspan="6"><%= l(date, format: "%A %d %B %Y") %></th>
     </tr>
-    <tr>
-      <th scope="row">339</th>
-      <td>21/03/2021</td>
-      <td>19:00</td>
-      <td>Carrefour Angers</td>
-      <td><i class="fas fa-user-times"></i></td>
-      <td><i class="fas fa-user-edit"></i></td>
-    </tr>
-  </tbody>
-</table>
-
-
-
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Zipcode</th>
-      <th scope="col">City</th>
-      <th colspan="2">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
-    <tr>
-      <th scope="row"><%= user.id %></th>
-      <td><%= user.first_name %></td>
-      <td><%= user.last_name %></td>
-      <td><%= user.email %></td>
-      <td><i class="fas fa-user-times"></i></td>
-      <td><i class="fas fa-user-edit"></i></td>
-    </tr>
+    <% non_distributed_harvest.each do |harvest| %>
+        <%= render partial: "non_distributed_harvests", locals: { harvest: harvest } %>
+    <% end %>
     <% end %>
   </tbody>
 </table>
 
-
 <br><br><br><br>
 
-
+<h1>Liste des partenaires</h1>
+<button type="button" class="btn btn-primary btn-sm">Nouveau partenaire</button>
 <table class="table">
   <thead>
     <tr>
@@ -100,3 +75,33 @@ Les récoltes suivantes posent problème
     <% end %>
   </tbody>
 </table>
+<button type="button" class="btn btn-primary btn-sm">Nouveau partenaire</button>
+
+<br><br><br><br>
+
+<h1>Liste des utilisateurs</h1>
+<button type="button" class="btn btn-primary btn-sm">Nouvel utilisateur</button>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Zipcode</th>
+      <th scope="col">City</th>
+      <th colspan="2">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <th scope="row"><%= user.id %></th>
+      <td><%= user.first_name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= user.email %></td>
+      <td><i class="fas fa-user-times"></i></td>
+      <td><i class="fas fa-user-edit"></i></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<button type="button" class="btn btn-primary btn-sm">Nouvel utilisateur</button>
