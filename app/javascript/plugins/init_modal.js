@@ -1,6 +1,9 @@
 const initModal = () => {
   const modalWindow = document.getElementById("modal-window");
   if (modalWindow) {
+
+
+
     // Eléments de la modale (message, nom du magasin, date, boutons)
     const introTag = document.getElementById("intro-text");
     const modalShop = document.getElementById("modal-shop");
@@ -11,6 +14,7 @@ const initModal = () => {
     const buttons = document.querySelectorAll(".date-action > div");
 
     buttons.forEach((button) => {
+
       button.addEventListener('click', () => {
         const shop = button.dataset.shop;
         const date = button.dataset.date;
@@ -27,7 +31,6 @@ const initModal = () => {
         } else {
             introTag.innerText = "Confirmez votre inscription pour la récolte :";
         }
-        confirmButton.setAttribute("data-remote", "true");
         confirmButton.setAttribute("data-method", method);
         confirmButton.setAttribute("href", url);
         // Insérer les données magasin + date
@@ -41,10 +44,12 @@ const initModal = () => {
       });
     });
 
+
     // Au clic sur Annuler, masquer la modale
     cancelButton.addEventListener('click', () => {
       cancelButton.classList.add("revert-red");
       modalWindow.classList.add("transparent");
+
       setTimeout(() => {
         modalWindow.classList.remove("z10");
         cancelButton.classList.remove("revert-red");
