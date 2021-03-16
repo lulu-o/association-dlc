@@ -40,7 +40,7 @@ class PartnersController < ApplicationController
   end
 
   def show
-    @partner = Partner.joins(:harvests).where("harvests.date > ?", Time.now).find(params[:id])
+    @partner = Partner.joins(:harvests).find(params[:id])
     @is_favorite = Favorite.includes(:partner).where('user_id = ? AND partner_id = ?', current_user.id, @partner.id)
     if @is_favorite.blank?
       # @is_favorite = Favorite.new
@@ -50,7 +50,7 @@ class PartnersController < ApplicationController
 
     @markers = [{ lat: @partner.latitude, lng: @partner.longitude, i_window: "none" }]
 
-    @harvests = @partner.harvests.joins(:harvesters)
+    @harvests = Harvest.joins(:partner).where("harvests.date > ? AND partner_id = ?", Time.now, @partner)
     # raise
   end
 

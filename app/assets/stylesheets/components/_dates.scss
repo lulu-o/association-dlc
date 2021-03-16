@@ -20,7 +20,7 @@
     letter-spacing: 0.5px;
   }
 
-  .missing {
+  .count{
     font-size: .9rem;
     font-weight: normal;
   }
@@ -35,7 +35,7 @@
   background-color: $green;
   color:white;
 
-  .missing {
+  .count {
     font-weight: lighter;
   }
 
@@ -48,7 +48,6 @@
 
 
 /* BOUTON INSCRIPTION */
-
 .harvest-date > div.date-action {
   cursor:pointer;
   display:flex;
