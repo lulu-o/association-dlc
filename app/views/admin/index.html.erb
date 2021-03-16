@@ -1,0 +1,68 @@
+Les récoltes suivantes posent problème
+  <p>Cette semaine, il manque du monde sur les crénaux suivants : </p>
+  <!-- CARDS -->
+
+  <div class="cards">
+    <% @harvests.each do |date, harvests_details| %>
+      <p class="date-harvest mt-4"><%= l(date, format: "%A %d %B %Y") %></p>
+      <% harvests_details.each do |harvest| %>
+        <%= render partial: "problematics_harvests", locals: { harvest: harvest } %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="cards">
+    <% @non_distributed_harvests.each do |date, non_distributed_harvest| %>
+      <p class="date-harvest mt-4"><%= l(date, format: "%A %d %B %Y") %></p>
+      <% non_distributed_harvest.each do |harvest| %>
+        <%= render partial: "non_distributed_harvests", locals: { harvest: harvest } %>
+      <% end %>
+    <% end %>
+  </div>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Zipcode</th>
+      <th scope="col">City</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <th scope="row"><%= user.id %></th>
+      <td><%= user.first_name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= user.email %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br><br><br><br>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Zipcode</th>
+      <th scope="col">City</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @partners.each do |partner| %>
+    <tr>
+      <th scope="row"><%= partner.id %></th>
+      <td><%= partner.name %></td>
+      <td><%= partner.zipcode %></td>
+      <td><%= partner.city %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
