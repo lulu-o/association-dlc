@@ -17,9 +17,9 @@ class UserMailer < ApplicationMailer
       ORDER BY harvests.date
     SQL
 
-    @harvests = Harvest.find_by_sql Arel.sql(urgent_harvests_query)
+    @harvests = Harvest.find_by_sql(urgent_harvests_query).group_by(&:date)
     @user = params[:user] # Instance variable => available in view
-    mail(to: @user.email, subject: 'Récoltes urgentes')
+    mail(to: "lucrecegugelot@gmail.com", subject: 'Récoltes urgentes')
 
     # This will render a view in `app/views/user_mailer`!
   end

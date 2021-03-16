@@ -1,5 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <style>
+      /* Email styles need to be inline */
+    .card-urgence {
+    background: white;
+    box-shadow: $box-shadow;
+    margin-bottom: 10px;
+    padding: 15px;
+    min-height: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: $card-radius;
+  }
+
+    </style>
+  </head>
+
+<body class="card-urgence">
+
+
 <p>Bonjour <%= @user.email %>,</p>
 
-<p>Voici la liste des récoltes urgentes. Merci à tout ceux qui pourront s'inscrire :)</p>
-<p>
+<p>Voici la liste des récoltes urgentes. Merci :)</p>
+<p class="card-urgence distance-label"> <%= render partial: "harvests", locals: { harvests: @harvests } %></p>
 <p>Bonnes récoltes !</p>
+
+</body>
+</html>

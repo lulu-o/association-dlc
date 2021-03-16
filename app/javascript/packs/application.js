@@ -8,12 +8,10 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
-import { initFlatpickr } from "../plugins/flatpickr"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
 
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
@@ -25,41 +23,21 @@ import "bootstrap";
 
 // Internal imports
 import { initMapbox } from '../plugins/init_mapbox';
-import { initModal } from '../plugins/init_modal';
 import { initSearch } from "../plugins/init_search";
-import { Button } from "bootstrap"
+import { initModal } from '../plugins/init_modal';
+import { tabs } from "../plugins/tabs";
+import { favs } from "../plugins/heart";
+import { Button } from "bootstrap";
+import { initFlatpickr } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
+  console.log("test");
 
   initFlatpickr();
-
   initMapbox();
   initSearch();
   initModal();
-  const tabs = document.querySelectorAll('.tab');
-  const tabContainers = document.querySelectorAll('.tab-container');
-
-  if (tabs) {
-    tabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
-        tabs.forEach((element) => {element.classList.remove('active')});
-        tab.classList.add('active');
-        tabContainers.forEach((container) => { container.classList.remove('active') });
-        const contentId = tab.id.split('-')[1];
-        const activeContainer = document.getElementById(`shops-${contentId}-container`);
-        activeContainer.classList.add('active');
-      });
-    });
-  }
-
-  const heart = document.getElementById('heart-fav');
-  if (heart) {
-    heart.addEventListener('click', () => {
-      heart.classList.add('heartpop');
-      setTimeout(() => {
-        heart.classList.remove('heartpop');
-      }, 400);
-    });
-  }
+  tabs();
+  favs();
 
 });

@@ -14,7 +14,30 @@ class DistributionsController < ApplicationController
   end
 
   def create
-    @distribution = Distribution.new(params[:distribution])
-    @distribution.save
+    @distribution = Distribution.new(params[:id])
+    if @distribution.save
+      redirect_to new_user_session_path
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @distribution = Distribution.find(params[:id])
+  end
+
+  def update
+    @distribution = Distribution.find(params[:id])
+    @distribution.update(distribution_params)
+
+    # no need for app/views/restaurants/update.html.erb
+    redirect_to distribution_path(@distribution)
+  end
+
+
+private
+
+  def distribution_params
+      params.require(:distribution).permit(:date, :hour, :address, :zipcode, :city, :baskets_number, :description, :need_bag, :need_cooler, :informations)
   end
 end
