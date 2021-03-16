@@ -13,4 +13,8 @@ class Harvest < ApplicationRecord
   def user_registered?(user_id)
     self.harvesters.any? {|harvester| harvester.user_id == user_id}
   end
+
+  def harvest_label
+    "#{date} - #{name}"
+  end
 end

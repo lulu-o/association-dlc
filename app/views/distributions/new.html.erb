@@ -1,4 +1,66 @@
+<%= simple_form_for(@distribution) do |f| %>
+  <div class="distribution-form-container">
+    <div class="form-user">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="text-right inset">J'organise ma distribution</h1>
+      </div>
+
+      <div class="row mt-2">
+        <div class="mt-3 col-12">
+          <label class="labels">1. De quelle récolte souhaitez-vous planifier la distribution</label>
+          <%= f.collection_select :harvest, @harvests, :id, :harvest_label %>
+        </div>
+        <div class="mt-3 col-12">
+          <%= f.input :baskets_number, label: "Le nombre de paniers", type: "number", class: "form-control" %>
+        </div>
+        <div class="mt-3 col-12">
+          <%= f.input :description, label: "Description", class: "form-control" %>
+        </div>
+
+        <div class="mt-3 col-12">
+          <p>Équipements nécessaires</p>
+        </div>
+        <div class="bags d-flex justify-content-around col-12">
+          <div class="form-check mt-3">
+            <%= f.check_box :need_bag, class: "form-check-input" %>
+            <%= f.label :need_bag, "Sacs et cabas", class: "form-check-label text-center"  %>
+          </div>
+          <div class="form-check mt-3">
+            <%= f.check_box :need_cooler, class: "form-check-input" %>
+            <%= f.label :need_cooler, "Glacière obligatoire", class: "form-check-label text-center"  %>
+          </div>
+        </div>
+        <div class="mt-3 col-12">
+          <%= f.input :address, label: "Adresse de la distriution", class: "form-control" %>
+        </div>
+        <div class="mt-3 col-6">
+          <%= f.input :zipcode, label: "Code postal", class: "form-control" %>
+        </div>
+        <div class="mt-3 col-6">
+          <%= f.input :city, label: "Ville", class: "form-control" %>
+        </div>
+        <div class="mt-3 col-6">
+          <%= f.input :date, label: "Date", class: "form-control datepicker" %>
+        </div>
+        <div class="mt-3 col-6">
+          <%= f.input :hour, label: "Heure", class: "form-control timepicker" %>
+        </div>
+        <div class="mt-3 col-12">
+          <%= f.input :informations, label: "Informations complémentaires", class: "form-control" %>
+        </div>
+
+        <div class="form-actions mt-1 col-6 offset-6">
+          <%= f.button :submit, value: "Sauvegarder", class: "btn btn-oval-full-green profile-button" %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<!--
 <form method="post" action="/distributions" class="button-to">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
   <div class="distribution-form-container">
 
   <div class="form-user">
@@ -11,14 +73,14 @@
         <label class="labels">1. De quelle récolte souhaitez-vous planifier la distribution</label>
         <select name="harvest_id" id="harvest_id" class="form-control" >
           <% @harvests.each do |harvest| %>
-            <option value="harvest.id" label="<%= l(harvest.date, format: "%a %d/%m/%y").capitalize %> - <%= harvest.name %>"></option>
+            <option value="<%= harvest.id %>" label="<%= l(harvest.date, format: "%a %d/%m/%y").capitalize %> - <%= harvest.name %>"></option>
           <% end %>
         </select>
       </div>
 
       <div class="mt-3 col-12">
         <label class="labels">Le nombre de panier</label>
-        <input type="text" class="form-control" placeholder="" value="" id="baskets_number">
+        <input type="number" class="form-control" placeholder="" value="" id="baskets_number">
       </div>
 
       <div class="mt-3 col-12">
@@ -82,3 +144,5 @@
   </div>
 </div>
 </form>
+
+-->
