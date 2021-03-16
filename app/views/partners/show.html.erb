@@ -43,6 +43,8 @@
 
   <h1 class="inset">Prochaines récoltes</h1>
 
+  <input type="text" class="form-control" placeholder="" value="" id="date">
+
   <% @harvests.each do |harvest| %>
     <% if harvest.user_registered?(current_user.id) %>
       <% harvester = harvest.harvesters.find_by(:user_id => current_user) %>

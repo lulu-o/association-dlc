@@ -7,6 +7,16 @@
     img {
       margin-bottom: 1rem;
     }
+    a {
+      display: inline-block;
+    }
+    p {
+      font-size: .9rem;
+    }
+    .card-title {
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
   }
 
   button.mapboxgl-popup-close-button {
