@@ -75,6 +75,16 @@
         <% end %>
         </div>
         <p class="btn-distribution">voir mes dernières distributions</p>
+        <% @past_distributions.each do |past_distribution| %>
+          ID distribution : <%= past_distribution.id %><br>
+          Date distribution : <%= past_distribution.date.strftime("%d/%m/%Y") %><br>
+          Heure distribution : <%= past_distribution.hour.strftime("%H:%M") %><br>
+          Adresse distribution : <%= past_distribution.address %><br>
+          Code Postal distribution : <%= past_distribution.zipcode %><br>
+          Ville distribution : <%= past_distribution.city %><br>
+          ID récolte : <%= past_distribution.harvest.id %><br>
+          Nom partenaire : <%= past_distribution.harvest.partner.name %><br>
+        <% end %>
       </div>
     </div>
   </div>
@@ -118,7 +128,7 @@
           </div>
         </div>
       </div>
-      
+
     </div>
   </div>
 

@@ -11,6 +11,7 @@ class DistributionsController < ApplicationController
     @harvests = Harvest.find_by_sql([my_harvests_to_distribute, current_user.id, Date.today - 2.days, Date.today])
 
     @user = User.find_by_id(current_user.id)
+
   end
 
   def create
