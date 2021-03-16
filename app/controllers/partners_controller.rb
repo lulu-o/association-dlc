@@ -17,7 +17,6 @@ class PartnersController < ApplicationController
     @place_coord = Geocoder.search(@place)[0].data
     # Remonter tous les partenaires autour de ce lieu
     @partners = Partner.near(@place, @radius)
-    # raise
     @partners.each do |partner|
       partner.distance = Geocoder::Calculations.distance_between([@place_coord["lat"], @place_coord["lon"]], [partner.latitude, partner.longitude]).truncate(1)
     end
@@ -33,10 +32,9 @@ class PartnersController < ApplicationController
           infoWindow: render_to_string(partial: "partners/info_window", locals: { partner: partner })
         }
       end
+      @markers << {lat: @place_coord["lat"], lng: @place_coord["lon"], i_window: "none", type: "position"}
     end
 
-    # current_user.last_search = params[:place]
-    # current_user.save
   end
 
   def show
@@ -49,9 +47,7 @@ class PartnersController < ApplicationController
     end
 
     @markers = [{ lat: @partner.latitude, lng: @partner.longitude, i_window: "none" }]
-
     @harvests = Harvest.joins(:partner).where("harvests.date > ? AND partner_id = ?", Time.now, @partner)
-    # raise
   end
 
   def new
