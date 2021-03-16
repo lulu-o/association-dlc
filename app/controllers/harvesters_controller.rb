@@ -9,13 +9,15 @@ class HarvestersController < ApplicationController
 	  harvest = Harvest.find(params[:harvest_id])
     harvester = Harvester.new(user: current_user, harvest: harvest)
     harvester.save!
-    redirect_to partner_path(harvest.partner)
+    redirect_back(fallback_location: root_path)
+    # redirect_to partner_path(harvest.partner)
   end
 
   def destroy
     harvester = Harvester.find(params[:id])
     harvester.destroy
-    redirect_to partner_path(harvester.harvest.partner)
+    redirect_back(fallback_location: root_path)
+    # redirect_to partner_path(harvester.harvest.partner)
   end
 
 end
