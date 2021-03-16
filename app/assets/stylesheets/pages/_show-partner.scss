@@ -13,6 +13,7 @@
 		margin-right: 1rem;
 		padding-top: 1rem;
 	}
+
 	.store {
 		font-weight: bold;
 	}
@@ -25,6 +26,7 @@
 		align-items:center;
 		justify-content:center;
 	}
+
 	.heart {
 		color: $red;
 		font-size: 25px;
@@ -35,7 +37,6 @@
 }
 
 /* ANIMATION BOUTON */
-
 .heartpop {
 	transition:0.4s;
   animation-duration:0.4s;
