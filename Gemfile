@@ -40,7 +40,7 @@ gem 'rails-i18n'
 gem 'devise-i18n'
 
 
- gem "actionmailer_inline_css"
+gem "actionmailer_inline_css"
 
 gem 'flatpickr'
 

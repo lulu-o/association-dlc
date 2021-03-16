@@ -1,6 +1,12 @@
+.distribution-form-container {
+  margin-top: 1rem;
+  padding: 0 1.25rem;
+}
+
 .tag-item {
   display: inline-block;
 }
+
 .form-check-input {
   position: absolute;
   transform: scale(0);
@@ -17,6 +23,7 @@
   border: 1px solid $green;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
+  font-size: 14px;
 }
 
 .form-check-input:checked + label {
