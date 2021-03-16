@@ -1,16 +1,12 @@
-
 <!-- <p id="notice"><%= notice %></p> -->
-
 
 <div class="card-body">
   <%= image_tag partner.brand.logo, alt: "Carrefour", width: 30 %>
   <h5 class="card-title"><%= partner.name %></h5>
-<div class="distance">
-  <p class="distance-label" lat="<%= partner.latitude %>" lng="<%= partner.longitude %>"><span class="dist-number"><%= partner.distance %> km</span></p>
-</div>
-
-
-  <p class="btn-lg btn-oval-emergency"><%= link_to "Voir le magasin", partner_path(partner) %></p>
+	<div class="distance">
+	  <p class="distance-label" lat="<%= partner.latitude %>" lng="<%= partner.longitude %>"><span class="dist-number"><%= partner.distance %> km</span></p>
+	</div>
+  <%= link_to "Voir le magasin", partner_path(partner), class: "btn-lg btn-oval-emergency"%>
 </div>
 
 

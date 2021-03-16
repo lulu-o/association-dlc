@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_15_113927) do
+ActiveRecord::Schema.define(version: 2021_03_16_084459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,9 +68,9 @@ ActiveRecord::Schema.define(version: 2021_03_15_113927) do
     t.string "address"
     t.string "zipcode"
     t.string "city"
-    t.bigint "users_id"
+    t.bigint "user_id"
     t.index ["harvest_id"], name: "index_distributions_on_harvest_id"
-    t.index ["users_id"], name: "index_distributions_on_users_id"
+    t.index ["user_id"], name: "index_distributions_on_user_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -153,7 +153,7 @@ ActiveRecord::Schema.define(version: 2021_03_15_113927) do
   add_foreign_key "association_partners", "partners"
   add_foreign_key "contacts", "partners"
   add_foreign_key "distributions", "harvests"
-  add_foreign_key "distributions", "users", column: "users_id"
+  add_foreign_key "distributions", "users"
   add_foreign_key "favorites", "partners"
   add_foreign_key "favorites", "users"
   add_foreign_key "harvest_slots", "partners"

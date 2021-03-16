@@ -2,69 +2,67 @@
 
   <div class="header-show">
     <h1 class="store" id="partner-name"><%= @partner.name %></h1>
-      <% if @is_favorite.first.nil? %>
-        <%= link_to user_favorites_path(@partner), remote: :true, method: :post do  %>
-          <p><div id="heart-container"><i class="far fa-heart heart" id="heart-fav"></i></div></p>
+    <% if @is_favorite.first.nil? %>
+      <%= link_to user_favorites_path(@partner), remote: :true, method: :post do  %>
+        <p><div id="heart-container"><i class="far fa-heart heart" id="heart-fav"></i></div></p>
 
-        <% end %>
-      <% else %>
-        <%= link_to favorite_path(@is_favorite.first), remote: :true, method: :delete, class: "fav" do %>
-           <p><div id="heart-container"><i class="fas fa-heart heart" id="heart-fav"></i></div></p>
-        <% end %>
+      <% end %>
+    <% else %>
+      <%= link_to favorite_path(@is_favorite.first), remote: :true, method: :delete, class: "fav" do %>
+          <p><div id="heart-container"><i class="fas fa-heart heart" id="heart-fav"></i></div></p>
+      <% end %>
     <% end %>
   </div>
 
   <!-- INFO MAG -->
-
-    <div class="card-template-address-mag">
-      <div class="card-address-mag">
-        <p id="partner-address"><%= @partner.address %></p>
-        <p id="partner-city"><%= @partner.zipcode %> <%= @partner.city %></p>
-      </div>
+  <div class="card-template-address-mag">
+    <div class="card-address-mag">
+      <p id="partner-address"><%= @partner.address %></p>
+      <p id="partner-city"><%= @partner.zipcode %> <%= @partner.city %></p>
     </div>
+  </div>
 
   <!-- CARD HOUR -->
-    <div class="card-template-hour">
-      <div class="card-hour">
-        <p>Heure de la récolte</p>
-        <p>18h00</p>
-      </div>
+  <div class="card-template-hour">
+    <div class="card-hour">
+      <p>Heure de la récolte</p>
+      <p>18h00</p>
     </div>
+  </div>
 
   <!-- CARD CONTACT -->
-    <div class="card-template-contact">
-      <div class="card-contact">
-        <h4>Contact</h4>
-        <% @partner.contacts.each do |contact| %>
-          <p><i class="fas fa-user"></i>  <%= contact.first_name %> <%= contact.last_name %></p>
-          <p><i class="fas fa-mobile-alt"></i>  <a href="tel:<%= contact.phone_number %>"> <%= contact.phone_number %></a></p>
-        <% end %>
-      </div>
-    </div>
-
-    <h1 class="inset">Prochaines récoltes</h1>
-
-    <% @harvests.each do |harvest| %>
-      <% if harvest.user_registered?(current_user.id) %>
-        <% harvester = harvest.harvesters.find_by(:user_id => current_user) %>
-        <div class="harvest-date registered">
-          <p class="date"><%= l(harvest.date, format: "%a %d/%m/%y").capitalize %></p>
-          <p>vous participez</p>
-          <div class="date-action">
-            <div class="cancel" data-remote="true" data-method="delete" data-url="<%= harvester_path(harvester.id) %>"><i class="fas fa-times"></i></div>
-          </div>
-        </div>
-      <% else %>
-        <div class="harvest-date missing">
-          <p class="date"><%= l(harvest.date, format: "%a %d/%m/%y").capitalize %></p>
-            <p> <%= harvest.harvesters.count %>/<%= harvest.harvesters_number %> participants </p>
-          <div class="date-action">
-            <div class="register" data-remote="true" data-method="post" data-url="<%= harvesters_path(:harvest_id => harvest.id) %>"><i class="fas fa-plus"></i></div>
-          </div>
-        </div>
+  <div class="card-template-contact">
+    <div class="card-contact">
+      <h4>Contact</h4>
+      <% @partner.contacts.each do |contact| %>
+        <p><i class="fas fa-user"></i>  <%= contact.first_name %> <%= contact.last_name %></p>
+        <p><i class="fas fa-mobile-alt"></i>  <a href="tel:<%= contact.phone_number %>"> <%= contact.phone_number %></a></p>
       <% end %>
-    <% end %>
+    </div>
+  </div>
 
+  <h1 class="inset">Prochaines récoltes</h1>
+
+  <% @harvests.each do |harvest| %>
+    <% if harvest.user_registered?(current_user.id) %>
+      <% harvester = harvest.harvesters.find_by(:user_id => current_user) %>
+      <div class="harvest-date registered">
+        <p class="date"><%= l(harvest.date, format: "%a %d/%m/%y").capitalize %></p>
+        <p class="count">vous participez</p>
+        <div class="date-action">
+          <div class="cancel" data-remote="true" data-method="delete" data-url="<%= harvester_path(harvester.id) %>"><i class="fas fa-times"></i></div>
+        </div>
+      </div>
+    <% else %>
+      <div class="harvest-date missing">
+        <p class="date"><%= l(harvest.date, format: "%a %d/%m/%y").capitalize %></p>
+          <p class="count"> <%= harvest.harvesters.count %>/<%= harvest.harvesters_number %> participants </p>
+        <div class="date-action">
+          <div class="register" data-remote="true" data-method="post" data-url="<%= harvesters_path(:harvest_id => harvest.id) %>"><i class="fas fa-plus"></i></div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 
   <div id="map" class="show"
       style="width: 100%; height: 500px;"
