@@ -4,3 +4,5 @@
 <% @harvest.harvesters.each do |harvester| %>
   <p><%= harvester.user.first_name %></p>
 <% end %>
+
+<%= link_to "Fiche magasin", partner_path(@harvest.partner)%>

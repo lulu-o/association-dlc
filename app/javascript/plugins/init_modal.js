@@ -1,7 +1,6 @@
 const initModal = () => {
   const modalWindow = document.getElementById("modal-window");
   if (modalWindow) {
-    const shop = document.getElementById("partner-name").innerText;
     // Eléments de la modale (message, nom du magasin, date, boutons)
     const introTag = document.getElementById("intro-text");
     const modalShop = document.getElementById("modal-shop");
@@ -13,11 +12,15 @@ const initModal = () => {
 
     buttons.forEach((button) => {
       button.addEventListener('click', () => {
+        const shop = button.dataset.shop;
+        const date = button.dataset.date;
         const url = button.dataset.url;
         const method = button.dataset.method;
-        button.classList.add('pop');
+        if (button.classList.contains('label-yellow') == false) {
+          button.classList.add('pop');
+        }
         modalWindow.classList.add("z10");
-        const date = button.parentElement.parentElement.querySelector('.date').innerText;
+
         // Vérifier la classe css du bouton pour afficher le bon message
         if (button.classList.contains('cancel')) {
             introTag.innerText = "Souhaitez-vous vous désinscrire pour la récolte :";
