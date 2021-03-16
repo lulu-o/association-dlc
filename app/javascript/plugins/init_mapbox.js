@@ -20,11 +20,21 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     console.log(markers);
     markers.forEach((marker) => {
+      console.log(marker);
       const element = document.createElement('i');
       element.classList.add('fas');
-      element.classList.add('fa-map-marker-alt');
-      element.style.color = '#114D4D';
       element.style.fontSize = '32px';
+      if (marker.type == "position") {
+        element.classList.add('fa-user-circle');
+        element.style.color = '#EB5855';
+        element.style.backgroundColor = 'white';
+        element.style.borderRadius = '50%';
+        element.style.paddingBottom = '0';
+        element.style.marginBottom = '5px';
+      } else {
+        element.classList.add('fa-map-marker-alt');
+        element.style.color = '#114D4D';
+      }
       if (marker.i_window != "none") {
         const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
         new mapboxgl.Marker(element)
