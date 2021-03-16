@@ -1,107 +1,115 @@
-<h1>Les récoltes suivantes posent problème</h1>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Date</th>
-      <th scope="col">Heure</th>
-      <th scope="col">Partenaire</th>
-      <th scope="col">Nb Inscrits</th>
-      <th scope="col">Inscrits nécessaires</th>
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @harvests.each do |date, harvests_details| %>
-    <tr>
-      <th colspan="7"><%= l(date, format: "%A %d %B %Y") %></th>
-    </tr>
-    <% harvests_details.each do |harvest| %>
-        <%= render partial: "problematics_harvests", locals: { harvest: harvest } %>
+<div class="shops-list-container">
+  <h1 class="inset margin-inset">Les récoltes suivantes posent problème</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Date</th>
+          <th scope="col">Heure</th>
+          <th scope="col">Partenaire</th>
+          <th scope="col">Nb Inscrits</th>
+          <th scope="col">Inscrits nécessaires</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @harvests.each do |date, harvests_details| %>
+        <tr>
+          <th colspan="7"><%= l(date, format: "%A %d %B %Y") %></th>
+        </tr>
+        <% harvests_details.each do |harvest| %>
+          <%= render partial: "problematics_harvests", locals: { harvest: harvest } %>
+        <% end %>
       <% end %>
-    <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>
 
 <br><br><br><br>
 
-<h1>Récoltes qui n'ont pas de distribution planifiée</h1>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Date</th>
-      <th scope="col">Heure</th>
-      <th scope="col">Partenaire</th>
-      <th colspan="2">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @non_distributed_harvests.each do |date, non_distributed_harvest| %>
-    <tr>
-      <th colspan="6"><%= l(date, format: "%A %d %B %Y") %></th>
-    </tr>
-    <% non_distributed_harvest.each do |harvest| %>
-        <%= render partial: "non_distributed_harvests", locals: { harvest: harvest } %>
-    <% end %>
-    <% end %>
-  </tbody>
-</table>
+<div class="shops-list-container">
+  <h1 class="inset margin-inset">Récoltes qui n'ont pas de distribution planifiée</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Date</th>
+        <th scope="col">Heure</th>
+        <th scope="col">Partenaire</th>
+        <th colspan="2">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @non_distributed_harvests.each do |date, non_distributed_harvest| %>
+      <tr>
+        <th colspan="6"><%= l(date, format: "%A %d %B %Y") %></th>
+      </tr>
+      <% non_distributed_harvest.each do |harvest| %>
+          <%= render partial: "non_distributed_harvests", locals: { harvest: harvest } %>
+      <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br><br><br><br>
 
-<h1>Liste des partenaires</h1>
-<button type="button" class="btn btn-primary btn-sm">Nouveau partenaire</button>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Zipcode</th>
-      <th scope="col">City</th>
-      <th colspan="2">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @partners.each do |partner| %>
-    <tr>
-      <th scope="row"><%= partner.id %></th>
-      <td><%= partner.name %></td>
-      <td><%= partner.zipcode %></td>
-      <td><%= partner.city %></td>
-      <td><i class="fas fa-user-times"></i></td>
-      <td><i class="fas fa-user-edit"></i></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-<button type="button" class="btn btn-primary btn-sm">Nouveau partenaire</button>
+<div class="shops-list-container">
+  <h1 class="inset margin-inset">Liste des partenaires</h1>
+  <button type="button" class="btn btn-primary btn-sm">Nouveau partenaire</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Zipcode</th>
+        <th scope="col">City</th>
+        <th colspan="2">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @partners.each do |partner| %>
+      <tr>
+        <th scope="row"><%= partner.id %></th>
+        <td><%= partner.name %></td>
+        <td><%= partner.zipcode %></td>
+        <td><%= partner.city %></td>
+        <td><i class="fas fa-user-times"></i></td>
+        <td><i class="fas fa-user-edit"></i></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-primary btn-sm">Nouveau partenaire</button>
+</div>
 
 <br><br><br><br>
 
-<h1>Liste des utilisateurs</h1>
-<button type="button" class="btn btn-primary btn-sm">Nouvel utilisateur</button>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Zipcode</th>
-      <th scope="col">City</th>
-      <th colspan="2">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
-    <tr>
-      <th scope="row"><%= user.id %></th>
-      <td><%= user.first_name %></td>
-      <td><%= user.last_name %></td>
-      <td><%= user.email %></td>
-      <td><i class="fas fa-user-times"></i></td>
-      <td><i class="fas fa-user-edit"></i></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-<button type="button" class="btn btn-primary btn-sm">Nouvel utilisateur</button>
+<div class="shops-list-container">
+  <h1 class="inset margin-inset">Liste des utilisateurs</h1>
+  <button type="button" class="btn btn-primary btn-sm">Nouvel utilisateur</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Zipcode</th>
+        <th scope="col">City</th>
+        <th colspan="2">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+      <tr>
+        <th scope="row"><%= user.id %></th>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.email %></td>
+        <td><i class="fas fa-user-times"></i></td>
+        <td><i class="fas fa-user-edit"></i></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-primary btn-sm">Nouvel utilisateur</button>
+</div>
