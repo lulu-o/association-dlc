@@ -25,9 +25,38 @@ Les récoltes suivantes posent problème
   <thead>
     <tr>
       <th scope="col">ID</th>
+      <th scope="col">Date</th>
+      <th scope="col">Heure</th>
+      <th scope="col">Partenaire</th>
+      <th colspan="2">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th colspan="6">21/03/2021</th>
+    </tr>
+    <tr>
+      <th scope="row">339</th>
+      <td>21/03/2021</td>
+      <td>19:00</td>
+      <td>Carrefour Angers</td>
+      <td><i class="fas fa-user-times"></i></td>
+      <td><i class="fas fa-user-edit"></i></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
       <th scope="col">Name</th>
       <th scope="col">Zipcode</th>
       <th scope="col">City</th>
+      <th colspan="2">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -37,6 +66,8 @@ Les récoltes suivantes posent problème
       <td><%= user.first_name %></td>
       <td><%= user.last_name %></td>
       <td><%= user.email %></td>
+      <td><i class="fas fa-user-times"></i></td>
+      <td><i class="fas fa-user-edit"></i></td>
     </tr>
     <% end %>
   </tbody>
@@ -53,6 +84,7 @@ Les récoltes suivantes posent problème
       <th scope="col">Name</th>
       <th scope="col">Zipcode</th>
       <th scope="col">City</th>
+      <th colspan="2">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -62,6 +94,8 @@ Les récoltes suivantes posent problème
       <td><%= partner.name %></td>
       <td><%= partner.zipcode %></td>
       <td><%= partner.city %></td>
+      <td><i class="fas fa-user-times"></i></td>
+      <td><i class="fas fa-user-edit"></i></td>
     </tr>
     <% end %>
   </tbody>
