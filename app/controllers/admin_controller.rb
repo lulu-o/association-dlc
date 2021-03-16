@@ -28,6 +28,7 @@ class AdminController < ApplicationController
         harvests.partner_id AS partner_id
       FROM harvests
       WHERE harvests.id NOT IN (SELECT distinct(distributions.harvest_id) FROM distributions)
+      ORDER BY harvests.date
       SQL
 
 

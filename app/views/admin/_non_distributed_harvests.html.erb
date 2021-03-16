@@ -1,3 +1,8 @@
-<div class="card-template-urgence">
-
-La récolte du <%= harvest.date.strftime("%d/%m/%Y") %> à <%= harvest.hour.strftime("%H:%M") %> chez <%= harvest.partner.name %> n'a pas de distribution planifiée
+    <tr>
+      <th scope="row"><%= harvest.id %></th>
+      <td><%= harvest.date.strftime("%d/%m/%Y") %></td>
+      <td><%= harvest.hour.strftime("%H:%M")  %></td>
+      <td><%= harvest.partner.name %></td>
+      <td><i class="fas fa-user-times"></i></td>
+      <td><i class="fas fa-user-edit"></i></td>
+    </tr>
