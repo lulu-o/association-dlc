@@ -33,13 +33,20 @@ a {
 	color: #000;
 }
 
-.content {
+.content, .index {
 	position:relative;
 	z-index:5;
+}
+
+.content {
 	padding:0 1.25rem;
 	margin-top: 1rem;
 }
 
 .cards {
 	padding-bottom: 6rem;
+}
+
+.date-action {
+	cursor:pointer;
 }

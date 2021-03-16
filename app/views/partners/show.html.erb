@@ -41,28 +41,31 @@
     </div>
   </div>
 
-  <h1 class="inset">Prochaines récoltes</h1>
+    <% if @harvests.empty? || @harvests.nil? %>
+      <h1>Aucune récolte à venir</h1>
 
-  <input type="text" class="form-control" placeholder="" value="" id="date">
-
-  <% @harvests.each do |harvest| %>
-    <% if harvest.user_registered?(current_user.id) %>
-      <% harvester = harvest.harvesters.find_by(:user_id => current_user) %>
-      <div class="harvest-date registered">
-        <p class="date"><%= l(harvest.date, format: "%a %d/%m/%y").capitalize %></p>
-        <p class="count">vous participez</p>
-        <div class="date-action">
-          <div class="cancel" data-remote="true" data-method="delete" data-url="<%= harvester_path(harvester.id) %>"><i class="fas fa-times"></i></div>
-        </div>
-      </div>
     <% else %>
-      <div class="harvest-date missing">
-        <p class="date"><%= l(harvest.date, format: "%a %d/%m/%y").capitalize %></p>
-          <p class="count"> <%= harvest.harvesters.count %>/<%= harvest.harvesters_number %> participants </p>
-        <div class="date-action">
-          <div class="register" data-remote="true" data-method="post" data-url="<%= harvesters_path(:harvest_id => harvest.id) %>"><i class="fas fa-plus"></i></div>
+      <h1 class="inset">Prochaines récoltes</h1>
+    <% end %>
+    <% @harvests.each do |harvest| %>
+      <% if harvest.user_registered?(current_user.id) %>
+        <% harvester = harvest.harvesters.find_by(:user_id => current_user) %>
+        <div class="harvest-date registered">
+          <p class="date"><%= l(harvest.date, format: "%a %d/%m/%y").capitalize %></p>
+          <p>vous participez</p>
+          <div class="date-action">
+            <div class="cancel" data-shop="<%= @partner.name %>" data-date="<%= l(harvest.date, format: "%a %d/%m/%y").capitalize %>" data-remote="true" data-method="delete" data-url="<%= harvester_path(harvester.id) %>"><i class="fas fa-times"></i></div>
+          </div>
         </div>
-      </div>
+      <% else %>
+        <div class="harvest-date missing">
+          <p class="date"><%= l(harvest.date, format: "%a %d/%m/%y").capitalize %></p>
+            <p> <%= harvest.harvesters.count %>/<%= harvest.harvesters_number %> participants </p>
+          <div class="date-action">
+            <div class="register" data-shop="<%= @partner.name %>" data-date="<%= l(harvest.date, format: "%a %d/%m/%y").capitalize %>" data-remote="true" data-method="post" data-url="<%= harvesters_path(:harvest_id => harvest.id) %>"><i class="fas fa-plus"></i></div>
+          </div>
+        </div>
+
     <% end %>
   <% end %>
 
