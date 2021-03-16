@@ -13,6 +13,7 @@ class HarvestsController < ApplicationController
       FROM harvests
       LEFT OUTER JOIN harvesters_count ON harvesters_count.id = harvests.id
       WHERE (harvesters_count.compteur < harvests.harvesters_number OR harvesters_count.id IS NULL)
+      AND harvests.date >= NOW()
       GROUP BY harvests.date, harvests.id
       ORDER BY harvests.date
       SQL

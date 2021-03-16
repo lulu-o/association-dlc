@@ -16,7 +16,7 @@ class PartnersController < ApplicationController
     # Demander à Geocoder de remonter le résultat le plus pertinent (index 0)
     @place_coord = Geocoder.search(@place)[0].data
     # Remonter tous les partenaires autour de ce lieu
-    @partners = Partner.joins(:harvests).where("harvests.date > ?", Time.now).near(@place, @radius)
+    @partners = Partner.near(@place, @radius)
     # raise
     @partners.each do |partner|
       partner.distance = Geocoder::Calculations.distance_between([@place_coord["lat"], @place_coord["lon"]], [partner.latitude, partner.longitude]).truncate(1)
