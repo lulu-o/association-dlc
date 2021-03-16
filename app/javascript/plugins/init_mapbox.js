@@ -23,9 +23,10 @@ const initMapbox = () => {
       console.log(marker);
       const element = document.createElement('i');
       element.classList.add('fas');
-      element.style.fontSize = '32px';
+
       if (marker.type == "position") {
         element.classList.add('fa-user-circle');
+        element.style.fontSize = '26px';
         element.style.color = '#EB5855';
         element.style.backgroundColor = 'white';
         element.style.borderRadius = '50%';
@@ -34,6 +35,7 @@ const initMapbox = () => {
       } else {
         element.classList.add('fa-map-marker-alt');
         element.style.color = '#114D4D';
+        element.style.fontSize = '32px';
       }
       if (marker.i_window != "none") {
         const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
