@@ -43,7 +43,6 @@
 
     <% if @harvests.empty? || @harvests.nil? %>
       <h1>Aucune récolte à venir</h1>
-
     <% else %>
       <h1 class="inset">Prochaines récoltes</h1>
     <% end %>
@@ -60,7 +59,7 @@
       <% else %>
         <div class="harvest-date missing">
           <p class="date"><%= l(harvest.date, format: "%a %d/%m/%y").capitalize %></p>
-            <p class="count"> <%= harvest.harvesters.count %>/<%= harvest.harvesters_number %> participants </p>
+          <p class="count"> <%= harvest.harvesters.count %>/<%= harvest.harvesters_number %> participants </p>
           <div class="date-action">
             <div class="register" data-shop="<%= @partner.name %>" data-date="<%= l(harvest.date, format: "%a %d/%m/%y").capitalize %>" data-remote="true" data-method="post" data-url="<%= harvesters_path(:harvest_id => harvest.id) %>"><i class="fas fa-plus"></i></div>
           </div>

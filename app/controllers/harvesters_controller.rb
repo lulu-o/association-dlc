@@ -5,15 +5,17 @@ class HarvestersController < ApplicationController
   end
 
 	def create
+    page = request.path
 	  harvest = Harvest.find(params[:harvest_id])
     harvester = Harvester.new(user: current_user, harvest: harvest)
     harvester.save!
-    redirect_to harvest_path(harvest)
+    redirect_to partner_path(harvest.partner)
   end
 
   def destroy
     harvester = Harvester.find(params[:id])
     harvester.destroy
+    redirect_to partner_path(harvester.harvest.partner)
   end
 
 end
