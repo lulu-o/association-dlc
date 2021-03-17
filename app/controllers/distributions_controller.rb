@@ -29,7 +29,7 @@ class DistributionsController < ApplicationController
     @distribution = Distribution.new(distribution_params)
     @distribution.harvest = harvest
     if @distribution.save
-      redirect_to new_user_session_path
+      redirect_to user_path
     else
       render :new
     end
@@ -37,6 +37,14 @@ class DistributionsController < ApplicationController
 
   def edit
     @distribution = Distribution.find(params[:id])
+    my_harvests_to_distribute = <<~SQL
+      SELECT harvests.id, harvests.date, partners.name FROM harvests
+      INNER JOIN harvesters ON harvesters.harvest_id = harvests.id
+      INNER JOIN partners ON partners.id = harvests.partner_id
+      WHERE harvesters.user_id = ? AND (harvests.date BETWEEN ? AND ?)
+      ORDER BY harvests.date
+    SQL
+    @harvests = Harvest.find_by_sql([my_harvests_to_distribute, current_user.id, Date.today - 2.days, Date.today])
   end
 
   def update
