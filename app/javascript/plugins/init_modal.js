@@ -20,7 +20,7 @@ const initModal = () => {
         const date = button.dataset.date;
         const url = button.dataset.url;
         const method = button.dataset.method;
-        if (button.classList.contains('label-yellow') == false) {
+        if (button.classList.contains('static') == false) {
           button.classList.add('pop');
         }
         modalWindow.classList.add("z10");

@@ -15,30 +15,39 @@
       <!-- CARD PLANNING -->
       <div class="card-template-planning">
         <% @harvesters.each do |harvester| %>
-          <%= link_to partner_path(harvester.harvest.partner) do %>
+
             <div class="date-info">
               <p><%= l(harvester.harvest.date, format: "%A %d %B %Y") %></p>
               <p class="hour"><%= harvester.harvest.hour.strftime("%H:%M") %></p>
             </div>
             <div class="card-planning">
-              <div class="top">
-                <div class="shop-name">
-                  <%= image_tag harvester.harvest.partner.brand.logo, alt: "Carrefour", width: 30 %>
-                  <p class="shop-title"><%= harvester.harvest.partner.name %></p>
+              <%= link_to partner_path(harvester.harvest.partner) do %>
+                <div class="top">
+                  <div class="shop-name">
+                    <%= image_tag harvester.harvest.partner.brand.logo, alt: harvester.harvest.partner.brand.name, width: 30 %>
+                    <p class="shop-title"><%= harvester.harvest.partner.name %></p>
+                  </div>
+                  <div class="distance">
+                    <p class="distance-label"><span><i class="fas fa-map-marker-alt"></i></span>700 m</p>
+                  </div>
                 </div>
-                <div class="distance">
-                  <p class="distance-label"><span><i class="fas fa-map-marker-alt"></i></span>700 m</p>
+              <% end %>
+                <div class="bottom">
+                  <%= link_to partner_path(harvester.harvest.partner) do %>
+                    <div class="shop-address">
+                    <p><%= harvester.harvest.partner.address %></p>
+                    <p><%= harvester.harvest.partner.zipcode %> <%= harvester.harvest.partner.city %></p>
+                    </div>
+                  <% end %>
+                  <div class="date-action">
+                    <div class="static" data-shop="<%= harvester.harvest.partner.name %>" data-date="<%= l(harvester.harvest.date, format: "%a %d/%m/%y") %>" data-remote="true" data-method="delete" data-url="<%= harvester_path(harvester.id) %>">
+                      <i class="fas fa-times-circle cross"></i>
+                    </div>
+                  </div>
+
                 </div>
-              </div>
-              <div class="bottom">
-                <div class="shop-address">
-                 <p><%= harvester.harvest.partner.address %></p>
-                 <p><%= harvester.harvest.partner.zipcode %> <%= harvester.harvest.partner.city %></p>
-                </div>
-                  <i class="fas fa-times-circle cross"></i>
-              </div>
             </div>
-          <% end %>
+
         <% end %>
       </div>
     </div>
@@ -138,4 +147,4 @@
 </div>
 
 
-
+<%= render 'shared/modal_window' %>
