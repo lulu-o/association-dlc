@@ -46,7 +46,7 @@
 
 
   .btn-oval-full-green {
-    :hover {
+    &:hover {
       color: white;
     }
 
@@ -59,7 +59,7 @@
     }
 
     .btn-oval-full-green {
-      :hover {
+      &:hover {
         color: white;
       }
     }
