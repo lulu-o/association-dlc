@@ -1,7 +1,3 @@
-<% @distributions.each do |distribution| %>
-  Le <%= distribution.date.strftime("%d/%m/%Y") %> à <%= distribution.hour.strftime("%H:%M") %> distribution de la récolte faite chez <%= distribution.harvest.partner.name %> le <%= distribution.harvest.date.strftime("%d/%m/%Y") %> à <%= distribution.harvest.hour.strftime("%H:%M") %><br>
-<% end %>
-
 <div class="profil-container">
   <h1 class="inset margin-inset">MON PROFIL</h1>
 
@@ -60,12 +56,12 @@
     <div class="card-body">
 
       <!-- TEST TABS-->
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">En cours</a>
+      <ul class="nav nav-tabs tabs" id="myTab" role="tablist">
+        <li class="nav-item tab in-progress">
+          <a class="nav-link active in-progress" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">En cours</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Passée</a>
+        <li class="nav-item tab passed">
+          <a class="nav-link passed" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Passées</a>
         </li>
       </ul>
       <div class="tab-content" id="myTabContent">
