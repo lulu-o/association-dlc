@@ -4,7 +4,6 @@
   justify-content:center;
   width:100%;
   padding:0 1rem;
-  overflow:hidden;
 
   * {
     padding:0.2;
@@ -28,6 +27,7 @@
   select {
     flex-grow:2;
     border-right:1px dotted black;
+    background-color: white;
   }
 
   button:last-child {
@@ -82,4 +82,13 @@ div#shops-map-container {
 
 .mapboxgl-ctrl-attrib-inner {
   display:none;
+}
+
+@media screen and (max-width: 360px) {
+  #geo-search input:first-child {
+    padding: .5rem;
+  }
+  #geo-search button:last-child {
+    padding: .5em;
+}
 }
