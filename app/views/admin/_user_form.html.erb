@@ -1,0 +1,11 @@
+<%= simple_form_for (@user) do |f| %>
+  <%= f.input :first_name, label: "Prénom", placeholder: "Prénom", as: :string, required: true %>
+  <%= f.input :last_name, label: "Nom", placeholder: "Nom", as: :string, required: true %>
+  <%= f.input :email, label: "Email", placeholder: "Email", as: :string, required: true %>
+  <%= f.input :address, label: "Adresse", placeholder: "Adresse", as: :string, required: true %>
+  <%= f.input :zipcode, label: "Code Postal", placeholder: "Code Postal", as: :string, required: true %>
+  <%= f.input :city, label: "Ville", placeholder: "Ville", as: :string, required: true %>
+  <%= f.input :password, label: "Mot de passe", placeholder: "Mot de passe", as: :string, required: true %>
+
+  <%= f.button :submit, "Je réserve ce bateau", class: 'btn-show mt-2 mb-2', id: "book-btn" %>
+<% end %>
