@@ -32,7 +32,23 @@
           </div>
         <% end %>
         <div class="date-action">
-          <div class="label-yellow static"  data-shop="<%= harvest.partner.name %>" data-date="<%= l(harvest.date, format: "%a %d/%m/%y") %>" data-remote="true" data-method="post" data-url="<%= harvesters_path(:harvest_id => harvest.id) %>">je m'inscris</div>
+
+
+        <% if harvest.user_registered?(current_user.id) %>
+          <p class="count">
+            <div class="date-action">
+              <div class="static" data-shop="<%= harvest.partner.name %>" data-date="<%= l(harvest.date, format: "%a %d/%m/%y") %>" data-remote="true" data-method="delete" data-url="<%= harvester_path(current_user.id) %>">
+                <i class="fas fa-times-circle cross"></i>
+              </div>
+            </div></p>
+        <% elsif harvest.full? %>
+          <p class="count">Récolte pleine</p>
+        <% else  %>
+          <p class="count"><div class="label-yellow static"  data-shop="<%= harvest.partner.name %>" data-date="<%= l(harvest.date, format: "%a %d/%m/%y") %>" data-remote="true" data-method="post" data-url="<%= harvesters_path(:harvest_id => harvest.id) %>">je m'inscris</div></p>
+        <% end %>
+
+
+
         </div>
       </div>
     </div>
