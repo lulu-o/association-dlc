@@ -15,7 +15,19 @@ class DistributionsController < ApplicationController
   end
 
   def create
-    @distribution = Distribution.new(params[:id])
+    my_harvests_to_distribute = <<~SQL
+      SELECT harvests.id, harvests.date, partners.name FROM harvests
+      INNER JOIN harvesters ON harvesters.harvest_id = harvests.id
+      INNER JOIN partners ON partners.id = harvests.partner_id
+      WHERE harvesters.user_id = ? AND (harvests.date BETWEEN ? AND ?)
+      ORDER BY harvests.date
+    SQL
+    @user = current_user
+    @harvests = Harvest.find_by_sql([my_harvests_to_distribute, current_user.id, Date.today - 2.days, Date.today])
+    @user = User.find_by_id(current_user.id)
+    harvest = Harvest.find(params[:distribution][:harvest])
+    @distribution = Distribution.new(distribution_params)
+    @distribution.harvest = harvest
     if @distribution.save
       redirect_to new_user_session_path
     else
@@ -31,7 +43,6 @@ class DistributionsController < ApplicationController
     @distribution = Distribution.find(params[:id])
     @distribution.update(distribution_params)
 
-    # no need for app/views/restaurants/update.html.erb
     redirect_to distribution_path(@distribution)
   end
 
