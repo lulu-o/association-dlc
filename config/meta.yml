@@ -1,5 +1,4 @@
 meta_product_name: "DLC"
 meta_title: "DLC - Détournement Libre de Consommables"
 meta_description: "D.L.C est une association qui lutte contre le gaspillage alimentaire, en récupérant les invendus des commerces pour les redistribuer à des associations caritatives et en libre accès."
-meta_image: "app/assets/og_image.jpg" # should exist in `app/assets/images/`
-
+meta_image: "og_image.jpg" # should exist in `app/assets/images/`
