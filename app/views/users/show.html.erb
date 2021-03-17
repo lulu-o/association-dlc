@@ -27,6 +27,7 @@
                     <%= image_tag harvester.harvest.partner.brand.logo, alt: harvester.harvest.partner.brand.name, width: 30 %>
                     <p class="shop-title"><%= harvester.harvest.partner.name %></p>
                   </div>
+
                 </div>
               <% end %>
                 <div class="bottom">
@@ -37,7 +38,7 @@
                     </div>
                   <% end %>
                   <div class="date-action">
-                    <div class="static" data-shop="<%= harvester.harvest.partner.name %>" data-date="<%= l(harvester.harvest.date, format: "%a %d/%m/%y") %>" data-remote="true" data-method="delete" data-url="<%= harvester_path(harvester.id) %>">
+                    <div class="static cancel" data-shop="<%= harvester.harvest.partner.name %>" data-date="<%= l(harvester.harvest.date, format: "%a %d/%m/%y") %>" data-remote="true" data-method="delete" data-url="<%= harvester_path(harvester.id) %>">
                       <i class="fas fa-times-circle cross"></i>
                     </div>
                   </div>
@@ -93,9 +94,8 @@
         <% end %>
       </div>
     </div>
-  </div>
 
-  <div class="toggle-profil-btn btn btn-lg btn-block btn-primary d-flex justify-content-center card-body" data-toggle="collapse" href="#CollapseExample3" role="button" aria-expanded="false" aria-controls="CollapseExample3">
+    <div class="toggle-profil-btn btn btn-lg btn-block btn-primary d-flex justify-content-center card-body" data-toggle="collapse" href="#CollapseExample3" role="button" aria-expanded="false" aria-controls="CollapseExample3">
     <p>MES COORDONNÉES</p>
     <i class="fas fa-chevron-down fa-lg"></i>
   </div>
