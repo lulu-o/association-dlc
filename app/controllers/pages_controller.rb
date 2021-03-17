@@ -6,4 +6,7 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+  def landingpage
+  end
 end
