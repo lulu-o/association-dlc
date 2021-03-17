@@ -1,11 +1,7 @@
-<% @distributions.each do |distribution| %>
-  Le <%= distribution.date.strftime("%d/%m/%Y") %> à <%= distribution.hour.strftime("%H:%M") %> distribution de la récolte faite chez <%= distribution.harvest.partner.name %> le <%= distribution.harvest.date.strftime("%d/%m/%Y") %> à <%= distribution.harvest.hour.strftime("%H:%M") %><br>
-<% end %>
-
 <div class="profil-container">
   <h1 class="inset margin-inset">MON PROFIL</h1>
 
-  <div class="toggle-profil-btn btn btn-lg btn-block btn-primary d-flex justify-content-center card-body" data-toggle="collapse" href="#CollapseExample1" role="button" aria-expanded="false" aria-controls="CollapseExample">
+  <div class="toggle-profil-btn btn btn-lg btn-block toggle-color d-flex justify-content-center card-body" data-toggle="collapse" href="#CollapseExample1" role="button" aria-expanded="false" aria-controls="CollapseExample">
     <p>MON PLANNING RÉCOLTES</p>
     <i class="fas fa-chevron-down fa-lg"></i>
   </div>
@@ -59,7 +55,18 @@
   <div class="collapse" id="CollapseExample2">
     <div class="card-body">
 
-      <!-- CARD DISTRIBUTUION -->
+      <!-- TEST TABS-->
+      <ul class="nav nav-tabs tabs" id="myTab" role="tablist">
+        <li class="nav-item tab in-progress">
+          <a class="nav-link active in-progress" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">En cours</a>
+        </li>
+        <li class="nav-item tab passed">
+          <a class="nav-link passed" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Passées</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <!-- CARD DISTRIBUTUION -->
       <div class="card-template-distribution">
         <% @distributions.each do |distribution| %>
           <div class="date-info">
@@ -76,22 +83,38 @@
                 <p> <%= distribution.address %></p>
                 <p> <%= distribution.zipcode %> <%= distribution.city %></p>
               </div>
-              <p><i class="fas fa-pen-square pensil"></i></p>
+              <%= link_to edit_distribution_path(distribution) do %>
+                <i class="fas fa-pen-square pensil"></i>
+              <% end %>
             </div>
           </div>
         <% end %>
         </div>
-        <p class="btn-distribution">voir mes dernières distributions</p>
+      </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="card-template-distribution">
         <% @past_distributions.each do |past_distribution| %>
-          ID distribution : <%= past_distribution.id %><br>
-          Date distribution : <%= past_distribution.date.strftime("%d/%m/%Y") %><br>
-          Heure distribution : <%= past_distribution.hour.strftime("%H:%M") %><br>
-          Adresse distribution : <%= past_distribution.address %><br>
-          Code Postal distribution : <%= past_distribution.zipcode %><br>
-          Ville distribution : <%= past_distribution.city %><br>
-          ID récolte : <%= past_distribution.harvest.id %><br>
-          Nom partenaire : <%= past_distribution.harvest.partner.name %><br>
+          <div class="date-info">
+            <p><%= past_distribution.date.strftime("%d/%m/%Y") %></p>
+            <p><%= past_distribution.baskets_number %> <i class="fas fa-shopping-basket"></i></p>
+            <p class="hour"><%= past_distribution.hour.strftime("%H:%M") %></p>
+          </div>
+          <div class="card-distribution">
+            <div class="top">
+              <p><%= past_distribution.description %></p>
+            </div>
+            <div class="bottom mt-2">
+              <div class="shop-address">
+                <p> <%= past_distribution.address %></p>
+                <p> <%= past_distribution.zipcode %> <%= distribution.city %></p>
+              </div>
+            </div>
+          </div>
         <% end %>
+        </div>
+        </div>
+      </div>
+
       </div>
     </div>
 
