@@ -3,8 +3,13 @@ Rails.application.routes.draw do
 
 
   devise_for :users
-  root to: 'partners#index'
+  root to: 'pages#landingpage'
+  get '/partners' => "partners#index", :as => :user_root
   get 'contact', to: 'pages#contact'
+  get 'landingpage', to: 'pages#landingpage'
+
+  get 'admin/new_user', to: 'admin#new_user'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :partners, only: [:index, :show]
   resources :users, only: [:show, :edit, :update] do

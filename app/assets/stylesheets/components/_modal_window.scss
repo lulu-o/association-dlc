@@ -39,7 +39,7 @@
   h5 {
     font-size: 16px;
   }
-  
+
   h5:not(#intro-text) {
     font-weight:bold;
     text-align:center;
@@ -48,6 +48,7 @@
 
 #modal-confirm {
 margin-right: 40px;
+display: inline-block!important;
 }
 
 #modal-schedule {

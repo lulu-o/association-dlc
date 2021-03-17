@@ -1,9 +1,10 @@
-.profil-container {	
+.profil-container {
   margin-top: 1rem;
 
   .inset {
 	  margin-left: 1.25rem;
 	}
+
   .tabs {
     border-radius: .5rem;
     
@@ -47,13 +48,30 @@
 .btn-oval-full-green {
   :hover {
   	color: white;
-  }
-}
 
-.btn-logout:hover {
+  .toggle-profil .btn {
+  	color: green-25;
+
+  }
+  .form-user .profile-button {
+    float: right;
+  }
+  .btn-oval-full-green {
+    :hover {
+    	color: white;
+    }
+  }
+  .btn-logout:hover {
 		color: white;
 	}
+
 
 .toggle-color {
   background: $green;
 }
+
+  #CollapseExample2 .card-body {
+    padding: 0;
+  }
+}
+
