@@ -23,7 +23,7 @@
                     <%= image_tag harvester.harvest.partner.brand.logo, alt: harvester.harvest.partner.brand.name, width: 30 %>
                     <p class="shop-title"><%= harvester.harvest.partner.name %></p>
                   </div>
-
+                  <a href=https://waze.com/ul?q='<%= URI.encode(harvester.harvest.partner.address) %>,<%= URI.encode(harvester.harvest.partner.zipcode) %>,<%= URI.encode(harvester.harvest.partner.city) %>'><i class="fab fa-waze"></i></a>
                 </div>
               <% end %>
                 <div class="bottom">
@@ -34,7 +34,7 @@
                     </div>
                   <% end %>
                   <div class="date-action">
-                    <a href=https://waze.com/ul?q='<%= URI.encode(harvester.harvest.partner.address) %>,<%= URI.encode(harvester.harvest.partner.zipcode) %>,<%= URI.encode(harvester.harvest.partner.city) %>'><i class="fab fa-waze"></i></a>
+
                     <div class="static cancel" data-shop="<%= harvester.harvest.partner.name %>" data-date="<%= l(harvester.harvest.date, format: "%a %d/%m/%y") %>" data-remote="true" data-method="delete" data-url="<%= harvester_path(harvester.id) %>">
                       <i class="fas fa-times-circle cross"></i>
                     </div>
