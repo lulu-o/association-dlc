@@ -31,7 +31,6 @@ import { Button } from "bootstrap";
 import { initFlatpickr } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
-  console.log("test");
 
   initFlatpickr();
   initMapbox();
