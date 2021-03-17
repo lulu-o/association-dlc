@@ -1,12 +1,51 @@
 <%= form_tag('/partners',
     :method => "get",
     :id => "geo-search") do |f| %>
-  <%= text_field_tag :place, params["search-type"] == "geolocation" ? "Ma position" : params[:place] || current_user.full_address, {:required => 'required', "data-coords" => params[:place]} %>
-    <%= button_tag(type: "button", id: "geoloc") do %>
-    <i class="fas fa-map-marker-alt"></i>
-  <% end %>
-  <%= hidden_field_tag "search-type", params["search-type"] || "text" %>
-  <%= select_tag :radius,
+
+    <div id="search-bar">
+      <%= text_field_tag :place, params["search-type"] == "geolocation" ? "Ma position" : params[:place] || current_user.full_address, {:required => 'required', "data-coords" => params[:place]} %>
+
+      <%= button_tag(type: "button", id: "geoloc") do %>
+        <i class="fas fa-map-marker-alt"></i>
+      <% end %>
+
+      <%= hidden_field_tag "search-type", params["search-type"] || "text" %>
+
+      <%= button_tag(type: "submit", id: "search-submit") do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+
+    </div>
+
+    <div id="form-options">
+      <a class="text-center w-100" data-toggle="collapse" href="#search-options" role="button" aria-expanded="false" aria-controls="search-options">Rayon<i class="fas fa-chevron-down"></i></a>
+
+    <div class="collapse col-12" id="search-options">
+        <div class="col-6">
+          <%= radio_button_tag :radius, "5" %>
+          <%= label_tag :radius, "5 km", :value => "5" %>
+        </div>
+
+        <div class="col-6">
+          <%= radio_button_tag :radius, "10", selected: true %>
+          <%= label_tag :radius, "10 km", :value => "10" %>
+        </div>
+
+        <div class="col-6">
+          <%= radio_button_tag :radius, "20" %>
+          <%= label_tag :radius, "20 km", :value => "20" %>
+        </div>
+
+        <div class="col-6">
+          <%= radio_button_tag :radius, "50" %>
+          <%= label_tag :radius, "50 km", :value => "50" %>
+        </div>
+
+        <div class="col-6">
+          <%= radio_button_tag :radius, "100" %>
+          <%= label_tag :radius, "100 km", :value => "100" %>
+        </div>
+        <%#= select_tag :radius,
         options_for_select([
           ["2km", "2"],
           ["5km", "5"],
@@ -14,10 +53,9 @@
           ["20km", "20"],
           ["50km", "50"],
           ["100km", "100"]
-        ], params[:radius] || "5"), {prompt: "Rayon", :required => 'required'} %>
+        ], params[:radius] || "10"), {prompt: "Rayon", :required => 'required'} %>
+    </div>
+    </div>
 
-  <%= button_tag(type: "submit", id: "search-submit") do %>
-    <i class="fas fa-search"></i>
-  <% end %>
 
 <% end %>
