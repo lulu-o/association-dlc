@@ -7,7 +7,7 @@
 
   .tabs {
     border-radius: .5rem;
-    
+
     .tab {
       padding: 0;
     }
@@ -34,44 +34,48 @@
     background-color: $green;
     border-color: $green;
   }
-}
 
-.toggle-profil .btn {
-	color: green-25;
-}
-
-.form-user .profile-button {
-  float: right;
-}
-
-
-.btn-oval-full-green {
-  :hover {
-  	color: white;
 
   .toggle-profil .btn {
-  	color: green-25;
-
+    color: green-25;
   }
+
   .form-user .profile-button {
     float: right;
   }
+
+
   .btn-oval-full-green {
     :hover {
-    	color: white;
+      color: white;
+    }
+
+    .toggle-profil .btn {
+      color: green-25;
+    }
+
+    .form-user .profile-button {
+      float: right;
+    }
+
+    .btn-oval-full-green {
+      :hover {
+        color: white;
+      }
+    }
+
+    .btn-logout:hover {
+      color: white;
+    }
+
+
+    .toggle-color {
+      background: $green;
+    }
+
+    #CollapseExample2 .card-body {
+      padding: 0;
     }
   }
-  .btn-logout:hover {
-		color: white;
-	}
 
-
-.toggle-color {
-  background: $green;
 }
-
-  #CollapseExample2 .card-body {
-    padding: 0;
-  }
-}
-
