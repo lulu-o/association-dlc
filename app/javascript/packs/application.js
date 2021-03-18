@@ -29,8 +29,10 @@ import { tabs } from "../plugins/tabs";
 import { favs } from "../plugins/heart";
 import { Button } from "bootstrap";
 import { initFlatpickr } from "../plugins/flatpickr";
-import { hideFlash } from "../plugins/hide_flash";
+import { hideFlash } from "../plugins/hide_flash"
+import { targetTabs } from "../plugins/target_tab"
 import { selectAsButtons } from "../plugins/select_as_buttons";
+
 
 document.addEventListener('turbolinks:load', () => {
   const body = document.querySelector('body');
@@ -45,5 +47,7 @@ document.addEventListener('turbolinks:load', () => {
   tabs();
   favs();
   hideFlash();
+  targetTabs();
   selectAsButtons();
+
 });
