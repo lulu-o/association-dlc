@@ -29,9 +29,15 @@ import { tabs } from "../plugins/tabs";
 import { favs } from "../plugins/heart";
 import { Button } from "bootstrap";
 import { initFlatpickr } from "../plugins/flatpickr";
-import { hideFlash } from "../plugins/hide_flash"
+import { hideFlash } from "../plugins/hide_flash";
+import { selectAsButtons } from "../plugins/select_as_buttons";
 
 document.addEventListener('turbolinks:load', () => {
+  const body = document.querySelector('body');
+  window.setTimeout(() => {
+    body.classList.remove("preload");
+  }, 500);
+
   initFlatpickr();
   initMapbox();
   initSearch();
@@ -39,5 +45,5 @@ document.addEventListener('turbolinks:load', () => {
   tabs();
   favs();
   hideFlash();
-
+  selectAsButtons();
 });
