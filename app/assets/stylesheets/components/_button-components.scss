@@ -12,15 +12,13 @@
 }
 
 .btn-oval-full-green {
-	border-radius: 10px;
-	background-color: $green;
-	border: 2px solid $green;
-	color: white;
-	font-family: 'Hind Madurai', sans-serif;
-	padding-left: 20px;
-	padding-right: 20px;
-	margin-top: 20px;
+	background-color: $yellow;
 	text-transform: uppercase;
+	font-size: 14px;
+	border-radius: 10px;
+	padding: 0.3rem .8em;
+	margin: 0;
+	line-height: normal;
 }
 
 .btn-oval-full-pink {
@@ -35,15 +33,27 @@ margin-top: 20px;
 text-transform: uppercase;
 }
 
-.btn-oval-emergency {
+.btn-oval-full-yes {
 border-radius: 10px;
 background-color: $yellow;
-border: none;
+border: 2px solid $yellow;
 color: black;
 font-family: 'Hind Madurai', sans-serif;
-padding-left: 20px;
+padding-lef: 20px;
 padding-right: 20px;
 margin-top: 20px;
+text-transform: uppercase;
+}
+
+.btn-oval-emergency {
+	background-color: $green;
+	color: white;
+	text-transform: uppercase;
+	font-size: 14px;
+	border-radius: 10px;
+	padding: 0.3rem .8em;
+	margin: 0;
+	line-height: normal;
 }
 
 .revert-green {

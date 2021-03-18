@@ -6,6 +6,16 @@
   background-size:cover;
   padding-top:16px;
 
+  .btn-home {
+    padding: 1rem;
+    margin: 0 auto;
+    width: 50%;
+  
+    a {
+      color: black;
+    }
+  }
+
   .logo-container {
     background-color: white;
     width:100px;
@@ -14,7 +24,7 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    margin:0 auto;
+    margin:3rem auto;
   }
 
   .logo-badge {
@@ -32,17 +42,19 @@
   }
 
   #paragraph-landing {
-    font-size:18px;
+    font-size:16px;
     font-weight:300;
-    opacity: .8;
     line-height: 28px;
     letter-spacing:.4px;
     text-align: center;
     color:white;
+    margin-bottom: 5rem;
+    margin-top: 2rem;
 
     span {
-      opacity: 1;
       font-weight:600;
+      font-size: 18px;
+      letter-spacing: 1px;
     }
   }
 }
