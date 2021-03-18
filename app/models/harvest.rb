@@ -15,6 +15,9 @@ class Harvest < ApplicationRecord
   end
 
   def harvest_label
-    "#{date} - #{name}"
+    "#{I18n.l(date, format: "%a %d/%m/%y").capitalize} - #{name}"
   end
 end
+
+
+# I18n.l(harvest.date, format: "%a %d/%m/%y").capitalize
