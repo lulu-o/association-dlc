@@ -1,32 +1,44 @@
 <div class="contact">
 
-	<h1>Merci !</h1>
+	<h1 class="h1-contact">Merci !</h1>
+	<p class="p-contact pb-3">L'équipe support</p>
 
-	<p>L'équipe support</p>
-
-	<div class="top">
-		<div class="inside">
-			<div  class="photo">
-				<%= image_tag "Guillaume.jpeg", class: "photo-contact", alt: "avatar" %>
-			</div>
-			<h5 class="p-contact">Guillaume</h5>
-		</div>
-
-		<div class="inside">
-			<%= image_tag "Lucrece.jpeg", class: "photo-contact", alt: "avatar" %>
-			<h5 class="p-contact">Lucrèce</h5>
-		</div>
- 	</div>
-
- 	<div class="bottom">
- 		<div class="inside">
-			<%= image_tag "Marion.jpeg", class: "photo-contact", alt: "avatar" %>
-			<h5 class="p-contact">Marion</h5>
-		</div>
-
-		<div class="inside">
-			<%= image_tag "Antoine.jpeg", class: "photo-contact", alt: "avatar" %>
-			<h5 class="p-contact">Antoine</h5>
-		</div>
-	</div>
+  <div class="contact-container">
+    <div class="our-team">
+      <div class="picture">
+         <%= image_tag "Guillaume.jpeg", class: "contact-pic photo-contact", alt: "avatar" %>
+      </div>
+      <div class="team-content">
+        <h3 class="name">Guillaume</h3>
+        <h4 class="title">Web Developer</h4>
+      </div>
+    </div>
+    <div class="our-team">
+      <div class="picture">
+        <%= image_tag "Lucrece.jpeg", class: "contact-pic photo-contact", alt: "avatar" %>
+      </div>
+      <div class="team-content">
+        <h3 class="name">Lucrèce</h3>
+        <h4 class="title">Web Developer</h4>
+      </div>
+    </div>
+    <div class="our-team">
+      <div class="picture">
+        <%= image_tag "Marion.jpeg", class: "contact-pic photo-contact", alt: "avatar" %>
+      </div>
+      <div class="team-content">
+        <h3 class="name">Marion</h3>
+        <h4 class="title">Web Developer</h4>
+      </div>
+    </div>
+    <div class="our-team">
+      <div class="picture">
+        <%= image_tag "Antoine.jpeg", class: "contact-pic photo-contact", alt: "avatar" %>
+      </div>
+      <div class="team-content">
+        <h3 class="name">Antoine</h3>
+        <h4 class="title">Web Developer</h4>
+      </div>
+    </div>
+  </div>
 </div>

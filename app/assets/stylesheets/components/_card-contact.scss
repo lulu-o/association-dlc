@@ -1,35 +1,40 @@
-.card-template-contact {
 
-	.card-contact {
-		background: $white-30;
-		border-radius: $card-radius;
-		margin-bottom: 10px;
-		padding: 15px;
-		min-height: 4rem;
-	}
 
-	:hover {
-		color: $green;
-	}
 
-	h4 {
-		text-transform: uppercase;
-		font-size: 14px;
-		font-weight: 700;
-	}
 
-	p {
-		font-weight: 300;
-		font-size: 14px;
-		color: $green;
-	}
+.container-contact {
+  font-family: tahoma;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
 
-	i {
-		font-size: 12px;
-		margin-right: .5rem;
-	}
+.our-team {
+  padding: 30px 0 40px;
+  margin-bottom: 30px;
+  background-color: #f7f5ec;
+  text-align: center;
+  overflow: hidden;
+   box-shadow: $box-shadow;
+}
 
-	a {
-		color: $green;
-	}
+.our-team .picture {
+  display: inline-block;
+  margin-bottom: 50px;
+  z-index: 1;
+  border-radius: 50%;
+
+  .contact-pic {
+     border-radius: 50%;
+     width: 120px;
+  }
+}
+
+.our-team .title {
+  display: block;
+  font-size: 15px;
+  color: #4e5052;
+  text-transform: capitalize;
 }
