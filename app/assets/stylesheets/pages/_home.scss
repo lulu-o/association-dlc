@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .shops-list-container {
-	margin-top: 1rem;
+	margin-top: 2rem;
 	padding: 0 1.25rem;
 
 	h2 {
@@ -11,6 +11,7 @@
 	#search-options {
 		margin-top: 1rem !important;
 	}
+	/*
 	.form-radio-input {
 		width: fit-content;
     margin: 0 auto;
@@ -20,21 +21,23 @@
 	  position: absolute;
 	  transform: scale(0);
 	}
+*/
 
-	.form-radio-input + label  {
+	.radius-input  {
 	  cursor: pointer;
 	  font-size: 0.7rem;
 	  border-radius: 50rem;
 	  padding: 0.5rem 1rem;
 	  background-color: #ECEAFF;
 	  color: $green;
-	  border: 1px solid $green;
+	  border: 1px solid $green!important;
 	  margin-right: 0.6rem;
 	  margin-bottom: 0.4rem;
 	  font-size: 14px;
+		display:inline-block;
 	}
 
-	.form-radio-input input :checked + label{
+	.radius-input.selected{
 	  background-color: $green;
 	  color: white;
 	}
@@ -42,6 +45,7 @@
 
 .index {
 	padding: 0 1.25rem;
+	margin-top: 2rem;
 }
 
 .inset {

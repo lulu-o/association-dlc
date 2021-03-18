@@ -56,7 +56,7 @@
 
 <div class="shops-list-container">
   <h1 class="inset margin-inset">Liste des partenaires</h1>
-  <button type="button" class="btn btn-primary btn-sm">Nouveau partenaire</button>
+  <%= link_to "Nouvel partenaire", new_admin_partner_path, class: "btn btn-primary btn-sm" %>
   <table class="table">
     <thead>
       <tr>
@@ -64,7 +64,7 @@
         <th scope="col">Name</th>
         <th scope="col">Zipcode</th>
         <th scope="col">City</th>
-        <th colspan="2">Actions</th>
+        <th colspan="3">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -74,13 +74,14 @@
         <td><%= partner.name %></td>
         <td><%= partner.zipcode %></td>
         <td><%= partner.city %></td>
-        <td><i class="fas fa-user-times"></i></td>
-        <td><i class="fas fa-user-edit"></i></td>
+        <td><a href="#" alt="Paramètres des récoltes"><i class="fas fa-truck" alt="Paramètres des récoltes"></i></a></td>
+        <td><a href="#" alt="Editer partenaire"><i class="fas fa-user-edit"></i></td>
+        <td><a href="#" alt="Supprimer partenaire"><i class="fas fa-user-times"></i></td>
       </tr>
       <% end %>
     </tbody>
   </table>
-  <button type="button" class="btn btn-primary btn-sm">Nouveau partenaire</button>
+  <%= link_to "Nouvel partenaire", new_admin_partner_path, class: "btn btn-primary btn-sm" %>
 </div>
 
 <br><br><br><br>

@@ -1,9 +1,9 @@
 module Admin
-  class UsersController < ApplicationController
+  class PartnersController < ApplicationController
     skip_before_action :authenticate_user!, only: [ :home ]
 
     def new
-      @user = User.new
+      @partner = Partner.new
     end
 
   end

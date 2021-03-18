@@ -22,9 +22,6 @@ color: $green;
     align-self: flex-end;
  }
 
-
 .card-body[aria-expanded=true]>.fa-chevron-down {
-    transform: rotate(
--180deg
-);
+  transform: rotate(-180deg);
 }

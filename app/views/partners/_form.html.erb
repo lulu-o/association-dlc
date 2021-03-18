@@ -16,62 +16,25 @@
   </div>
 
   <div id="form-options">
-    <a class="text-center w-100" data-toggle="collapse" href="#search-options" role="button" aria-expanded="false" aria-controls="search-options">Rayon<i class="fas fa-chevron-down"></i></a>
-
-    <div class="collapse col-12" id="search-options">
-      <div class="col-6">
-        <%= radio_button_tag :radius, "5", class: "radio-button-input" %>
-        <%= label_tag :radius, "5 km", :value => "5", class: "radio-button-label" %>
-      </div>
-
-      <div class="col-6">
-        <%= radio_button_tag :radius, "10", selected: true, class: "radio-button-input" %>
-        <%= label_tag :radius, "10 km", :value => "10", class: "radio-button-label" %>
-      </div>
-
-      <div class="col-6">
-        <%= radio_button_tag :radius, "20", class: "radio-button-label text-center" %>
-        <%= label_tag :radius, "20 km", :value => "20", class: "radio-button-label" %>
-      </div>
-
-      <div class="col-6">
-        <%= radio_button_tag :radius, "50", class: "radio-button-label text-center" %>
-        <%= label_tag :radius, "50 km", :value => "50", class: "radio-button-label" %>
-      </div>
-
-      <div class="col-6">
-        <%= radio_button_tag :radius, "100", class: "radio-button-label text-center" %>
-        <%= label_tag :radius, "100 km", :value => "100", class: "radio-button-label" %>
-      </div>
-      
+    <a class="text-center" data-toggle="collapse" href="#search-options" role="button" aria-expanded="false" aria-controls="search-options">Affiner la recherche<i class="fas fa-chevron-down"></i></a>
+    <div class="collapse" id="search-options">
+      <%= hidden_field_tag "radius", params["radius"] || 20 %>
+      <div class="radius-input option" data-value="10">10 km</div>
+      <div class="radius-input option" data-value="20">20 km</div>
+      <div class="radius-input option" data-value="50">50 km</div>
     </div>
 
+    <!-- select_tag :radius,
+        options_for_select([
+          ["1km", "1"],
+          ["2km", "2"],
+          ["5km", "5"],
+          ["10km", "10"],
+          ["20km", "20"],
+          ["50km", "50"],
+          ["100km", "100"]
+        ]) -->
 
-    <!-- NEW FILTER TO INSERT -->
-    
-  <!--   <div class="collapse col-12" id="search-options">
-      <div class="form-group">
-        <%= radio_button_tag :radius, "5", input_html:{ class: "form-radio-input" } %>
-        <%= label_tag :radius, "5 km", :value => "5", class: "form-radio-label" %>
-      </div>
-      <div class="form-group">
-        <%= radio_button_tag :radius, "10", input_html:{ class: "form-radio-input", selected: true} %>
-        <%= label_tag :radius, "10 km", :value => "10", class: "form-radio-label" %>
-      </div>
-      <div class="form-group">
-        <%= radio_button_tag :radius, "20", input_html:{ class: "form-radio-input" } %>
-        <%= label_tag :radius, "20 km", :value => "20", class: "form-radio-label" %>
-      </div>
-      <div class="form-group">
-        <%= radio_button_tag :radius, "50", input_html:{ class: "form-radio-input" } %>
-        <%= label_tag :radius, "50 km", :value => "50", class: "form-radio-label" %>
-      </div>
-      <div class="form-group">
-        <%= radio_button_tag :radius, "100", input_html:{ class: "form-radio-input" } %>
-        <%= label_tag :radius, "100 km", :value => "100", class: "form-radio-label" %>
-      </div>
-      
-    </div> -->
   </div>
 
 <% end %>

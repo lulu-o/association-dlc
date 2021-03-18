@@ -31,8 +31,15 @@ import { Button } from "bootstrap";
 import { initFlatpickr } from "../plugins/flatpickr";
 import { hideFlash } from "../plugins/hide_flash"
 import { targetTabs } from "../plugins/target_tab"
+import { selectAsButtons } from "../plugins/select_as_buttons";
+
 
 document.addEventListener('turbolinks:load', () => {
+  const body = document.querySelector('body');
+  window.setTimeout(() => {
+    body.classList.remove("preload");
+  }, 500);
+
   initFlatpickr();
   initMapbox();
   initSearch();
@@ -41,4 +48,6 @@ document.addEventListener('turbolinks:load', () => {
   favs();
   hideFlash();
   targetTabs();
+  selectAsButtons();
+
 });

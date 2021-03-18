@@ -24,7 +24,8 @@ Rails.application.routes.draw do
   resources :admin, only: [:index]
 
   namespace :admin do
-    resources :user
+    resources :users
+    resources :partners
   end
 
   post 'notifications', to: 'harvests#send_notif'
