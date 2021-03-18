@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact'
   get 'landingpage', to: 'pages#landingpage'
 
-  get 'admin/new_user', to: 'admin#new_user'
+
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :partners, only: [:index, :show]
@@ -21,6 +22,10 @@ Rails.application.routes.draw do
   resources :distributions, only: [:new, :create, :index, :show, :edit, :update]
 
   resources :admin, only: [:index]
+
+  namespace :admin do
+    resources :user
+  end
 
   post 'notifications', to: 'harvests#send_notif'
 

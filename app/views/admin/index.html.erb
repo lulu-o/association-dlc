@@ -87,7 +87,7 @@
 
 <div class="shops-list-container">
   <h1 class="inset margin-inset">Liste des utilisateurs</h1>
-  <button type="button" class="btn btn-primary btn-sm">Nouvel utilisateur</button>
+  <%= link_to "Nouvel utilisateur", new_admin_user_path, class: "btn btn-primary btn-sm" %>
   <table class="table">
     <thead>
       <tr>
@@ -111,5 +111,5 @@
       <% end %>
     </tbody>
   </table>
-  <button type="button" class="btn btn-primary btn-sm">Nouvel utilisateur</button>
+  <%= link_to "Nouvel utilisateur", new_admin_user_path, class: "btn btn-primary btn-sm" %>
 </div>
