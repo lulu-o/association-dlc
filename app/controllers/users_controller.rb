@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def show
+    @target = params[:target]
     @user = User.find(params[:id])
     # @harvesters = Harvester.where("user_id = ?", current_user.id)
     # @harvesters = Harvest.includes(:harvesters).where( harvesters: {user: current_user}).order(:date)

@@ -30,6 +30,7 @@ import { favs } from "../plugins/heart";
 import { Button } from "bootstrap";
 import { initFlatpickr } from "../plugins/flatpickr";
 import { hideFlash } from "../plugins/hide_flash"
+import { targetTabs } from "../plugins/target_tab"
 
 document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
@@ -39,5 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   tabs();
   favs();
   hideFlash();
-
+  targetTabs();
 });

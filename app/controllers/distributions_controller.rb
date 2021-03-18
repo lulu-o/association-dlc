@@ -34,7 +34,8 @@ class DistributionsController < ApplicationController
     @distribution.user = @user
     @distribution.harvest = harvest
     if @distribution.save!
-      redirect_to distribution_path(@distribution)
+      params[:target] = "distributions"
+      redirect_to user_path(@user, target: params[:target])
     else
       render :new
     end
