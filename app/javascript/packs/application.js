@@ -29,6 +29,7 @@ import { tabs } from "../plugins/tabs";
 import { favs } from "../plugins/heart";
 import { Button } from "bootstrap";
 import { initFlatpickr } from "../plugins/flatpickr";
+import { hideFlash } from "../plugins/hide_flash"
 
 document.addEventListener('turbolinks:load', () => {
 
@@ -38,5 +39,6 @@ document.addEventListener('turbolinks:load', () => {
   initModal();
   tabs();
   favs();
+  hideFlash();
 
 });
