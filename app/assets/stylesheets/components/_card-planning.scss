@@ -3,7 +3,7 @@
 	:hover {
 		color: #000;
 	}
-	
+
 	.date-info {
 		background-color: $green;
 		color: white;
@@ -36,7 +36,7 @@
 	  p {
 			margin-bottom: 0;
 		}
-		
+
 		.top {
 			display: flex;
 			flex-direction: row;
@@ -90,6 +90,12 @@
 
 		.cross {
 			color: $red;
+			font-size: 25px;
+			padding: 0.2rem .1em;
+	    margin: 0;
+		}
+
+		.fa-waze {
 			font-size: 25px;
 			padding: 0.2rem .1em;
 	    margin: 0;
