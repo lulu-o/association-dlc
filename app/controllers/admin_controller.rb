@@ -39,10 +39,6 @@ class AdminController < ApplicationController
 
     @partners = Partner.all
   end
-
-  def new_user
-    @user = User.new
-  end
 end
 
 
