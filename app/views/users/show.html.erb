@@ -17,15 +17,16 @@
               <p class="hour"><%= harvester.harvest.hour.strftime("%H:%M") %></p>
             </div>
             <div class="card-planning">
-              <%= link_to partner_path(harvester.harvest.partner) do %>
                 <div class="top">
-                  <div class="shop-name">
-                    <%= image_tag harvester.harvest.partner.brand.logo, alt: harvester.harvest.partner.brand.name, width: 30 %>
-                    <p class="shop-title"><%= harvester.harvest.partner.name %></p>
-                  </div>
+                  <%= link_to partner_path(harvester.harvest.partner) do %>
+                    <div class="shop-name">
+                      <%= image_tag harvester.harvest.partner.brand.logo, alt: harvester.harvest.partner.brand.name, width: 30 %>
+                      <p class="shop-title"><%= harvester.harvest.partner.name %></p>
+                    </div>
+                  <% end %>
                   <a href=https://waze.com/ul?q='<%= URI.encode(harvester.harvest.partner.address) %>,<%= URI.encode(harvester.harvest.partner.zipcode) %>,<%= URI.encode(harvester.harvest.partner.city) %>'><i class="fab fa-waze"></i></a>
                 </div>
-              <% end %>
+
                 <div class="bottom">
                   <%= link_to partner_path(harvester.harvest.partner) do %>
                     <div class="shop-address">

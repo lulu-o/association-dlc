@@ -1,0 +1,21 @@
+<h2>Distribution</h2>
+
+<div class="card-template-distribution">
+  <div class="date-info">
+    <p><%= @distribution.date.strftime("%d/%m/%Y") %></p>
+    <p><%= @distribution.baskets_number %> <i class="fas fa-shopping-basket"></i></p>
+    <p class="hour"><%= @distribution.hour.strftime("%H:%M") %></p>
+  </div>
+  <div class="card-distribution">
+    <div class="top">
+      <p><%= @distribution.description %></p>
+    </div>
+    <div class="bottom mt-2">
+      <div class="shop-address">
+        <p> <%= @distribution.address %></p>
+        <p> <%= @distribution.zipcode %> <%= @distribution.city %></p>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -32,7 +32,6 @@ import { initFlatpickr } from "../plugins/flatpickr";
 import { hideFlash } from "../plugins/hide_flash"
 
 document.addEventListener('turbolinks:load', () => {
-
   initFlatpickr();
   initMapbox();
   initSearch();
