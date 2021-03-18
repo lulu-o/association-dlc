@@ -342,6 +342,11 @@ favorite_53 = Favorite.create({user: user_5, partner: partner_07})
 puts "End Of Favorites Creating"
 
 puts "Creating Distributions"
+ distribution_01 = Distribution.create({user: user_2 ,harvest: harvest_01, date: "2021-03-07", hour: "20:30:00", baskets_number: 15, description: "fruits et légumes", address: "Place de l'église", zipcode: "44680", city: "Saint Mars de Coutais"})
+ distribution_02 = Distribution.create({user: user_2 ,harvest: harvest_02, date: "2021-03-08", hour: "20:00:00", baskets_number: 17, description: "fruits et légumes, produits épicerie", address: "Place de l'église", zipcode: "44680", city: "Saint Mars de Coutais"})
+ distribution_03 = Distribution.create({user: user_2 ,harvest: harvest_03, date: "2021-03-09", hour: "19:30:00", baskets_number: 18, description: "Petits pains au chocolat et croissants", address: "Place de l'église", zipcode: "44680", city: "Saint Mars de Coutais"})
+ distribution_04 = Distribution.create({user: user_2 ,harvest: harvest_04, date: "2021-03-10", hour: "20:30:00", baskets_number: 19, description: "fruits et légumes", address: "Place de l'église", zipcode: "44680", city: "Saint Mars de Coutais"})
+ distribution_05 = Distribution.create({user: user_2 ,harvest: harvest_05, date: "2021-03-11", hour: "20:45:00", baskets_number: 20, description: "fruits et légumes et produits épicerie", address: "Place de l'église", zipcode: "44680", city: "Saint Mars de Coutais"})
  distribution_01 = Distribution.create({user: user_1 ,harvest: harvest_01, date: "2021-03-22", hour: "20:30:00", baskets_number: 3})
  distribution_02 = Distribution.create({user: user_2 ,harvest: harvest_02, date: "2021-03-24", hour: "20:30:00", baskets_number: 3})
  distribution_03 = Distribution.create({user: user_3 ,harvest: harvest_03, date: "2021-03-26", hour: "20:30:00", baskets_number: 3})

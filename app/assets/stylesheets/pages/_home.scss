@@ -7,6 +7,37 @@
 		font-size: .9rem;
 		margin-bottom: 2rem;
 	}
+
+	#search-options {
+		margin-top: 1rem !important;
+	}
+	.form-radio-input {
+		width: fit-content;
+    margin: 0 auto;
+	}
+
+	.form-radio-input  {
+	  position: absolute;
+	  transform: scale(0);
+	}
+
+	.form-radio-input + label  {
+	  cursor: pointer;
+	  font-size: 0.7rem;
+	  border-radius: 50rem;
+	  padding: 0.5rem 1rem;
+	  background-color: #ECEAFF;
+	  color: $green;
+	  border: 1px solid $green;
+	  margin-right: 0.6rem;
+	  margin-bottom: 0.4rem;
+	  font-size: 14px;
+	}
+
+	.form-radio-input input :checked + label{
+	  background-color: $green;
+	  color: white;
+	}
 }
 
 .index {
@@ -16,4 +47,7 @@
 .inset {
 	box-shadow: $title-shadow;
 	width: fit-content;
+}
+.inset-partner {
+	margin: 3rem 0 2rem;
 }
