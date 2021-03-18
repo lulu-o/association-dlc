@@ -3,7 +3,7 @@ module Admin
     skip_before_action :authenticate_user!, only: [ :home ]
 
     def new
-      user = User.new
+      @user = User.new
     end
 
   end
