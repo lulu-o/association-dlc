@@ -18,16 +18,8 @@ class HarvestsController < ApplicationController
       ORDER BY harvests.date
       SQL
 
-
       @harvests = Harvest.find_by_sql(urgent_harvests_query).group_by(&:date)
 
-    # Retrieve harvests needing people - to be joined with upper query
-    # Facon degueulasse
-    # @emergency_harvest = Harvest.all.select do |harvest|
-    #   harvest.harvesters_number > harvest.harvesters.count
-    # end
-    # Facon plus propre ne fonctionne pas - a creuser
-    # Harvest.where('harvesters_number > harvesters.count')
   end
 
   def show
