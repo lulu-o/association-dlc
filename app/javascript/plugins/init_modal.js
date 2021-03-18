@@ -40,7 +40,7 @@ const initModal = () => {
         setTimeout(() => {
           button.classList.remove('pop');
           modalWindow.classList.remove("transparent");
-        }, 150);
+        }, 250);
       });
     });
 
@@ -53,7 +53,7 @@ const initModal = () => {
       setTimeout(() => {
         modalWindow.classList.remove("z10");
         cancelButton.classList.remove("revert-red");
-      }, 150);
+      }, 250);
     });
 
     // Au clic sur Confirmer, inscrire le user (à terminer)
@@ -63,7 +63,7 @@ const initModal = () => {
       setTimeout(() => {
         modalWindow.classList.remove("z10");
         confirmButton.classList.remove("revert-green");
-      }, 150);
+      }, 250);
     });
   }
 

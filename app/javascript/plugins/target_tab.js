@@ -1,9 +1,8 @@
 const targetTabs = () => {
-
   const container = document.querySelector('.profil-container');
-  const targetAttr = container.getAttribute('target');
 
-  if (targetAttr) {
+  if (container) {
+    const targetAttr = container.getAttribute('target');
     const target = document.getElementById(targetAttr);
     const blockTarget = target.getAttribute('aria-controls');
     target.classList.remove('collapsed');
