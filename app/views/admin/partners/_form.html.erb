@@ -1,0 +1,8 @@
+<%= simple_form_for [:admin, @partner] do |f| %>
+  <%= f.input :name, label: "Nom du partenaire", placeholder: "Nom du partenaire", as: :string, required: true %>
+  <%= f.input :address, label: "Adresse", placeholder: "Adresse", as: :string, required: true %>
+  <%= f.input :zipcode, label: "Code Postal", placeholder: "Code Postal", as: :string, required: true %>
+  <%= f.input :city, label: "Ville", placeholder: "Ville", as: :string, required: true %>
+
+  <%= f.button :submit, "Créer partenaire", class: "btn btn-primary btn-sm", id: "book-btn" %>
+<% end %>
