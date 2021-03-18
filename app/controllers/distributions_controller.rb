@@ -1,4 +1,8 @@
 class DistributionsController < ApplicationController
+  def show
+    @distribution = Distribution.find(params[:id])
+  end
+
 	def new
     @distribution = Distribution.new # needed to instantiate the form_for
     my_harvests_to_distribute = <<~SQL
@@ -27,9 +31,10 @@ class DistributionsController < ApplicationController
     @user = User.find_by_id(current_user.id)
     harvest = Harvest.find(params[:distribution][:harvest])
     @distribution = Distribution.new(distribution_params)
+    @distribution.user = @user
     @distribution.harvest = harvest
-    if @distribution.save
-      redirect_to user_path
+    if @distribution.save!
+      redirect_to distribution_path(@distribution)
     else
       render :new
     end
@@ -58,6 +63,6 @@ class DistributionsController < ApplicationController
 private
 
   def distribution_params
-      params.require(:distribution).permit(:date, :hour, :address, :zipcode, :city, :baskets_number, :description, :need_bag, :need_cooler, :informations)
+      params.require(:distribution).permit(:date, :hour, :address, :zipcode, :city, :baskets_number, :description, :need_bag, :need_cooler, :informations, :user)
   end
 end
