@@ -1,48 +1,12 @@
-.photo-contact {
-  width: 80px;
-  border-radius: 40%;
+.contact {
+  padding: 3rem;
+
+}
+
+.h1-contact {
+  text-align: center;
 }
 
 .p-contact {
-  margin: 1rem;
+  text-align: center;
 }
-
-.contact {
-	text-align: center;
-
-	p {
-		font-size: 1rem;
-		margin: 2rem;
-	}
-
-	i {
-		font-size: 1rem;
-		margin: 1rem;
-	}
-}
-
-.top {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-
-	.inside {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-}
-
-.bottom {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-
-	.inside {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-}
-
-
