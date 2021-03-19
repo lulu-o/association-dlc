@@ -47,7 +47,7 @@ class PartnersController < ApplicationController
     end
 
     @markers = [{ lat: @partner.latitude, lng: @partner.longitude, i_window: "none" }]
-    @harvests = Harvest.joins(:partner).where("harvests.date > ? AND partner_id = ?", Time.now, @partner)
+    @harvests = Harvest.joins(:partner).where("harvests.date > ? AND partner_id = ?", Time.now, @partner).order(:date)
   end
 
   def new
