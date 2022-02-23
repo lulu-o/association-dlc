@@ -1,31 +1,31 @@
 module Admin
-  class PartnersController < ApplicationController
+  class BrandsController < ApplicationController
     before_action :authorize, only: %i[ new create edit update destroy ]
-    before_action :set_partner, only: %i[ edit update destroy]
+    before_action :set_brand, only: %i[ edit update destroy]
 
     def new
-      @partner = Partner.new
+      @brand = Brand.new
     end
 
     def create
-      @partner = Partner.new(partner_params)
-      @partner.save
+      @brand = Brand.new(partner_params)
+      @brand.save
       redirect_to admin_index_path
     end
 
     def edit
-      set_partner
+      set_brand
     end
 
     def update
-      set_partner
-      @partner.save
+      set_brand
+      @brand.save
       redirect_to admin_index_path
     end
 
     def destroy
-      set_partner
-      @partner.destroy
+      set_brand
+      @brand.destroy
       redirect_to admin_index_path
     end
 
@@ -33,13 +33,13 @@ module Admin
 
 
     # Use callbacks to share common setup or constraints between actions.
-    def set_partner
-      @partner = Partner.find(params[:id])
+    def set_brand
+      @brand = Brand.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def partner_params
-      params.require(:partner).permit(:name, :address, :zipcode, :city, :brand_id)
+      params.require(:brand).permit(:name, :logo)
     end
 
     def authorize
@@ -49,4 +49,4 @@ module Admin
 
   end
 
-  end
+end

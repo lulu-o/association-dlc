@@ -12,7 +12,7 @@ const initModal = () => {
     const confirmButton = document.getElementById("modal-confirm");
     //Tous les boutons d'action des dates
     const buttons = document.querySelectorAll(".date-action > div");
-
+    console.log(buttons);
     buttons.forEach((button) => {
 
       button.addEventListener('click', () => {

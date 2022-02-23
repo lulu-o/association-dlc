@@ -1,4 +1,6 @@
 class AdminController < ApplicationController
+  before_action :authorize, only: %i[index]
+
   def index
     urgent_harvests_query = <<~SQL
       WITH harvesters_count AS
@@ -38,6 +40,24 @@ class AdminController < ApplicationController
     @users = User.all
 
     @partners = Partner.all
+
+    @associations = Association.all
+
+    @brands = Brand.all
+
+    @contacts = Contact.all
+
+
+
+  end
+
+  private
+
+
+  # sécurité permettant au utilisateur hors admin d'être redir
+  def authorize
+    @user = current_user
+    redirect_to user_path('me') unless @user.admin
   end
 end
 

@@ -1,31 +1,31 @@
 module Admin
-  class UsersController < ApplicationController
+  class AssociationsController < ApplicationController
     before_action :authorize, only: %i[ new create edit update destroy ]
-    before_action :set_user, only: %i[ edit update destroy]
+    before_action :set_association, only: %i[ edit update destroy]
 
     def new
-      @user = User.new
+      @association = Association.new
     end
 
     def create
-      @user = User.new(user_params)
-      @user.save
+      @association = Association.new(association_params)
+      @association.save
       redirect_to admin_index_path
     end
 
     def edit
-      set_user
+      set_association
     end
 
     def update
-      set_user
-      @user.update(user_params)
+      set_association
+      @association.update(association_params)
       redirect_to admin_index_path
     end
 
     def destroy
       set_association
-      @user.destroy
+      @association.destroy
       redirect_to admin_index_path
     end
 
@@ -36,13 +36,13 @@ module Admin
     end
 
     # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
+    def set_association
+      @association = Association.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
-    def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :address, :zipcode, :city)
+    def association_params
+      params.require(:association).permit(:name, :address, :zipcode, :city)
     end
 
   end

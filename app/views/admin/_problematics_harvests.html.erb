@@ -2,7 +2,6 @@
       <th scope="row"><%= harvest.id %></th>
       <td><%= harvest.date.strftime("%d/%m/%Y") %></td>
       <td><%= harvest.hour.strftime("%H:%M")  %></td>
-      <td><%= image_tag harvest.partner.brand.logo, alt: " ", width: 30 %> <%= harvest.partner.name %></td>
       <td><%= harvest.harvesters.count %></td>
       <td><%= harvest.harvesters_number %></td>
       <td><i class="fas fa-user-times"></i></td>

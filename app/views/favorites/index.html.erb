@@ -11,7 +11,7 @@
         <div class="card-favoris">
           <div class="top">
             <div class="shop-name">
-              <%= image_tag favorite.partner.brand.logo, alt: "Carrefour", width: 30 %>
+              <%= image_tag favorite.partner.brand.logo, alt: "Logo", width: 30 %>
               <p class="shop-title"><%= favorite.partner.name %></p>
             </div>
           </div>
@@ -22,7 +22,7 @@
             </div>
             <%# if favorite.users.include? current_user %>
             <%= link_to favorite_path(favorite), remote: :true, method: :delete, class: "fav" do %>
-              <i class="fas fa-times-circle cross"></i>
+              <i id="cross" class="fas fa-times-circle cross"></i>
             <% end %>
           </div>
         </div>
@@ -30,4 +30,5 @@
     <% end %>
   </div>
 
+</div>
 </div>

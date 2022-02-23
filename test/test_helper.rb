@@ -4,7 +4,7 @@ require "rails/test_help"
 
 class ActiveSupport::TestCase
   # Run tests in parallel with specified workers
-  parallelize(workers: :number_of_processors)
+  parallelize(workers: :number_of_processors, with: :threads) #thread needed for test to run on windowsrubyruby
 
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
