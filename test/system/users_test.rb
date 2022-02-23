@@ -15,10 +15,14 @@ class UsersTest < ApplicationSystemTestCase
      click_button('Valider')
      sleep(1)
      assert_text("JE CHOISIS UN MAGASIN")
+     find('#shops-map-tab').click
+     sleep(1)
+     find('#shops-list-tab').click
+     sleep(1)
      click_on('urgent', match: :first)
      sleep(1)
      assert_text("PROCHAINES RÉCOLTES")
-     sleep(5)
+     sleep(1)
 
      find('.register', match: :first).click
      sleep(1)
