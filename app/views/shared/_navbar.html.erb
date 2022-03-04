@@ -13,7 +13,7 @@
     </div>
   <% end %>
      
-  <%= link_to user_favorites_path(current_user) do %> 
+  <%= link_to user_favorites_path('me') do %>
     <div class="category-menu <%= current_class?(user_favorites_path(current_user)) %>">
       <i class="fas fa-heart <%= current_class?(user_favorites_path(current_user)) %>"></i>
       <p>Favoris</p>
@@ -21,13 +21,13 @@
   <% end %>
 
    <%= link_to new_distribution_path do %> 
-    <div class="category-menu <%= current_class?(new_distribution_path) %>">
+    <div id="newdistrib" class="category-menu <%= current_class?(new_distribution_path) %>">
       <i class="fas fa-sync <%= current_class?(new_distribution_path) %>"></i>
       <p>Distributions</p>
     </div>
   <% end %>
 
-  <%= link_to user_path(current_user) do %> 
+  <%= link_to user_path('me') do %>
     <div class="category-menu <%= current_class?(user_path(current_user)) %>">
       <i class="fas fa-user <%= current_class?(user_path(current_user)) %>"></i>
       <p>Profil</p>

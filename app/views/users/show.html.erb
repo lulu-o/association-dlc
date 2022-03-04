@@ -1,6 +1,12 @@
 <div class="profil-container" target="<%= @target %>">
   <h1 class="inset margin-inset">MON PROFIL</h1>
 
+  <% if @user.admin %>
+  <div>
+  <%= button_to "Admin", admin_index_path , method: :get %>
+  </div>
+  <%end %>
+
   <div id="planning" class="toggle-profil-btn btn btn-lg btn-block toggle-color d-flex justify-content-center card-body" data-toggle="collapse" href="#CollapseExample1" role="button" aria-expanded="false" aria-controls="CollapseExample1">
     <p>MON PLANNING RÉCOLTES</p>
     <i class="fas fa-chevron-down fa-lg"></i>
@@ -20,7 +26,6 @@
                 <div class="top">
                   <%= link_to partner_path(harvester.harvest.partner) do %>
                     <div class="shop-name">
-                      <%= image_tag harvester.harvest.partner.brand.logo, alt: harvester.harvest.partner.brand.name, width: 30 %>
                       <p class="shop-title"><%= harvester.harvest.partner.name %></p>
                     </div>
                   <% end %>
@@ -37,7 +42,7 @@
                   <div class="date-action">
 
                     <div class="static cancel" data-shop="<%= harvester.harvest.partner.name %>" data-date="<%= l(harvester.harvest.date, format: "%a %d/%m/%y") %>" data-remote="true" data-method="delete" data-url="<%= harvester_path(harvester.id) %>">
-                      <i class="fas fa-times-circle cross"></i>
+                      <i id="crossdeleteplanning" class="fas fa-times-circle cross"></i>
                     </div>
                   </div>
                 </div>
@@ -119,7 +124,7 @@
       </div>
     </div>
 
-    <div class="toggle-profil-btn btn btn-lg btn-block btn-primary d-flex justify-content-center card-body" data-toggle="collapse" href="#CollapseExample3" role="button" aria-expanded="false" aria-controls="CollapseExample3">
+    <div id="coordonees" class="toggle-profil-btn btn btn-lg btn-block btn-primary d-flex justify-content-center card-body" data-toggle="collapse" href="#CollapseExample3" role="button" aria-expanded="false" aria-controls="CollapseExample3">
     <p>MES COORDONNÉES</p>
     <i class="fas fa-chevron-down fa-lg"></i>
   </div>

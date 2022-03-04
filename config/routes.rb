@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :partners, only: [:index, :show]
-  resources :users, only: [:show, :edit, :update] do
+  resources :users, only: [:show, :edit, :update, ] do
   	resources :favorites, only: [:index, :create, :update]
   end
 	resources :favorites, only: [:destroy]
@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
     resources :partners
+    resources :associations
+    resources :brands
   end
 
   post 'notifications', to: 'harvests#send_notif'

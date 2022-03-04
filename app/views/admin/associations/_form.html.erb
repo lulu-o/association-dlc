@@ -1,0 +1,8 @@
+<%= simple_form_for [:admin, @association] do |f| %>
+  <%= f.input :name, label: "Nom de l'association", placeholder: "Nom de l'association", as: :string, required: true %>
+  <%= f.input :address, label: "Adresse", placeholder: "Adresse", as: :string, required: true %>
+  <%= f.input :zipcode, label: "Code Postal", placeholder: "Code Postal", as: :string, required: true %>
+  <%= f.input :city, label: "Ville", placeholder: "Ville", as: :string, required: true %>
+
+  <%= f.button :submit, "Enregistrer Association", class: "btn btn-primary btn-sm", id: "book-btn" %>
+<% end %>

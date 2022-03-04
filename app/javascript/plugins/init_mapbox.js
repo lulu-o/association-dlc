@@ -10,7 +10,12 @@ const fitMapToMarkers = (map, markers) => {
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
 
-  if (mapElement) { // only build a map if there's a div#map to inject into
+  if (!mapElement) { // only build a map if there's a div#map to inject into
+    console.debug("no #map element found... nothing to do")
+    return
+  }
+
+  try {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: mapElement,
@@ -56,9 +61,9 @@ const initMapbox = () => {
       accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl
     });
-
+  } catch (e) {
+    console.error("probleme map, car : " + e)
   }
-
 };
 
 export { initMapbox };

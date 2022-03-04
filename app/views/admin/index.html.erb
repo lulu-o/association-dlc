@@ -74,14 +74,13 @@
         <td><%= partner.name %></td>
         <td><%= partner.zipcode %></td>
         <td><%= partner.city %></td>
-        <td><a href="#" alt="Paramètres des récoltes"><i class="fas fa-truck" alt="Paramètres des récoltes"></i></a></td>
-        <td><a href="#" alt="Editer partenaire"><i class="fas fa-user-edit"></i></td>
-        <td><a href="#" alt="Supprimer partenaire"><i class="fas fa-user-times"></i></td>
+        <td><%= link_to "voir partenaire", partner_path(partner.id), class: "fas fa-truck" %></td>
+        <td><%= link_to "Edit partenaire", edit_admin_partner_path(partner.id), class: "fas fa-user-edit" %></td>
+        <td> <%= link_to "Supprimer partenaire", admin_partner_path(partner.id), :confirm => "Are you sure?", :method => :delete, class: "fas fa-user-times" %></td>
       </tr>
       <% end %>
     </tbody>
   </table>
-  <%= link_to "Nouvel partenaire", new_admin_partner_path, class: "btn btn-primary btn-sm" %>
 </div>
 
 <br><br><br><br>
@@ -93,9 +92,9 @@
     <thead>
       <tr>
         <th scope="col">ID</th>
-        <th scope="col">Name</th>
-        <th scope="col">Zipcode</th>
-        <th scope="col">City</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
         <th colspan="2">Actions</th>
       </tr>
     </thead>
@@ -106,11 +105,67 @@
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
         <td><%= user.email %></td>
-        <td><i class="fas fa-user-times"></i></td>
-        <td><i class="fas fa-user-edit"></i></td>
+        <td><%= link_to admin_user_path(user.id), data: {confirm: "Are you sure?"}, :method => :delete do %><i class="fas fa-user-times"></i><% end %></td>
+        <td><%= link_to edit_admin_user_path(user.id) do %><i class="fas fa-user-edit"></i><% end %></td>
       </tr>
       <% end %>
     </tbody>
   </table>
-  <%= link_to "Nouvel utilisateur", new_admin_user_path, class: "btn btn-primary btn-sm" %>
+</div>
+
+<br><br><br><br>
+
+<div class="shops-list-container">
+  <h1 class="inset margin-inset">Liste des associations</h1>
+  <%= link_to "Nouvel association", new_admin_association_path, class: "btn btn-primary btn-sm" %>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Zipcode</th>
+      <th scope="col">City</th>
+      <th colspan="2">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @associations.each do |association| %>
+      <tr>
+        <th scope="row"><%= association.id %></th>
+        <td><%= association.name %></td>
+        <td><%= association.zipcode %></td>
+        <td><%= association.city %></td>
+
+        <td><%= link_to edit_admin_association_path(association.id) do %><i class="fas fa-user-edit"></i><% end %></td>
+
+         <td><%= link_to admin_association_path(association.id), data: {confirm: "Are you sure?"}, :method => :delete do %><i class="fas fa-user-times"></i><% end %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="shops-list-container">
+  <h1 class="inset margin-inset">Liste des Brands</h1>
+  <%= link_to "Nouvel Brand", new_admin_brand_path, class: "btn btn-primary btn-sm" %>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Logo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @brands.each do |brand| %>
+      <tr>
+        <th scope="row"><%= brand.id %></th>
+        <td><%= brand.name %></td>
+        <td><%= brand.logo %></td>
+        <td><%= link_to edit_admin_brand_path(brand.id) do %><i class="fas fa-user-edit"></i><% end %></td>
+        <td><%= link_to admin_brand_path(brand.id), data: {confirm: "Are you sure?"}, :method => :delete do %><i class="fas fa-user-times"></i><% end %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 </div>

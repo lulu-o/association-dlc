@@ -57,7 +57,7 @@ class PartnersController < ApplicationController
   def create
     @partner = Partner.new(partner_params)
     @partner.save
-    redirect_to_partner_path(@partner)
+    partner_path(@partner)
   end
 
   def edit

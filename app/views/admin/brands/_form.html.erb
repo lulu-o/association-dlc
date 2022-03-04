@@ -1,0 +1,7 @@
+<%= simple_form_for [:admin, @brand] do |f| %>
+  <%= f.input :name, label: "Nom de l'association", placeholder: "Nom de la Brand", as: :string, required: true %>
+  <%= f.input :logo, label: "Logo", placeholder: "Logo", as: :string, required: false %>
+
+
+  <%= f.button :submit, "Enregistrer Brand", class: "btn btn-primary btn-sm", id: "book-btn" %>
+<% end %>
